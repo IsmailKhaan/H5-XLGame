@@ -1,0 +1,445 @@
+{
+    "pages": [
+        {
+            "path": "pages/index/index",
+            "style": {
+                "navigationStyle": "custom",
+				"navigationBarTitleText": "汛利娱乐-汛利体育、真人、电竞、电子、棋牌 - xunli Entertainment index"
+            }
+        },
+        {
+            "path": "pages/index/activityDt",
+            "style": {
+                "navigationStyle": "custom"
+            }
+        },
+		{
+		    "path": "pages/index/indexon",
+		    "style": {
+		        "navigationStyle": "custom"
+		    }
+		},
+        {
+            "path": "pages/index/activityDtl",
+            "style": {
+                "navigationStyle": "custom"
+            }
+        },
+        {
+            "path": "uni_modules/uni-upgrade-center-app/pages/upgrade-popup",
+            "style": {
+                "app-plus": {
+                    "animationDuration": 200,
+                    "animationType": "fade-in",
+                    "background": "transparent",
+                    "backgroundColorTop": "transparent",
+                    "popGesture": "none",
+                    "scrollIndicator": false,
+                    "titleNView": false
+                },
+                "disableScroll": true
+            }
+        }
+    ],
+    "subPackages": [
+        {
+            "root": "pages",
+            "pages": [
+                {
+                    "path": "forms",
+                    "style": {
+                        "navigationBarTitleText": "Form 表单"
+                    }
+                },
+                {
+                    "path": "test",
+                    "style": {
+                        "navigationBarTitleText": "test"
+                    }
+                },
+                {
+                    "path": "login/login",
+                    "style": {
+                        "navigationBarTitleText": "登录-login",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "register/register",
+                    "style": {
+                        "navigationBarTitleText": "注册-register",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "getpassword/getpassword",
+                    "style": {
+                        "navigationBarTitleText": "找回密码-getpassword/getpassword",
+                        "enablePullDownRefresh": false
+                    }
+                },
+				{
+					"path": "service/serviceDtl",
+					"style": {
+					    "navigationBarTitleText": "客服-about",
+					    "enablePullDownRefresh": false
+					}
+				},
+                {
+                    "path": "newpassword/newpassword",
+                    "style": {
+                        "navigationBarTitleText": "重置密码-password",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "updatepassword/updatepassword",
+                    "style": {
+                        "navigationBarTitleText": "修改密码-成功 password ok",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "activity/activity",
+                    "style": {
+                        "navigationBarTitleText": "优惠活动-activity",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "activity/activityDtl",
+                    "style": {
+                        "navigationBarTitleText": "汛利娱乐-游戏 game",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "sponsor/sponsor",
+                    "style": {
+                        "navigationBarTitleText": "赞助 - sponsor",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "service/service",
+                    "style": {
+                        "navigationBarTitleText": "客服 联系我们 - service",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "home/home",
+                    "style": {
+                        "navigationBarTitleText": "用户中心 - user",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "setting/setting",
+                    "style": {
+                        "navigationBarTitleText": "设置 - setting",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "setting/password/password",
+                    "style": {
+                        "navigationBarTitleText": "密码 - password",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "setting/deviceinfo/deviceinfo",
+                    "style": {
+                        "navigationBarTitleText": "设备信息 - deviceinfo",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "setting/about/about",
+                    "style": {
+                        "navigationBarTitleText": "联系我们 - about",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "setting/help/help",
+                    "style": {
+                        "navigationBarTitleText": "帮助 - help",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "setting/contact/contact",
+                    "style": {
+                        "navigationBarTitleText": "联系方式 - contact",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "news/news",
+                    "style": {
+                        "navigationBarTitleText": "消息中心 - news",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "deposit/deposit",
+                    "style": {
+                        "navigationBarTitleText": "存款 - deposit",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "deposit/crypto/crypto",
+                    "style": {
+                        "navigationBarTitleText": "汛利存款类型 - crypto",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "deposit/crypto/protocol",
+                    "style": {
+                        "navigationBarTitleText": "虚拟币类型介绍 - protocol",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "deposit/crypto/VirtualCurrency",
+                    "style": {
+                        "navigationBarTitleText": "币 - VirtualCurrency",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "deposit/bank/bank",
+                    "style": {
+                        "navigationBarTitleText": "银行卡 - bank",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "deposit/usdt",
+                    "style": {
+                        "navigationBarTitleText": "usdt",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "cardManage/addBank/addBank",
+                    "style": {
+                        "navigationBarTitleText": "添加银行卡 - addBank",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "cardManage/addcrypto/addcrypto",
+                    "style": {
+                        "navigationBarTitleText": "选择虚拟币 - addcrypto",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "cardManage/cardManage",
+                    "style": {
+                        "navigationBarTitleText": "选择类型 - cardManage",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "transfer/transfer",
+                    "style": {
+                        "navigationBarTitleText": "转账 - transfer",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "withdrawal/withdrawal",
+                    "style": {
+                        "navigationBarTitleText": "提现 - withdrawal",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "record/trade",
+                    "style": {
+                        "navigationBarTitleText": "交易记录 - record",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "record/betting",
+                    "style": {
+                        "navigationBarTitleText": "投注记录 - betting",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "wallet/wallet",
+                    "style": {
+                        "navigationBarTitleText": "钱包 - wallet",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "vip/vip",
+                    "style": {
+                        "navigationBarTitleText": "vip",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "help/help",
+                    "style": {
+                        "navigationBarTitleText": "",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "help/virtual_deposit_tutorial",
+                    "style": {
+                        "navigationBarTitleText": "虚拟币教程 - virtual_deposit_tutorial",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "help/bank_deposit_tutorial",
+                    "style": {
+                        "navigationBarTitleText": "银行卡存款教程 - bank_deposit_tutorial",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "help/betting_tutorial",
+                    "style": {
+                        "navigationBarTitleText": "投注 - betting_tutorial",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "help/game_play_tutorial",
+                    "style": {
+                        "navigationBarTitleText": "游戏 - game_play_tutorial",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "help/transfer_tutorial",
+                    "style": {
+                        "navigationBarTitleText": "转账 - transfer_tutorial",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "help/withdrawal_tutorial",
+                    "style": {
+                        "navigationBarTitleText": "提现 - withdrawal_tutorial",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "help/play/play",
+                    "style": {
+                        "navigationBarTitleText": "play",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "withdrawal/choosewithdrawmoney",
+                    "style": {
+                        "navigationBarTitleText": "选择-choosewithdrawmoney",
+                        "enablePullDownRefresh": false
+                    }
+                }
+                ,
+                {
+                    "path": "withdrawal/withdrawviabank",
+                    "style": {
+                        "navigationBarTitleText": "提现银行卡-withdrawviabank",
+                        "enablePullDownRefresh": false
+                    }
+                }
+                ,
+                {
+                    "path": "withdrawal/withdrawviacrypto",
+                    "style": {
+                        "navigationBarTitleText": "提现虚拟币-withdrawviacrypto",
+                        "enablePullDownRefresh": false
+                    }
+                }
+                ,{
+                    "path" : "baseinfo/baseinfo",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "baseinfo",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "baseinfo/email/email",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "邮箱 - email",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+				,{
+				    "path" : "baseinfo/name/name",
+				    "style" :                                                                                    
+				{
+				    "navigationBarTitleText": "name",
+				    "enablePullDownRefresh": false
+				}
+				
+				}
+				,{
+				    "path" : "baseinfo/phone/phone",
+				    "style" :                                                                                    
+				{
+				    "navigationBarTitleText": "phone",
+				    "enablePullDownRefresh": false
+				}
+				
+				}
+				
+                ,{
+                    "path" : "help/techsupport",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "help/security_tutorial",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
+        }
+    ],
+    "globalStyle": {
+        "pageOrientation": "portrait",
+        "navigationBarTitleText": "汛利娱乐",
+        "navigationBarTextStyle": "white",
+        "navigationBarBackgroundColor": "#007AFF",
+        "backgroundColor": "#F8F8F8",
+        "backgroundColorTop": "#F4F5F6",
+        "backgroundColorBottom": "#F4F5F6",
+        "mp-360": {
+            "navigationStyle": "custom"
+        },
+        "h5": {
+            "maxWidth": 1190,
+            "navigationBarTextStyle": "black",
+            "navigationBarBackgroundColor": "#F1F1F1"
+        }
+    }
+}
