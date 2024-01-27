@@ -43,6 +43,7 @@
   "login": {
     "login_title": "登录",
     "login_subtitle": "输入用户名登录",
+    "mobile_subtitle": "输入手机号码登录",
     "userNameLogin_label": "用户名登录",
     "mobile_number_label": "手机号登录",
     "userNamePlaceholder": "用户名",

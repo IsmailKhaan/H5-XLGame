@@ -1,107 +1,202 @@
 <template>
-  <view class="content">
-    <loading :isshow="isshow"></loading>
-
-    <view @click="support" class="support">
-      <image src="../../static/login/support.png" mode="widthFix"></image>
-    </view>
-    <view class="login_name f-c">{{ $t('login.login_title') }}</view>
-    <!-- <view class="login_name f-c">{{ $t('login.login_title') }}</view> -->
-    <view class="login_instructions f-c">{{ $t('login.login_subtitle') }}</view>
-    <view class="nav_bg f-c">
-      <view class="nav_btn" @click="LoginFx(0)" :class="logintype == 0 ? 'active' : ''">{{ $t('login.userNameLogin_label') }}</view>
-      <view class="nav_btn" @click="LoginFx(1)" :class="logintype == 1 ? 'active' : ''">{{ $t('login.mobile_number_label') }}</view>
-    </view>
-    <view class="form">
-      <!-- -------------------------------------Username Login------------------------------------------------------ -->
-      <view class="form_username_login" v-if="logintype == 0">
-        <view class="input_username f-c">
-          <input type="text" :placeholder="$t('login.userNamePlaceholder') " @blur="okformData" maxlength="30" data-type="username"
-            v-model="formData.username" placeholder-style="color:#B53D1E;" />
-        </view>
-        <view class="input_password f-c">
-          <input :type="isshowpass == 0 ? 'password' : 'text'" maxlength="12" :value="formData.password"
-            @blur="okformdata" data-type="password" :placeholder="$t('login.passwordPlaceholder')" placeholder-style="color:#B53D1E;" />
-          <view class="passwordshow" @click="showpass">
-            <image :src="isshowpass == 0
-                ? '../../static/login/eye-closed.png'
-                : '../../static/login/eye-open.png'
-              " mode="widthFix">
-            </image>
-          </view>
-        </view>
-
-        <view class="rememberpassAndforgetpass f-c">
-          <view class="rememberpass f-c" @click="saveFx">
-            <div class="save-main f-c" :class="{ 'green-bg': saveBtn }">
-              <uni-icons type="checkmarkempty" class="right" v-show="saveBtn"></uni-icons>
-            </div>
-            {{ $t('login.remember_me') }}
-          </view>
-          <view class="border_bottom">
-            <navigator url="/pages/getpassword/getpassword" class="forgetpass">{{ $t('login.forgot_password') }}</navigator>
-          </view>
-        </view>
-        <view class="loginBtn f-c" @click="acountlogin">{{ $t('login.login_title') }}</view>
+  <view class="main">
+    <view class="content">
+      <loading :isshow="isshow"></loading>
+      <view @click="support" class="support">
+        <image src="../../static/login/support.png" mode="widthFix"></image>
       </view>
+      <view class="login_name f-c">{{ $t("login.login_title") }}</view>
+      <!-- <view class="login_name f-c">{{ $t('login.login_title') }}</view> -->
+      <view class="login_instructions f-c">{{
+        logintype === 0
+          ? $t("login.login_subtitle")
+          : logintype === 1 && codesent === 0
+          ? $t("login.mobile_subtitle")
+          : logintype === 1 &&
+            codesent === 1 &&
+            "Code is sent to ********" + phoneData.phoneNo.slice(-3)
+      }}</view>
+      <view class="nav_bg f-c">
+        <view
+          class="nav_btn"
+          @click="LoginFx(0)"
+          :class="logintype == 0 ? 'active' : ''"
+          >{{ $t("login.userNameLogin_label") }}</view
+        >
+        <view
+          class="nav_btn"
+          @click="LoginFx(1)"
+          :class="logintype == 1 ? 'active' : ''"
+          >{{ $t("login.mobile_number_label") }}</view
+        >
+      </view>
+      <view class="form">
+        <!-- -------------------------------------Username Login------------------------------------------------------ -->
+        <view class="form_username_login" v-if="logintype == 0">
+          <view class="input_username f-c">
+            <input
+              type="text"
+              :placeholder="$t('login.userNamePlaceholder')"
+              @blur="okformData"
+              maxlength="30"
+              data-type="username"
+              v-model="formData.username"
+              placeholder-style="color:#003B3D;"
+            />
+          </view>
+          <view class="input_password f-c">
+            <input
+              :type="isshowpass == 0 ? 'password' : 'text'"
+              maxlength="12"
+              :value="formData.password"
+              @blur="okformdata"
+              data-type="password"
+              :placeholder="$t('login.passwordPlaceholder')"
+              placeholder-style="color:#003B3D;"
+            />
+            <view class="passwordshow" @click="showpass">
+              <image
+                :src="
+                  isshowpass == 0
+                    ? '../../static/login/eye-closed.png'
+                    : '../../static/login/eye-open.png'
+                "
+                mode="widthFix"
+              >
+              </image>
+            </view>
+          </view>
 
-      <!--------------------------------------------------#Number Login----------------------------------------------------------------->
-      <view class="form_username_login" v-if="logintype == 1">
-        <view class="forminpu">
-          <view class="input" style="margin-bottom: 56rpx">
-            <input type="text"  :placeholder="$t('login.phoneNumPlaceholder') "  maxlength="11" v-model="phoneData.phoneNo"
-              placeholder-style="color:#B53D1E;" />
-          </view>
-          <view class="input" style="margin-bottom: 60rpx">
-            <input type="text"  :placeholder="$t('login.verficationPlaceholder') "  maxlength="6" data-type="smsCode"
-              v-model="phoneData.smsCode" placeholder-style="color:#B53D1E;" />
-            <view :class="noclick" @click="getcode" :style="codesent == 1 ? 'background-color: #ababab !important;' : ''">{{ yzmtext }}</view>
-          </view>
           <view class="rememberpassAndforgetpass f-c">
             <view class="rememberpass f-c" @click="saveFx">
               <div class="save-main f-c" :class="{ 'green-bg': saveBtn }">
-                <uni-icons type="checkmarkempty" class="right" v-show="saveBtn"></uni-icons>
+                <uni-icons
+                  type="checkmarkempty"
+                  class="right"
+                  v-show="saveBtn"
+                ></uni-icons>
               </div>
-              {{ $t('login.remember_me') }}
+              {{ $t("login.remember_me") }}
             </view>
             <view class="border_bottom">
-              <navigator url="/pages/getpassword/getpassword" class="forgetpass">{{ $t('login.forgot_password') }}</navigator>
+              <navigator
+                url="/pages/getpassword/getpassword"
+                class="forgetpass"
+                >{{ $t("login.forgot_password") }}</navigator
+              >
             </view>
           </view>
-          <view class="loginBtn f-c" @click="phoneBtn">{{ $t('login.login_title') }}</view>
+          <view class="loginBtn f-c" @click="acountlogin">{{
+            $t("login.login_title")
+          }}</view>
+        </view>
+
+        <!--------------------------------------------------#Number Login----------------------------------------------------------------->
+        <view class="form_username_login" v-if="logintype == 1">
+          <view class="forminpu">
+            <view
+              v-if="codesent === 0"
+              class="input"
+              style="margin-bottom: 56rpx"
+            >
+              <input
+                type="text"
+                :placeholder="$t('login.phoneNumPlaceholder')"
+                maxlength="11"
+                v-model="phoneData.phoneNo"
+                placeholder-style="color:#003B3D;"
+              />
+            </view>
+            <view v-else class="code" style="margin-bottom: 60rpx">
+              <!-- <input
+                type="text"
+                :placeholder="$t('login.verficationPlaceholder')"
+                maxlength="6"
+                data-type="smsCode"
+                v-model="phoneData.smsCode"
+                placeholder-style="color:#003B3D;"
+              /> -->
+              <!-- <view v-for="item,index in 6" :key="index" class="slot f-c">{{ index }}</view> -->
+              <input
+                v-for="(item, index) in 6"
+                :key="index"
+                :ref="`otpInput${index}`"
+                type="number"
+                v-model="otpArray[index]"
+                maxlength="1"
+                class="slot"
+                :disabled="index > 0 && !otpArray[index - 1]"
+              />
+            </view>
+            <view v-if="codesent === 0" class="rememberpassAndforgetpass f-c">
+              <view class="rememberpass f-c" @click="saveFx">
+                <div class="save-main f-c" :class="{ 'green-bg': saveBtn }">
+                  <uni-icons
+                    type="checkmarkempty"
+                    class="right"
+                    v-show="saveBtn"
+                  ></uni-icons>
+                </div>
+                {{ $t("login.remember_me") }}
+              </view>
+              <!-- <view class="border_bottom">
+                <navigator
+                  url="/pages/getpassword/getpassword"
+                  class="forgetpass"
+                  >{{ $t("login.forgot_password") }}</navigator
+                >
+              </view> -->
+            </view>
+            <view v-if="codesent === 1" class="nocode_recieved"
+              >Don’t receive code?
+              <span class="request_again" @click="codesent = 0">
+                Request again</span
+              ></view
+            >
+            <view v-if="codesent === 0" class="loginBtn f-c" @click="getcode">{{
+              yzmtext
+            }}</view>
+            <view v-else class="loginBtn f-c" @click="phoneBtn">{{
+              $t("login.login_title")
+            }}</view>
+          </view>
         </view>
       </view>
-    </view>
-    <view class="bottom_class">
-      <view class="OR f-c">{{ $t('login.or') }}</view>
-      <view class="signup_url f-c" style="z-index: 1001">
-        <navigator class="url_link" url="/pages/register/register">
-          <view class="url_sub_class">{{ $t('login.register_Now') }}</view>
-        </navigator>
-      </view>
-      <navigator url="/pages/index/index">
-        <view class="f-c QV">{{ $t('login.quick_visit') }}</view>
-      </navigator>
-      
+      <view class="bottom_class f-c">
+        <!-- <view class="OR f-c">{{ $t("login.or") }}</view> -->
+        <span> If you dont have an account</span>
+        <view class="signup_url f-c" style="z-index: 1001">
+          <navigator class="url_link" url="/pages/register/register">
+            <view class="url_sub_class">{{ $t("login.register_Now") }}</view>
+          </navigator>
+        </view>
+        <!-- <navigator url="/pages/index/index">
+          <view class="f-c QV">{{ $t("login.quick_visit") }}</view>
+        </navigator> -->
 
-      <button type="default" onclick="window.location.href='https://www.xunli.bet'" class="f-c url_image"></button>
-      <view class="f-c OW">{{ $t('login.office_website_label') }}</view>
+        <!-- <button
+          type="default"
+          onclick="window.location.href='https://www.xunli.bet'"
+          class="f-c url_image"
+        ></button>
+        <view class="f-c OW">{{ $t("login.office_website_label") }}</view> -->
+      </view>
     </view>
   </view>
 </template>
 
 <script>
-import { localizationMixin } from '../../common/js/localization';
+import { localizationMixin } from "../../common/js/localization";
 import { mapState, mapMutations, mapAction } from "vuex";
 import state from "@/store/state";
 export default {
   mixins: [localizationMixin],
   data() {
     return {
-      codesent:0,
+      codesent: 0,
       isshow: 0,
       logintype: 0,
-			saveData: uni.getStorageSync('saveData'),
+      saveData: uni.getStorageSync("saveData"),
       formData: {
         username: "", //username
         password: "", //password
@@ -114,10 +209,10 @@ export default {
       saveBtn: false,
       noclick: "yzmbtn",
       yzmtext: "发送验证码",
-			dajishi: "dajishi",
-			yzmbtntype: 0,
-			djtime: 60,
-
+      dajishi: "dajishi",
+      yzmbtntype: 0,
+      djtime: 60,
+      otpArray: Array(6).fill(""),
     };
   },
   computed: {
@@ -129,7 +224,15 @@ export default {
     rules() {
       this.initFx();
     },
+    otpArray() {
+      const allEmpty = this.otpArray.every((element) => element === "");
+
+      if (!allEmpty) {
+        this.phoneData.smsCode = this.otpArray.join("");
+      }
+    },
   },
+
   onLoad() {
     let _this = this;
     //是否记住密码
@@ -141,10 +244,10 @@ export default {
     this.initFx();
   },
   methods: {
-    support(){
+    support() {
       uni.navigateTo({
-          url: "../service/serviceDtl",
-        });
+        url: "../service/serviceDtl",
+      });
     },
     initFx() {
       this.isshow = 1;
@@ -172,25 +275,23 @@ export default {
     ////////////////////User Login by name&password////////////////////////////////////
     acountlogin() {
       let _this = this;
-      
-
 
       // return
       if (_this.formData.username.length < 5) {
         uni.showToast({
-          title: this.$t('rules.username'),
+          title: this.$t("rules.username"),
           icon: "none",
         });
         return;
       }
       if (!state.rule.password.test(_this.formData.password)) {
         uni.showToast({
-          title: this.$t('rules.password'),
+          title: this.$t("rules.password"),
           icon: "none",
         });
         return;
       }
-      
+
       let url = _this.$globalApi.login;
       // _this.isshow = 1;
       this.$res.postRequest(url, _this.formData).then((res) => {
@@ -204,8 +305,7 @@ export default {
               title: "账号密码不匹配，还剩" + res.data.msg + "次机会",
               icon: "none",
             });
-          }
-          else {
+          } else {
             uni.showToast({
               title: res.data.msg,
               icon: "none",
@@ -217,36 +317,35 @@ export default {
 
     ////////////////////////////Phone Login////////////////////////////////
     phoneBtn() {
-			let _this = this;
-			if (!state.rule.phoneNo.test(_this.phoneData.phoneNo)) {
-				uni.showToast({
-					title:  this.$t('rules.phoneNo'),
-					icon: "none",
-				});
-				return
-			}
-			if (!_this.phoneData.smsCode) {
-				uni.showToast({
-					title: "请输入验证码",
-					icon: "none",
-				});
-				return false;
-			}
+      let _this = this;
+      if (!state.rule.phoneNo.test(_this.phoneData.phoneNo)) {
+        uni.showToast({
+          title: this.$t("rules.phoneNo"),
+          icon: "none",
+        });
+        return;
+      }
+      if (!_this.phoneData.smsCode) {
+        uni.showToast({
+          title: "请输入验证码",
+          icon: "none",
+        });
+        return false;
+      }
 
-			let url = _this.$globalApi.loginBySms;
-			let datas = _this.phoneData;
+      let url = _this.$globalApi.loginBySms;
+      let datas = _this.phoneData;
       this.$res.postRequest(url, datas).then((res) => {
-				if (res.data.code == 0) {
-					this.saveDataFx(res.data.data)
-					
-				} else {
-					uni.showToast({
-						title: res.data.msg,
-						icon: "none",
-					});
-				}
-			});
-		},
+        if (res.data.code == 0) {
+          this.saveDataFx(res.data.data);
+        } else {
+          uni.showToast({
+            title: res.data.msg,
+            icon: "none",
+          });
+        }
+      });
+    },
 
     getphoneMes() {
       let _this = this;
@@ -284,14 +383,14 @@ export default {
       let _this = this;
       if (!state.rule.phoneNo.test(this.phoneData.phoneNo)) {
         uni.showToast({
-          title: this.$t('rules.phoneNo'),
+          title: this.$t("rules.phoneNo"),
           icon: "none",
         });
       } else {
         if (this.yzmbtntype == 1) {
           uni.showToast({
             title: "验证码已发送",
-           icon: "none",
+            icon: "none",
           });
         } else {
           let url = _this.$globalApi.sendLoginSms;
@@ -301,50 +400,6 @@ export default {
           this.$res.postRequest(url, datas).then((res) => {
             console.log(res);
             if (res.data.code == 0) {
-              uni.showToast({
-                title: state.codes[res.data.code],
-               icon: "none",
-              });
-              _this.codesent = 1;
-              _this.noclick = "yzmbtn noclick";
-              _this.yzmbtntype = !this.yzmbtntype;
-              _this.yzmtext = "倒计时60秒";
-              _this.dajishi = setInterval(function () {
-                _this.djtime = _this.djtime - 1;
-                _this.yzmtext = "倒计时" + _this.djtime + "秒";
-                if (_this.djtime == -1) {
-               _this.codesent = 0;
-                  _this.yzmtext = "获取验证码";
-                  _this.yzmbtntype = 0;
-                  _this.djtime = 60;
-                  _this.noclick = "yzmbtn";
-                  clearInterval(_this.dajishi);
-                }
-              }, 1000);
-            }
-          else if (res.data.code == 20006) {
-              uni.showToast({
-                title: state.codes[res.data.code],
-               icon: "none",
-              });
-              _this.codesent = 1;
-              _this.noclick = "yzmbtn noclick";
-              _this.yzmbtntype = !this.yzmbtntype;
-              _this.yzmtext = "倒计时60秒";
-              _this.dajishi = setInterval(function () {
-                _this.djtime = _this.djtime - 1;
-                _this.yzmtext = "倒计时" + _this.djtime + "秒";
-                if (_this.djtime == -1) {
-               _this.codesent = 0;
-                  _this.yzmtext = "获取验证码";
-                  _this.yzmbtntype = 0;
-                  _this.djtime = 60;
-                  _this.noclick = "yzmbtn";
-                  clearInterval(_this.dajishi);
-                }
-              }, 1000);
-            } 
-            else if (res.data.code == 1000) {
               uni.showToast({
                 title: state.codes[res.data.code],
                 icon: "none",
@@ -357,7 +412,7 @@ export default {
                 _this.djtime = _this.djtime - 1;
                 _this.yzmtext = "倒计时" + _this.djtime + "秒";
                 if (_this.djtime == -1) {
-               _this.codesent = 0;
+                  _this.codesent = 0;
                   _this.yzmtext = "获取验证码";
                   _this.yzmbtntype = 0;
                   _this.djtime = 60;
@@ -365,11 +420,52 @@ export default {
                   clearInterval(_this.dajishi);
                 }
               }, 1000);
-            }            
-            else {
+            } else if (res.data.code == 20006) {
+              uni.showToast({
+                title: state.codes[res.data.code],
+                icon: "none",
+              });
+              _this.codesent = 1;
+              _this.noclick = "yzmbtn noclick";
+              _this.yzmbtntype = !this.yzmbtntype;
+              _this.yzmtext = "倒计时60秒";
+              _this.dajishi = setInterval(function () {
+                _this.djtime = _this.djtime - 1;
+                _this.yzmtext = "倒计时" + _this.djtime + "秒";
+                if (_this.djtime == -1) {
+                  _this.codesent = 0;
+                  _this.yzmtext = "获取验证码";
+                  _this.yzmbtntype = 0;
+                  _this.djtime = 60;
+                  _this.noclick = "yzmbtn";
+                  clearInterval(_this.dajishi);
+                }
+              }, 1000);
+            } else if (res.data.code == 1000) {
+              uni.showToast({
+                title: state.codes[res.data.code],
+                icon: "none",
+              });
+              _this.codesent = 1;
+              _this.noclick = "yzmbtn noclick";
+              _this.yzmbtntype = !this.yzmbtntype;
+              _this.yzmtext = "倒计时60秒";
+              _this.dajishi = setInterval(function () {
+                _this.djtime = _this.djtime - 1;
+                _this.yzmtext = "倒计时" + _this.djtime + "秒";
+                if (_this.djtime == -1) {
+                  _this.codesent = 0;
+                  _this.yzmtext = "获取验证码";
+                  _this.yzmbtntype = 0;
+                  _this.djtime = 60;
+                  _this.noclick = "yzmbtn";
+                  clearInterval(_this.dajishi);
+                }
+              }, 1000);
+            } else {
               uni.showToast({
                 title: "发送失败",
-               icon: "none",
+                icon: "none",
               });
             }
           });
@@ -425,10 +521,13 @@ export default {
 
 <style lang="scss" scoped>
 /* 背景容器 */
-
+.main {
+  background: #008d91;
+  padding-top: 48rpx;
+}
 .content {
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 48rpx);
   background-size: cover;
   overflow: hidden;
   display: flex;
@@ -436,59 +535,55 @@ export default {
   justify-content: flex-start;
   box-sizing: border-box;
   position: relative;
-  background-color: #ffffff;
-
+  background-color: #fff;
+  border-radius: 80rpx 80rpx 0 0;
+  position: relative;
   .login_name {
     margin-top: 110rpx;
-    color: #bf1c05;
+    color: #003b3d;
     font-family: Microsoft YaHei UI;
     font-size: 52rpx;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin-top: 328rpx;
   }
 
   .login_instructions {
-    margin-top: 12rpx;
-    color: #bf1c05;
-    font-family: Microsoft YaHei UI;
+    margin-top: 16rpx;
+    color: #008d91;
     font-size: 24rpx;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
   }
 
   .nav_bg {
-    background: url("../../static/login/nav_bg.png") no-repeat;
-    background-size: 100% 100%;
-    width: 612rpx;
+    // background: url("../../static/login/nav_bg.png") no-repeat;
+    // background-size: 100% 100%;
+    width: 512rpx;
     height: 66rpx;
     margin: 0 auto;
     margin-top: 54rpx;
 
     .nav_btn {
-      color: #fff;
+      color: #003b3d;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 700;
       line-height: 48rpx;
       /* 166.667% */
       letter-spacing: -0.5px;
       padding: 6rpx;
-      border-radius: 100rpx;
-      width: 306rpx;
       height: 54rpx;
       margin: auto;
     }
 
     .nav_btn.active {
       padding: 6rpx;
-      background-color: #fff;
-      border-radius: 100rpx;
-      color: #bf1c05;
-      margin: 6rpx;
+      color: #003b3d;
+      border-bottom: 4rpx solid #003b3d;
     }
   }
 
@@ -504,12 +599,12 @@ export default {
       padding: 0 10rpx 0 12rpx;
       box-sizing: border-box;
       justify-content: space-between;
-      border-bottom: 4rpx solid #781000;
+      border-bottom: 4rpx solid #003b3d;
 
       input {
         width: 430rpx;
-      //  height: 100%;
-        color: #b53d1e;
+        //  height: 100%;
+        color: #003b3d;
         font-family: Microsoft YaHei UI;
         font-size: 32rpx;
         font-style: normal;
@@ -520,18 +615,18 @@ export default {
 
     .input_password {
       width: 100%;
-      height:54rpx;
+      height: 54rpx;
       position: relative;
       margin-bottom: 60rpx;
       padding: 0 10rpx 0 12rpx;
       box-sizing: border-box;
       justify-content: space-between;
-      border-bottom: 4rpx solid #781000;
+      border-bottom: 4rpx solid #003b3d;
 
       input {
         width: 430rpx;
-      //  height: 100%;
-        color: #b53d1e;
+        //  height: 100%;
+        color: #003b3d;
         font-family: Microsoft YaHei UI;
         font-size: 32rpx;
         font-style: normal;
@@ -551,7 +646,7 @@ export default {
           width: 100%;
           height: 100%;
         }
-      } 
+      }
     }
 
     .rememberpassAndforgetpass {
@@ -561,7 +656,7 @@ export default {
 
       .border_bottom {
         border-bottom: 2rpx solid #ababab; //temporary color
-        padding-bottom: 4.10rpx;
+        padding-bottom: 4.1rpx;
 
         .forgetpass {
           color: #ababab;
@@ -589,14 +684,30 @@ export default {
 
         input {
           width: 430rpx;
-         // height: 100%;
-          color: #b53d1e;
+          // height: 100%;
+          color: #003b3d;
           font-family: Microsoft YaHei UI;
           font-size: 32rpx;
           font-style: normal;
           font-weight: 400;
           line-height: normal;
-        //  margin-bottom: -9px;
+          //  margin-bottom: -9px;
+        }
+      }
+      .code {
+        display: flex;
+        align-items: center;
+        gap: 16rpx;
+        justify-content: center;
+        .slot {
+          color: #fff;
+          font-size: 24rpx;
+          font-weight: 700;
+          background-color: #008d91;
+          border-radius: 10rpx;
+          width: 56rpx;
+          height: 64rpx;
+          padding-left: 20rpx;
         }
       }
     }
@@ -605,21 +716,20 @@ export default {
 
 .uni-input-placeholder {
   width: 430rpx;
-//  height: 100%;
-  color: #b53d1e;
+  //  height: 100%;
+  color: #003b3d;
   font-family: Microsoft YaHei UI;
   font-size: 32rpx;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-//  margin-bottom: -30px;
-
+  //  margin-bottom: -30px;
 }
 
-/deep/.uni-input-input {
+/deep/.uni-input-input[type="text"] {
   width: 430rpx;
-//  height: 100%;
-  color: #b53d1e;
+  //  height: 100%;
+  color: #003b3d;
   font-family: Microsoft YaHei UI;
   font-size: 32rpx;
   font-style: normal;
@@ -627,9 +737,13 @@ export default {
   line-height: normal;
   //margin-bottom: -15px;
 }
-
+/deep/.uni-input-input[type="number"] {
+  color: white;
+  font-size: 24rpx;
+  font-weight: 700;
+}
 .rememberpass {
-  color: #781000;
+  color: #003b3d;
   text-align: center;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
@@ -665,23 +779,37 @@ export default {
 input {
   font-size: 32rpx !important;
 }
-
+.nocode_recieved {
+  text-align: center;
+  color: #008d91;
+  font-size: 24rpx;
+  .request_again {
+    color: #003b3d;
+    font-weight: 700;
+    border-bottom: 4rpx solid #003b3d;
+    padding: 4rpx;
+  }
+}
 .loginBtn {
-  width:232.728rpx;
-  height: 74.314rpx;
-  background: url("../../static/login/login_button.png") no-repeat;
-  background-size: 100% 100%;
+  width: 366rpx;
+  height: 66rpx;
   color: #fff;
   font-size: 24rpx;
+  font-weight: 700;
   margin: auto;
-  padding-bottom: 8rpx;
   margin-top: 72rpx;
+  border-radius: 20rpx;
+  background: #003b3d;
 }
 
 .bottom_class {
   margin: 0 0 0 0;
   z-index: 1001;
-
+  // margin-top: 300rpx;
+  position: absolute;
+  bottom: 72rpx;
+  margin: 0 auto;
+  width: 100%;
   .url_image {
     background: url("../../static/login/urlweb.png") no-repeat;
     background-size: 100% 100%;
@@ -737,30 +865,32 @@ input {
 
   .signup_url {
     //margin-top: 10.92rpx;
-    background: url("../../static/login/signup_btn.png") no-repeat;
-    background-size: 100% 100%;
-    width: 236rpx;
-    height: 66rpx;
-    margin: 0 auto;
+    // background: url("../../static/login/signup_btn.png") no-repeat;
+    // background-size: 100% 100%;
+    // width: 236rpx;
+    // height: 66rpx;
+    // margin: 0 auto;
 
     .url_link {
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #ffffff;
+      color: #008d91;
       z-index: 102;
+      font-weight: 700;
     }
 
     .url_sub_class {
-      color: #FFF;
+      color: #008d91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 700;
       line-height: normal;
       margin-left: 12rpx;
       z-index: 102;
+      border-bottom: 4rpx solid #008d91;
     }
   }
 }

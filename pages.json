@@ -8,6 +8,12 @@
             }
         },
         {
+            "path": "pages/index/home",
+            "style": {
+                "navigationStyle": "custom"
+            }
+        },
+        {
             "path": "pages/index/activityDt",
             "style": {
                 "navigationStyle": "custom"
