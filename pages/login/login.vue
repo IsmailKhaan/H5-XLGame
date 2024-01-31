@@ -108,23 +108,13 @@
               />
             </view>
             <view v-else class="code" style="margin-bottom: 60rpx">
-              <!-- <input
-                type="text"
-                :placeholder="$t('login.verficationPlaceholder')"
-                maxlength="6"
-                data-type="smsCode"
-                v-model="phoneData.smsCode"
-                placeholder-style="color:#003B3D;"
-              /> -->
-              <!-- <view v-for="item,index in 6" :key="index" class="slot f-c">{{ index }}</view> -->
               <input
                 v-for="(item, index) in 6"
                 :key="index"
-                :ref="`otpInput${index}`"
                 type="number"
                 v-model="otpArray[index]"
                 maxlength="1"
-                class="slot"
+                class="slot f-c"
                 :disabled="index > 0 && !otpArray[index - 1]"
               />
             </view>
@@ -639,7 +629,6 @@ export default {
         height: 40rpx;
         position: absolute;
         right: 30rpx;
-        top: 12rpx;
 
         image {
           display: block;
@@ -706,8 +695,7 @@ export default {
           background-color: #008d91;
           border-radius: 10rpx;
           width: 56rpx;
-          height: 64rpx;
-          padding-left: 20rpx;
+          min-height: 64rpx;
         }
       }
     }

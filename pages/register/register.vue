@@ -1,109 +1,121 @@
 <template>
-  <view class="content re">
-    <view @click="support" class="support">
-		<image src="../../static/login/support.png" mode="widthFix"></image>
-	  </view>
-
-    <view class="signup_name f-c">{{ $t("sign_up.signUp_title") }}</view>
-    <view class="signup_instructions f-c">{{
-      $t("sign_up.signup_subtitle")
-    }}</view>
-
-    <view class="form f-c">
-      <view class="forminpu">
-        <view class="input f-c">
-          <input
-            type="text"
-            :placeholder="$t('login.userNamePlaceholder')"
-            :value="formData.username"
-            @input="getformdata"
-            data-type="username"
-            maxlength="11"
-            placeholder-style="color:#B53D1E"
-          />
-        </view>
-
-        <view class="input f-c">
-          <input
-            :type="isshowpass1 == 0 ? 'password' : 'text'"
-            :placeholder="$t('login.passwordPlaceholder')"
-            maxlength="11"
-            :value="formData.password"
-            @input="getformdata"
-            data-type="password"
-            placeholder-style="color:#B53D1E"
-          />
-          <view class="passwordshow" @click="showpass(1)">
-            <image
-              :src="
-                isshowpass1 == 0
-                  ? '../../static/login/eye-closed.png'
-                  : '../../static/login/eye-open.png'
-              "
-              mode="widthFix"
-            ></image>
-          </view>
-        </view>
-
-        <view class="input f-c">
-          <input
-            :type="isshowpass1 == 0 ? 'password' : 'text'"
-            :placeholder="$t('sign_up.confirm_passwordPlaceholder')"
-            maxlength="11"
-            :value="formData.passwords"
-            @input="getformdata"
-            data-type="passwords"
-            placeholder-style="color:#B53D1E"
-          />
-          <view class="passwordshow" @click="showpass(1)">
-            <image
-              :src="
-                isshowpass1 == 0
-                  ? '../../static/login/eye-closed.png'
-                  : '../../static/login/eye-open.png'
-              "
-              mode="widthFix"
-            ></image>
-          </view>
-        </view>
-
-        <view class="input f-c marginbotm">
-          <input
-            style="margin-top: 10px"
-            type="number"
-            :placeholder="$t('login.phoneNumPlaceholder')"
-            :value="formData.phoneNo"
-            @input="getformdata"
-            @blur="okformdata"
-            maxlength="11"
-            data-type="phoneNo"
-            placeholder-style="color:#B53D1E"
-          />
-        </view>
-        <view class="input f-c marginbotms">
-          <input
-            style="margin-top: 4px"
-            type="text"
-            :placeholder="$t('login.verficationPlaceholder')"
-            maxlength="8"
-            :value="formData.smsCode"
-            @input="getformdata"
-            data-type="smsCode"
-            placeholder-style="color:#E7E7E7"
-          />
-          <view :class="noclick" @click="getcode" :style="codesent == 1 ? 'background-color: #ababab !important;' : ''">{{ yzmtext }}</view>
-        </view>
-
-        <view class="regBtn f-c" @click="postfromdata">{{
-          $t("sign_up.signUp_title")
-        }}</view>
+  <view class="main">
+    <view class="content">
+      <view @click="support" class="support">
+        <image src="../../static/login/support.png" mode="widthFix"></image>
       </view>
-    </view>
-    <view class="signup_url f-c">
-      <view class="question f-c">{{ $t("sign_up.already_Have_Account") }}</view>
-      <navigator class="url_link" url="/pages/login/login">
-        <view class="url_sub_class">{{ $t("sign_up.sign_in") }}</view>
-      </navigator>
+      <view class="signup_name f-c">{{ $t("sign_up.signUp_title") }}</view>
+      <view v-if="codesent === 0" class="signup_instructions f-c">{{
+        $t("sign_up.signup_subtitle")
+      }}</view>
+      <view v-else class="signup_instructions f-c"
+        >Code is sent to ******** {{ formData.phoneNo.slice(-3) }}</view
+      >
+      <view class="form f-c">
+        <view class="forminpu">
+          <view v-if="codesent === 0">
+            <view class="input f-c">
+              <input
+                type="text"
+                :placeholder="$t('login.userNamePlaceholder')"
+                :value="formData.username"
+                @input="getformdata"
+                data-type="username"
+                maxlength="11"
+                placeholder-style="color:#003b3d"
+              />
+            </view>
+            <view class="input f-c">
+              <input
+                :type="isshowpass1 == 0 ? 'password' : 'text'"
+                :placeholder="$t('login.passwordPlaceholder')"
+                maxlength="11"
+                :value="formData.password"
+                @input="getformdata"
+                data-type="password"
+                placeholder-style="color:#003b3d"
+              />
+              <view class="passwordshow" @click="showpass(1)">
+                <image
+                  :src="
+                    isshowpass1 == 0
+                      ? '../../static/login/eye-closed.png'
+                      : '../../static/login/eye-open.png'
+                  "
+                  mode="widthFix"
+                ></image>
+              </view>
+            </view>
+            <view class="input f-c">
+              <input
+                :type="isshowpass1 == 0 ? 'password' : 'text'"
+                :placeholder="$t('sign_up.confirm_passwordPlaceholder')"
+                maxlength="11"
+                :value="formData.passwords"
+                @input="getformdata"
+                data-type="passwords"
+                placeholder-style="color:#003b3d"
+              />
+              <view class="passwordshow" @click="showpass(1)">
+                <image
+                  :src="
+                    isshowpass1 == 0
+                      ? '../../static/login/eye-closed.png'
+                      : '../../static/login/eye-open.png'
+                  "
+                  mode="widthFix"
+                ></image>
+              </view>
+            </view>
+            <view class="input f-c marginbotm">
+              <input
+                style="margin-top: 10px"
+                type="text"
+                :placeholder="$t('login.phoneNumPlaceholder')"
+                :value="formData.phoneNo"
+                @input="getformdata"
+                @blur="okformdata"
+                maxlength="11"
+                data-type="phoneNo"
+                placeholder-style="color:#003b3d"
+              />
+            </view>
+          </view>
+          <view v-else class="input f-c marginbotms">
+            <view class="code" style="margin-bottom: 60rpx">
+              <input
+                v-for="(item, index) in 6"
+                :key="index"
+                type="number"
+                v-model="otpArray[index]"
+                maxlength="1"
+                class="slot f-c"
+                :disabled="index > 0 && !otpArray[index - 1]"
+              />
+            </view>
+          </view>
+          <view v-if="codesent === 1" class="nocode_recieved"
+            >Don’t receive code?
+            <span class="request_again" @click="codesent = 0">
+              Request again</span
+            ></view
+          >
+          <view v-if="codesent === 0" class="regBtn f-c" @click="getcode">{{
+            yzmtext
+          }}</view>
+          <view v-else class="regBtn f-c" @click="postfromdata">{{
+            $t("sign_up.signUp_title")
+          }}</view>
+        </view>
+      </view>
+      <view class="signup_url f-c">
+        <view class="question f-c">{{
+          $t("sign_up.already_Have_Account")
+        }}</view>
+        <navigator class="url_link" url="/pages/login/login">
+          <view class="url_sub_class">{{ $t("sign_up.sign_in") }}</view>
+        </navigator>
+      </view>
     </view>
   </view>
 </template>
@@ -119,7 +131,7 @@ export default {
 
   data() {
     return {
-      codesent:0,
+      codesent: 1,
       formData: {
         username: "",
         password: "",
@@ -140,10 +152,20 @@ export default {
       yzmtext: "发送验证码",
       userName: "",
       password: "",
+      otpArray: Array(6).fill(""),
     };
   },
   onLoad() {
     this.getphoneMes();
+  },
+  watch: {
+    otpArray() {
+      const allEmpty = this.otpArray.every((element) => element === "");
+
+      if (!allEmpty) {
+        this.formData.smsCode = this.otpArray.join("");
+      }
+    },
   },
   methods: {
     support() {
@@ -186,7 +208,7 @@ export default {
       let _this = this;
       if (publicMethod.phonereg(_this.formData.phoneNo) === false) {
         uni.showToast({
-          title: this.$t('rules.phoneNo'),
+          title: this.$t("rules.phoneNo"),
           icon: "none",
         });
       } else {
@@ -195,7 +217,6 @@ export default {
             title: "验证码已发送",
             icon: "none",
           });
-
         } else {
           let url = _this.$globalApi.sendRegisterSms;
           let datas = {
@@ -226,8 +247,7 @@ export default {
                   clearInterval(_this.dajishi);
                 }
               }, 1000);
-            }
-            else if (res.data.code == 1000) {
+            } else if (res.data.code == 1000) {
               uni.showToast({
                 title: state.codes[res.data.code],
                 icon: "none",
@@ -240,7 +260,7 @@ export default {
                 _this.djtime = _this.djtime - 1;
                 _this.yzmtext = "倒计时" + _this.djtime + "秒";
                 if (_this.djtime == -1) {
-               _this.codesent = 0;
+                  _this.codesent = 0;
                   _this.yzmtext = "获取验证码";
                   _this.yzmbtntype = 0;
                   _this.djtime = 60;
@@ -248,8 +268,7 @@ export default {
                   clearInterval(_this.dajishi);
                 }
               }, 1000);
-            } 
-            else {
+            } else {
               uni.showToast({
                 title: state.codes[res.data.code],
                 icon: "none",
@@ -266,7 +285,7 @@ export default {
 
       if (!state.rule.username.test(this.formData.username)) {
         uni.showToast({
-          title:  this.$t('rules.username'),
+          title: this.$t("rules.username"),
           icon: "none",
         });
         return false;
@@ -274,7 +293,7 @@ export default {
 
       if (!state.rule.password.test(this.formData.password)) {
         uni.showToast({
-          title: this.$t('rules.password'),
+          title: this.$t("rules.password"),
           icon: "none",
         });
         return false;
@@ -282,7 +301,7 @@ export default {
 
       if (this.formData.password != this.formData.passwords) {
         uni.showToast({
-          title:  this.$t('rules.new_password'),
+          title: this.$t("rules.new_password"),
           icon: "none",
         });
         return false;
@@ -290,14 +309,14 @@ export default {
 
       if (!state.rule.phoneNo.test(this.formData.phoneNo)) {
         uni.showToast({
-          title:  this.$t('rules.phoneNo'),
+          title: this.$t("rules.phoneNo"),
           icon: "none",
         });
         return false;
       }
       if (!this.formData.smsCode) {
         uni.showToast({
-          title: this.$t('rules.code'),
+          title: this.$t("rules.code"),
           icon: "none",
         });
         return false;
@@ -396,15 +415,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.re {
-  position: relative;
+.main {
+  background: #008d91;
+  padding-top: 48rpx;
 }
-.yzmbtn{
+
+.yzmbtn {
   min-width: 254rpx;
   height: 44rpx;
   border-radius: 22rpx;
   color: #fff;
-  background: #BF1C05; 
+  background: #003b3d;
   position: absolute;
   right: 0rpx;
   top: 20rpx;
@@ -418,7 +439,10 @@ export default {
 
 .content {
   width: 100%;
-  min-height: 100vh;
+  height: calc(100vh - 48rpx);
+  background-color: #fff;
+  border-radius: 80rpx 80rpx 0 0;
+  position: relative;
   background-size: cover;
   overflow: hidden;
   display: flex;
@@ -448,17 +472,22 @@ export default {
     }
 
     .url_sub_class {
-      color: #108adc;
-      font-size: 24rpx;
+      color: #008d91;
+      text-align: center;
       font-family: Microsoft YaHei UI;
-      font-weight: bold;
-      border-bottom: 2rpx solid #108adc;
+      font-size: 24rpx;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-left: 12rpx;
+      z-index: 102;
+      border-bottom: 4rpx solid #008d91;
     }
   }
 
   .signup_name {
-    padding-top: 110rpx;
-    color: #bf1c05;
+    padding-top: 348rpx;
+    color: #003b3d;
     font-size: 52rpx;
     font-weight: 700;
     font-family: Microsoft YaHei UI;
@@ -467,7 +496,7 @@ export default {
 
   .signup_instructions {
     margin-top: 12rpx;
-    color: #bf1c05;
+    color: #003b3d;
     font-size: 24rpx;
     font-weight: 400;
     font-family: Microsoft YaHei UI;
@@ -480,7 +509,7 @@ export default {
 
     .forminpu {
       margin: 0 auto;
-      margin-top: 202rpx;
+      margin-top: 64rpx;
 
       .input {
         width: 100%;
@@ -494,7 +523,7 @@ export default {
         input {
           width: 594rpx;
           height: 100%;
-          color: #b53d1e;
+          color: #003b3d;
           padding-left: 12rpx;
           border-bottom: 2rpx solid #781000;
         }
@@ -504,12 +533,26 @@ export default {
           height: 40rpx;
           position: absolute;
           right: 30rpx;
-          top: 28rpx;
 
           image {
             display: block;
             width: 100%;
             height: 100%;
+          }
+        }
+        .code {
+          display: flex;
+          align-items: center;
+          gap: 16rpx;
+          justify-content: center;
+          .slot {
+            color: #fff;
+            font-size: 24rpx;
+            font-weight: 700;
+            background-color: #008d91;
+            border-radius: 10rpx;
+            width: 56rpx;
+            min-height: 64rpx;
           }
         }
       }
@@ -549,14 +592,15 @@ export default {
       }
 
       .regBtn {
-        width: 232rpx;
-        height: 74rpx;
-        background: url("../../static/login/login_button.png") no-repeat;
-        background-size: 100% 100%;
+        width: 366rpx;
+        height: 66rpx;
         color: #fff;
         font-size: 24rpx;
+        font-weight: 700;
         margin: auto;
-        margin-top: 164.16rpx;
+        margin-top: 72rpx;
+        border-radius: 20rpx;
+        background: #003b3d;
       }
 
       .phonenumLogin {
@@ -564,33 +608,49 @@ export default {
         color: #fff;
         padding: 20rpx 0 30rpx;
       }
+      .nocode_recieved {
+        text-align: center;
+        color: #008d91;
+        font-size: 24rpx;
+        .request_again {
+          color: #003b3d;
+          font-weight: 700;
+          border-bottom: 4rpx solid #003b3d;
+          padding: 4rpx;
+        }
+      }
     }
   }
 
-  /deep/.uni-input-placeholder {
+  /deep/.uni-input-input[type="text"] {
     width: 430rpx;
-   // height: 100%;
-    color: #b53d1e;
+    //  height: 100%;
+    color: #003b3d;
     font-family: Microsoft YaHei UI;
     font-size: 32rpx;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-   // margin-bottom: -30px;
+    //margin-bottom: -15px;
+  }
+  /deep/.uni-input-input[type="number"] {
+    color: white;
+    font-size: 24rpx;
+    font-weight: 700;
   }
 
   /deep/.uni-input-input {
     width: 215px;
     //height: 100%;
-    color: #b53d1e;
+    color: #003b3d;
     font-family: Microsoft YaHei UI;
     font-size: 32rpx;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-   // margin-bottom: -30rpx;
+    // margin-bottom: -30rpx;
   }
-  /deep/ uni-input{
+  /deep/ uni-input {
     height: 54rpx !important;
   }
 
@@ -616,7 +676,7 @@ export default {
 }
 
 .noclick {
-  background: #BF1C05 !important;
+  background: #003b3d !important;
   position: absolute;
 }
 
