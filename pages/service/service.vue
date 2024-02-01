@@ -30,15 +30,10 @@
     </view>
     <view class="listbtn">
       <view style="padding: 52rpx 78rpx; margin-top: 60rpx">
-        <view class="title"
-          ><span style="border-bottom: 2rpx solid #404261">{{
-            $t("customer_support_View.recommendations_lbl")
-          }}</span></view
-        >
         <view class="one" @click="cjwt">
           <view class="left">
             <image
-              class="image1"
+              class="image"
               src="../../static/service/ke1.png"
               mode=""
             ></image>
@@ -51,7 +46,7 @@
         <view class="one" @click="play">
           <view class="left">
             <image
-              class="image2"
+              class="image"
               src="../../static/service/j7.png"
               mode=""
             ></image>
@@ -64,7 +59,7 @@
         <view class="one" @click="self">
           <view class="left">
             <image
-              class="image3"
+              class="image"
               src="../../static/service/ke3.png"
               mode=""
             ></image>
@@ -77,7 +72,7 @@
         <navigator url="/pages/setting/contact/contact" class="one">
           <view class="left">
             <image
-              class="image4"
+              class="image"
               src="../../static/service/j3.png"
               mode=""
             ></image>
@@ -88,7 +83,7 @@
         <view class="one" @click="lxwe">
           <view class="left">
             <image
-              class="image5"
+              class="image"
               src="../../static/service/sponsor.png"
               mode=""
             ></image>
@@ -173,8 +168,6 @@
 
     <publicNav :active="2"></publicNav>
     <movable-view :x="x" :y="y" direction="all" @click="movable"></movable-view>
-
-    
   </view>
 </template>
 
@@ -335,10 +328,10 @@ span {
 }
 movable-view {
   position: fixed;
-  top: 76%;
-  left: 79%;
-  width: 152rpx;
-  height: 160rpx;
+  top: 80%;
+  left: 81%;
+  width: 110rpx;
+  height: 110rpx;
   background: url("../../static/service/ke-icon.png");
   background-size: cover;
 }
@@ -402,7 +395,7 @@ page {
     }
 
     .text-one {
-      color: #304258;
+      color: #003B3D;
       text-align: left;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -413,7 +406,7 @@ page {
       padding: 28rpx 50rpx 0 50rpx;
     }
     .text-two {
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
       font-style: normal;
@@ -508,7 +501,7 @@ page {
     }
     .upper_classs {
       padding: 32rpx 26rpx 0 40rpx;
-      color: #304258;
+      color: #003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -707,7 +700,7 @@ page {
 
       .txt {
         h2:nth-child(1) {
-          color: #304258;
+          color: #003B3D;
           font-family: Microsoft YaHei UI;
           font-size: 28rpx;
           font-style: normal;
@@ -740,8 +733,8 @@ page {
 
     view {
       width: 226rpx;
-      height: 54rpx;
-      background: #ed876d;
+      height: 66rpx;
+      background: #008d91;
       border-radius: 108rpx;
       display: flex;
       align-items: center;
@@ -760,7 +753,7 @@ page {
     }
 
     .active {
-      background: #b53d1e;
+      background: #003b3d;
       //  color: #fff;
     }
   }
@@ -768,12 +761,11 @@ page {
   .listbtn {
     width: 100%;
     box-sizing: border-box;
-    background: #e9e9e9;
 
     .title {
       box-sizing: border-box;
       position: relative;
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 28rpx;
       font-style: normal;
@@ -799,64 +791,12 @@ page {
         align-items: center;
         justify-content: flex-start;
 
-        .image1 {
-          display: block;
-          width: 20rpx;
-          height: 40rpx;
-          margin-right: 34rpx;
-          margin-left: 10rpx;
-
-          image {
-            width: 100%;
-            height: 100%;
-          }
-        }
-
-        .image2 {
-          display: block;
-          width: 52.1388rpx;
-          height: 26.1888rpx;
-          margin-right: 14rpx;
-          margin-left: -8rpx;
-
-          image {
-            width: 100%;
-            height: 100%;
-          }
-        }
-
-        .image3 {
+        .image {
           display: block;
           width: 48rpx;
-          height: 40rpx;
-          margin-right: 18rpx;
-          margin-left: -2rpx;
-
-          image {
-            width: 100%;
-            height: 100%;
-          }
-        }
-
-        .image4 {
-          display: block;
-          width: 48.894rpx;
-          height: 44.346rpx;
-          margin-right: 16rpx;
-          margin-left: -2rpx;
-
-          image {
-            width: 100%;
-            height: 100%;
-          }
-        }
-
-        .image5 {
-          display: block;
-          width: 36rpx;
-          height: 44rpx;
-          margin-right: 20rpx;
-          margin-left: 6rpx;
+          height: 48rpx;
+          margin-right: 34rpx;
+          margin-left: 10rpx;
 
           image {
             width: 100%;

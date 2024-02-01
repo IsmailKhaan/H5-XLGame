@@ -265,7 +265,7 @@ uni-page-body {
 
   .tit_02 {
     padding: 18px 0 0 48px;
-    color: #304258;
+    color: #003B3D;
     font-family: Microsoft YaHei UI;
     font-size: 12px;
     font-style: normal;
@@ -276,7 +276,7 @@ uni-page-body {
 
   .tit_03 {
     padding: 18px 0 0 48px;
-    color: #304258;
+    color: #003B3D;
     font-family: Microsoft YaHei UI;
     font-size: 12px;
     font-style: normal;
@@ -309,7 +309,7 @@ uni-page-body {
     margin: 0 auto;
   }
   .tit_04 {
-    color: #304258;
+    color: #003B3D;
     text-align: center;
     font-family: Microsoft YaHei UI;
     font-size: 12px;
@@ -332,7 +332,7 @@ uni-page-body {
       height: 37px;
       border-radius: 10px;
       border: 2px solid #be1c05;
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
       font-style: normal;
@@ -360,7 +360,7 @@ uni-page-body {
     box-sizing: border-box;
     justify-content: space-between;
     text {
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
       font-style: normal;
@@ -394,7 +394,7 @@ uni-page-body {
     margin-top: 15px;
 
     .tit {
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
       font-style: normal;
@@ -403,7 +403,7 @@ uni-page-body {
       letter-spacing: -0.5px;
     }
     .s {
-      color: #304258;
+      color: #003B3D;
       text-align: right;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
@@ -414,7 +414,7 @@ uni-page-body {
     }
 
     .amount {
-      color: #304258;
+      color: #003B3D;
       text-align: right;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
@@ -450,7 +450,7 @@ uni-page-body {
       border-radius: 20rpx;
     }
     .textt {
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
       font-style: normal;

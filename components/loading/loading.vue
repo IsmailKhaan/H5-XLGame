@@ -79,7 +79,7 @@ export default {
 	}
 
 	.texts{
-		color: #304258;
+		color: #003B3D;
 		font-family: Microsoft YaHei UI;
 		font-size: 32rpx;
 		font-style: normal;

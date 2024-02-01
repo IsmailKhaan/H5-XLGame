@@ -131,7 +131,7 @@ export default {
 
   data() {
     return {
-      codesent: 1,
+      codesent: 0,
       formData: {
         username: "",
         password: "",

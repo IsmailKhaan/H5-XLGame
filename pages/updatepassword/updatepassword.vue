@@ -1,39 +1,38 @@
 <template>
-  <view class="content">
-    <view @click="support" class="support">
-      <image src="../../static/login/support.png" mode="widthFix"></image>
-    </view>
-    <view class="form">
-      <view class="passwordOK">
-        <image src="../../static/login/passchange.png" mode="widthFix"></image>
-        <view class="text2 f-c">您的新密码已设置，<b class="text3">不要分享
-          </b>和  </view>
-        <view class=" text2 f-c">
-          还有谁！
-        </view>
-        <view class="star1"></view>
-        <view class="star2"></view>
-        <navigator class="loginbtn" url="/pages/login/login">  {{ $t('general.oka')  }}</navigator>
-        <view class="star3"></view>
-
+  <view class="main">
+    <view class="content">
+      <view @click="support" class="support">
+        <image src="../../static/login/support.png" mode="widthFix"></image>
       </view>
-    </view>
-    <view class="callkf">
-      {{ $t('general.info_lbl')  }}
+      <view class="form">
+        <view class="passwordOK">
+          <image
+            src="../../static/login/passchange.png"
+            mode="widthFix"
+          ></image>
+          <view class="text2 f-c">您的新密码已设置，不要分享和 </view>
+          <view class="text2 f-c"> 还有谁！ </view>
+
+          <navigator class="loginbtn" url="/pages/login/login">
+            {{ $t("general.oka") }}</navigator
+          >
+        </view>
+      </view>
+      <view class="callkf">
+        {{ $t("general.info_lbl") }}
+      </view>
     </view>
   </view>
 </template>
 
 <script>
-import { localizationMixin } from '../../common/js/localization';
+import { localizationMixin } from "../../common/js/localization";
 
 export default {
-	mixins: [localizationMixin],
+  mixins: [localizationMixin],
 
   data() {
-    return {
-
-    }
+    return {};
   },
   methods: {
     support() {
@@ -41,16 +40,22 @@ export default {
         url: "../service/serviceDtl",
       });
     },
-
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss" scoped>
+.main {
+  background: #008d91;
+  padding-top: 48rpx;
+}
 /* 背景容器 */
 .content {
   width: 100%;
-  min-height: 100vh;
+  height: calc(100vh - 48rpx);
+  background-color: #fff;
+  border-radius: 80rpx 80rpx 0 0;
+  position: relative;
   background-size: cover;
   overflow: hidden;
   display: flex;
@@ -63,18 +68,17 @@ export default {
     .passwordOK {
       width: 100%;
       text-align: center;
-      color: #BF1C05;
-
+      color: #008d91;
       image {
         width: 268rpx;
         height: 266rpx;
         display: block;
-        margin: 418rpx auto 40rpx;
+        margin: 400rpx auto 40rpx;
       }
 
       .text2 {
         margin: auto;
-        color: #BF1C05;
+        color: #008d91;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
@@ -82,9 +86,19 @@ export default {
         font-weight: 400;
         line-height: normal;
       }
-
+      .loginbtn {
+        width: 366rpx;
+        height: 66rpx;
+        color: #fff;
+        font-size: 24rpx;
+        font-weight: 700;
+        margin: auto;
+        margin-top: 72rpx;
+        border-radius: 20rpx;
+        background: #003b3d;
+      }
       .text3 {
-        color: #FF470F;
+        color: #ff470f;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
@@ -113,9 +127,9 @@ export default {
     position: fixed;
     bottom: 70rpx;
     left: 0;
-    width: 100%; 
+    width: 100%;
     z-index: 10;
-    color: #ABABAB;
+    color: #008d91;
     text-align: center;
     font-family: Microsoft YaHei UI;
     font-size: 24rpx;
@@ -131,7 +145,7 @@ export default {
     width: 64rpx;
     height: 64rpx;
     position: relative;
-    top: 8rpx;
+    top: 32rpx;
     left: 648rpx;
 
     image {
@@ -155,7 +169,6 @@ export default {
     background-size: 100% 100%;
     margin-left: 500rpx;
     margin-top: 4rpx;
-
   }
 
   .star3 {
@@ -165,8 +178,6 @@ export default {
     background-size: 100% 100%;
     margin-left: 290rpx;
     margin-top: 22.158rpx;
-
   }
-
 }
 </style>

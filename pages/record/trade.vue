@@ -410,7 +410,7 @@ export default {
     border-bottom: 2rpx solid #7E97B7;
 
     .titles {
-        color: #304258;
+        color: #003B3D;
         text-align: center;
         font-family: Inter;
         font-size: 32rpx;
@@ -445,7 +445,7 @@ export default {
             height: 42rpx;
             border-radius: 6rpx;
             background: #D9D9D9;
-            color: #304258;
+            color: #003B3D;
             text-align: center;
             font-family: Inter;
             font-size: 24rpx;
@@ -455,7 +455,7 @@ export default {
         }
 
         .transaction_records_time {
-            color: #304258;
+            color: #003B3D;
             text-align: right;
             font-family: Inter;
             font-size: 24rpx;
@@ -468,7 +468,7 @@ export default {
     .transaction_records_sub_2 {
         margin-top: 14rpx;
         margin-bottom: 22rpx;
-        color: #304258;
+        color: #003B3D;
         font-family: Inter;
         font-size: 24rpx;
         font-style: normal;
@@ -642,7 +642,7 @@ export default {
             .name {
                 min-width: 222rpx;
                 height: 70rpx;
-                color: #304258;
+                color: #003B3D;
                 text-align: center;
                 font-family: Microsoft YaHei UI;
                 font-size: 24rpx;

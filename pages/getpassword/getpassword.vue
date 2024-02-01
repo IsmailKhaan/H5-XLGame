@@ -1,53 +1,65 @@
 <template>
-  <view class="content">
-    <navigator url="/pages/login/login" class="goto">
+  <view class="main">
+    <view class="content">
+      <!-- <navigator url="/pages/login/login" class="goto">
       <image src="../../static/login/goto.png" mode="widthFix"></image>
-    </navigator>
-    <view @click="support" class="support">
-      <image src="../../static/login/support.png" mode="widthFix"></image>
-    </view>
-    <view class="signup_name f-c">{{ $t('forget_password.forgot_Title') }}</view>
-    <view class="signup_instructions f-c"
-      >{{ $t('forget_password.forgot_subTitle') }}
-    </view>
-    <view class="form f-c">
-      <view class="forminpu">
-        <view class="input f-c">
-          <input
-            type="text"
-            :placeholder="$t('login.userNamePlaceholder') "
-            @blur="okformdata"
-            data-type="username"
-            maxlength="11"
-            :value="formData.username"
-            placeholder-style="color:#B53D1E"
-          />
+    </navigator> -->
+      <view @click="support" class="support">
+        <image src="../../static/login/support.png" mode="widthFix"></image>
+      </view>
+      <view class="signup_name f-c">{{
+        $t("forget_password.forgot_Title")
+      }}</view>
+      <view v-if="codesent === 0" class="signup_instructions f-c"
+        >{{ $t("forget_password.forgot_subTitle") }}
+      </view>
+      <view v-else class="signup_instructions f-c"
+        >Enter verification code to confirm your ownership
+      </view>
+      <view class="form f-c">
+        <view class="forminpu">
+          <view v-if="codesent === 0">
+            <view class="input f-c">
+              <input
+                type="text"
+                :placeholder="$t('login.userNamePlaceholder')"
+                @blur="okformdata"
+                data-type="username"
+                maxlength="11"
+                :value="formData.username"
+                placeholder-style="color:#003B3D"
+              />
+            </view>
+            <view class="input f-c">
+              <input
+                type="text"
+                :placeholder="$t('login.phoneNumPlaceholder')"
+                @blur="okformdata"
+                data-type="contact"
+                maxlength="11"
+                :value="formData.contact"
+                placeholder-style="color:#003B3D"
+              />
+            </view>
+          </view>
+          <view v-else class="code" style="margin-bottom: 60rpx">
+            <input
+              v-for="(item, index) in 6"
+              :key="index"
+              type="number"
+              v-model="otpArray[index]"
+              maxlength="1"
+              class="slot f-c"
+              :disabled="index > 0 && !otpArray[index - 1]"
+            />
+          </view>
+          <view class="getpass f-c" v-if="codesent === 0" @click="getcode">{{
+            yzmtext
+          }}</view>
+          <view class="getpass f-c" v-else @click="gotosetpassword">{{
+            $t("general.submit")
+          }}</view>
         </view>
-        <view class="input f-c">
-          <input
-            type="text"
-            :placeholder="$t('login.phoneNumPlaceholder') "
-            @blur="okformdata"
-            data-type="contact"
-            maxlength="11"
-            :value="formData.contact"
-            placeholder-style="color:#B53D1E"
-          />
-        </view>
-        <view class="marginbotms f-c">
-          <input
-            type="text"
-            :placeholder="$t('login.verficationPlaceholder') " 
-            @blur="okformdata"
-            data-type="verifyCode"
-            :value="formData.verifyCode"
-            maxlength="6"
-            placeholder-style="color:#E7E7E7"
-            style="margin-left: 0px;"
-          />
-          <view :class="noclick" @click="getcode" :style="codesent == 1 ? 'background-color: #ababab !important;' : ''">{{ yzmtext }}</view>
-        </view>
-        <view class="getpass f-c" @click="gotosetpassword">{{ $t('general.submit')  }}</view>
       </view>
     </view>
   </view>
@@ -57,13 +69,13 @@
 // import RequestSender from "@/common/js/request.js";
 import publicMethod from "@/common/js/publicMethod.js";
 import state from "@/store/state";
-import { localizationMixin } from '../../common/js/localization';
+import { localizationMixin } from "../../common/js/localization";
 
 export default {
   mixins: [localizationMixin],
   data() {
     return {
-      codesent:0,
+      codesent: 0,
       formData: {
         username: "",
         contact: "",
@@ -74,13 +86,23 @@ export default {
       yzmbtntype: 0,
       djtime: 60,
       dajishi: "dajishi",
+      otpArray: Array(6).fill(""),
     };
   },
+  watch: {
+    otpArray() {
+      const allEmpty = this.otpArray.every((element) => element === "");
+
+      if (!allEmpty) {
+        this.formData.verifyCode = this.otpArray.join("");
+      }
+    },
+  },
   methods: {
-    support(){
+    support() {
       uni.navigateTo({
-          url: "../service/serviceDtl",
-        });
+        url: "../service/serviceDtl",
+      });
     },
     okformdata(e) {
       let _this = this;
@@ -90,13 +112,13 @@ export default {
       let _this = this;
       if (publicMethod.phonereg(_this.formData.contact) === false) {
         uni.showToast({
-          title: this.$t('rules.phoneNo'),
+          title: this.$t("rules.phoneNo"),
           icon: "none",
         });
       } else {
         if (this.yzmbtntype == 1) {
           uni.showToast({
-            title: this.$t('rules.code'),
+            title: this.$t("rules.code"),
             icon: "none",
           });
         } else {
@@ -125,8 +147,7 @@ export default {
                   clearInterval(_this.dajishi);
                 }
               }, 1000);
-            } 
-            else if (res.data.code == 1000) {
+            } else if (res.data.code == 1000) {
               uni.showToast({
                 title: state.codes[res.data.code],
                 icon: "none",
@@ -139,7 +160,7 @@ export default {
                 _this.djtime = _this.djtime - 1;
                 _this.yzmtext = "倒计时" + _this.djtime + "秒";
                 if (_this.djtime == -1) {
-               _this.codesent = 0;
+                  _this.codesent = 0;
                   _this.yzmtext = "获取验证码";
                   _this.yzmbtntype = 0;
                   _this.djtime = 60;
@@ -147,8 +168,7 @@ export default {
                   clearInterval(_this.dajishi);
                 }
               }, 1000);
-            } 
-            else {
+            } else {
               uni.showToast({
                 title: res.data.msg,
                 icon: "none",
@@ -163,14 +183,14 @@ export default {
       let _this = this;
       if (!_this.formData.username) {
         uni.showToast({
-          title: this.$t('rules.username'),
+          title: this.$t("rules.username"),
           icon: "none",
         });
         return false;
       }
       if (!_this.formData.contact) {
         uni.showToast({
-          title: this.$t('rules.phoneNo'),
+          title: this.$t("rules.phoneNo"),
           icon: "none",
         });
         return false;
@@ -178,21 +198,21 @@ export default {
 
       if (publicMethod.phonereg(_this.formData.contact) === false) {
         uni.showToast({
-          title: this.$t('rules.phoneNo'),
+          title: this.$t("rules.phoneNo"),
           icon: "none",
         });
         return false;
       }
       if (!_this.formData.verifyCode) {
         uni.showToast({
-          title: this.$t('rules.code'),
+          title: this.$t("rules.code"),
           icon: "none",
         });
         return false;
       }
       let url = _this.$globalApi.checkVerifyCode;
       let datas = _this.formData;
-	  _this.$res.postRequest(url, datas).then((res) => {
+      _this.$res.postRequest(url, datas).then((res) => {
         if (res.data.code == 0) {
           uni.navigateTo({
             url:
@@ -215,9 +235,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.main {
+  background: #008d91;
+  padding-top: 48rpx;
+}
 .content {
   width: 100%;
-  min-height: 100vh;
+  height: calc(100vh - 48rpx);
+  background-color: #fff;
+  border-radius: 80rpx 80rpx 0 0;
+  position: relative;
   background-size: cover;
   overflow: hidden;
   display: flex;
@@ -244,7 +271,7 @@ export default {
     justify-content: center;
     align-items: center;
     display: flex;
-    color: #bf1c05;
+    color: #003b3d;
     text-align: center;
     font-family: Microsoft YaHei UI;
     font-size: 52rpx;
@@ -255,7 +282,7 @@ export default {
 
   .signup_instructions {
     margin-top: 12rpx;
-    color: #bf1c05;
+    color: #003b3d;
     text-align: center;
     font-family: Microsoft YaHei UI;
     font-size: 24rpx;
@@ -265,25 +292,21 @@ export default {
   }
 
   .getpass {
-    width: 232rpx;
-    height: 74rpx;
-    background: url("../../static/login/login_button.png") no-repeat;
-    background-size: 100% 100%;
-    margin: auto;
-    margin-top: 80rpx;
+    width: 366rpx;
+    height: 66rpx;
     color: #fff;
-    text-align: center;
-    font-family: Microsoft YaHei UI;
     font-size: 24rpx;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    font-weight: 700;
+    margin: auto;
+    margin-top: 72rpx;
+    border-radius: 20rpx;
+    background: #003b3d;
   }
 
   .form {
     .forminpu {
       margin: 0 auto;
-      margin-top: 172rpx;
+      margin-top: 64rpx;
 
       .input {
         width: 594rpx;
@@ -299,7 +322,6 @@ export default {
         input {
           width: 530rpx;
           color: #781000;
-          margin-top: 18rpx;
         }
       }
 
@@ -312,13 +334,25 @@ export default {
 
         input {
           width: 530rpx;
-         // height: 100%;
+          // height: 100%;
           margin-left: -46rpx;
           margin-top: -13rpx;
         }
-
-
-        
+      }
+      .code {
+        display: flex;
+        align-items: center;
+        gap: 16rpx;
+        justify-content: center;
+        .slot {
+          color: #fff;
+          font-size: 24rpx;
+          font-weight: 700;
+          background-color: #008d91;
+          border-radius: 10rpx;
+          max-width: 56rpx;
+          min-height: 64rpx;
+        }
       }
     }
   }
@@ -336,38 +370,38 @@ input {
 
 /deep/.uni-input-placeholder {
   width: 430rpx;
- // height: 100%;
-  color: #b53d1e;
+  // height: 100%;
+  color: #003b3d;
   font-family: Microsoft YaHei UI;
   font-size: 32rpx;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
- // margin-bottom: -38px;
+  // margin-bottom: -38px;
 }
 
-/deep/.uni-input-input {
+/deep/.uni-input-input[type="text"] {
   width: 430rpx;
- // height: 100%;
-  color: #b53d1e;
+  //  height: 100%;
+  color: #003b3d;
   font-family: Microsoft YaHei UI;
   font-size: 32rpx;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
- // margin-bottom: -15px;
+  //margin-bottom: -15px;
 }
-/deep/ uni-input{
-  width: 560rpx !important;
-  color: #781000;
-  margin-top: 0rpx !important;
+/deep/.uni-input-input[type="number"] {
+  color: white;
+  font-size: 24rpx;
+  font-weight: 700;
 }
-.yzmbtn{
+.yzmbtn {
   min-width: 254rpx;
   height: 44rpx;
   border-radius: 22rpx;
   color: #fff;
-  background: #BF1C05;
+  background: #003b3d;
   position: absolute;
   right: 0px;
   top: 24rpx;
@@ -376,6 +410,6 @@ input {
   font-size: 24rpx;
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 }
 </style>

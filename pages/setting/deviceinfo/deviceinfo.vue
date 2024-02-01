@@ -156,7 +156,7 @@ page {
 		} 
 
 		.yes1 {
-			color: #304258;
+			color: #003B3D;
 			font-family: Microsoft YaHei UI;
 			font-size: 24rpx;
 			font-style: normal;
@@ -181,7 +181,7 @@ page {
 			width: 444rpx;
 			height: 68rpx;
 			border-radius: 22rpx;
-			background: #304258;
+			background: #003B3D;
 			box-shadow: 4rpx 4rpx 14rpx 0rpx rgba(80, 118, 164, 0.76);
 			margin: 0 auto;
 			color: #FFF;

@@ -269,7 +269,7 @@ export default {
   width: 120rpx;
   height: 22px;
   z-index: 101;
-  color: #304258;
+  color: #003B3D;
   text-align: center;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;

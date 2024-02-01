@@ -58,7 +58,7 @@ export default {
 
     .heading {
         margin-left: 18rpx;
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 28rpx;
         font-style: normal;
@@ -77,7 +77,7 @@ export default {
 
 .text {
     padding: 12rpx 62rpx 0 72rpx;
-    color: #304258;
+    color: #003B3D;
     font-family: Microsoft YaHei UI;
     font-size: 24rpx;
     font-style: normal;

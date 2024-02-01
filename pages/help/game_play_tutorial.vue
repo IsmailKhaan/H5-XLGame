@@ -4,14 +4,6 @@
       :title="$t('help_center.game_tutorial')"
       :lefticon="lefticon"
     ></zhnavbar>
-    <view class="heading_one f-a">
-      <image
-        src="../../static/image/help/game.png"
-        mode="widthFix"
-        class="image"
-      ></image>
-      <view class="heading letter">{{ $t("help_center.how_to_play") }}</view>
-    </view>
     <!-- <uni-section> -->
     <uni-collapse ref="collapse" @change="change">
       <uni-collapse-item :title="$t('game_problems.sports_question')">
@@ -105,7 +97,6 @@
       </uni-collapse-item>
 
       <uni-collapse-item :title="$t('game_problems.lottery_problem')">
-
         <view class="text2">{{ $t("lottery_game_problem.question1") }}</view>
         <view class="text" v-html="$t('lottery_game_problem.answer1')"></view>
 
@@ -114,7 +105,6 @@
 
         <view class="text2">{{ $t("lottery_game_problem.question3") }}</view>
         <view class="text" v-html="$t('lottery_game_problem.answer3')"></view>
-        
       </uni-collapse-item>
 
       <uni-collapse-item :title="$t('game_problems.other_problems')">
@@ -130,7 +120,6 @@
     <!-- <view class="bg">
       <view class="border_bottom"></view>
     </view> -->
-
   </view>
 </template>
 
@@ -168,7 +157,7 @@ view {
 
 .games_options {
   padding: 0 74.5rpx 40rpx 54rpx;
-  .bg{
+  .bg {
     width: 100%;
     background: #fff;
     height: 40px;
@@ -198,7 +187,7 @@ view {
 
     .heading {
       margin-left: 18rpx;
-      color: #304258;
+      color: #003b3d;
       font-family: Microsoft YaHei UI;
       font-size: 28rpx;
       font-style: normal;

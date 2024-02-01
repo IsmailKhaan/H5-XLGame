@@ -389,7 +389,7 @@ export default {
     ///////////////////getBackgroundColor//////////
     getBackgroundColor(index) {
       if (index % 2 === 0) {
-        return "#304258";
+        return "#003B3D";
       } else {
         return "#647182";
       }
@@ -609,7 +609,7 @@ uni-page-body {
     align-items: center;
     padding: 100rpx 0 46rpx 0;
     box-sizing: border-box;
-    border-bottom: 2rpx solid #304258;
+    border-bottom: 2rpx solid #003B3D;
 
     > view {
       width: 100%;
@@ -636,7 +636,7 @@ uni-page-body {
         justify-content: center;
 
         view {
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -654,7 +654,7 @@ uni-page-body {
       display: block;
       width: 2rpx;
       height: 100%;
-      background: #304258;
+      background: #003B3D;
       position: absolute;
       right: 0;
       top: 0;
@@ -677,7 +677,7 @@ uni-page-body {
       //width: 138rpx;
 
       .tit {
-        color: #304258;
+        color: #003B3D;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
@@ -739,7 +739,7 @@ uni-page-body {
 
   .heading {
     margin-top: 42rpx;
-    color: #304258;
+    color: #003B3D;
     text-align: center;
     font-family: Microsoft YaHei UI;
     font-size: 32rpx;
@@ -759,7 +759,7 @@ uni-page-body {
   .reminder {
     padding-top: 124rpx;
     padding-bottom: 60rpx;
-    color: #304258;
+    color: #003B3D;
     text-align: center;
     font-family: Microsoft YaHei UI;
     font-size: 24rpx;
@@ -833,7 +833,7 @@ uni-page-body {
 
 .text_support {
   margin-top: 56rpx;
-  color: #304258;
+  color: #003B3D;
   text-align: center;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;

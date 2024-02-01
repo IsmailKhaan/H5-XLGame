@@ -336,7 +336,7 @@ export default {
 
     .add_fresh_card {
       padding: 32rpx 0 44rpx 48rpx;
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 36rpx;
       font-style: normal;
@@ -369,7 +369,7 @@ export default {
   }
   .tex{
     .bold_address {
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 28rpx;
       font-style: normal;
@@ -382,7 +382,7 @@ export default {
       width: 100%;
     }
     .card_lumber {
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 28rpx;
       font-style: normal;
@@ -419,7 +419,7 @@ export default {
         margin-top: 43rpx;
       }
       .uni-input-wrapper {
-        border-bottom: 2rpx solid #304258;
+        border-bottom: 2rpx solid #003B3D;
         display: flex;
         padding: 16rpx 26rpx;
         flex-direction: row;
@@ -440,7 +440,7 @@ export default {
         width: 430rpx;
         //height: 100%;
         //margin-bottom: -35px;
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 28rpx;
         font-style: normal;
@@ -453,7 +453,7 @@ export default {
         width: 430rpx;
       //  height: 100%;
        // margin-bottom: -28px;
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 28rpx;
         font-style: normal;
@@ -563,7 +563,7 @@ export default {
         .ner2 {
           display: flex;
           justify-content: center;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -587,7 +587,7 @@ export default {
 
         .ner3 {
           justify-content: center;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -656,7 +656,7 @@ export default {
         .ner5 {
           display: flex;
           justify-content: center;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -680,7 +680,7 @@ export default {
 
         .ner4 {
           justify-content: center;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -761,7 +761,7 @@ export default {
         .ner5 {
           display: flex;
           justify-content: center;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -785,7 +785,7 @@ export default {
 
         .ner4 {
           justify-content: center;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;

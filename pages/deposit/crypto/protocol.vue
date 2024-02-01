@@ -109,7 +109,7 @@ export default {
   .cards {
     width: 674rpx;
     border-radius: 40rpx;
-    background: #304258;
+    background: #003B3D;
     margin: 0 auto;
     padding: 30rpx 20rpx 56rpx 84rpx;
     .protocol_intro {
@@ -117,7 +117,7 @@ export default {
       height: 64rpx;
       border-radius: 100rpx;
       background: #fff;
-      color: #304258;
+      color: #003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 28rpx;
@@ -161,7 +161,7 @@ export default {
   .cards2 {
     width: 674rpx;
     border-radius: 40rpx;
-    background: #304258;
+    background: #003B3D;
     margin: 0 auto;
     padding: 30rpx 32rpx 56rpx 32rpx;
     .protocol_intro {
@@ -169,7 +169,7 @@ export default {
       height: 64rpx;
       border-radius: 100rpx;
       background: #fff;
-      color: #304258;
+      color: #003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 28rpx;
@@ -214,7 +214,7 @@ export default {
   .cards3 {
     width: 674rpx;
     border-radius: 40rpx;
-    background: #304258;
+    background: #003B3D;
     margin: 0 auto;
     padding: 15px 16px 28px 24px;
     .protocol_intro {
@@ -222,7 +222,7 @@ export default {
       height: 64rpx;
       border-radius: 100rpx;
       background: #fff;
-      color: #304258;
+      color: #003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 28rpx;

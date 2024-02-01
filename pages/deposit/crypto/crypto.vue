@@ -457,7 +457,7 @@ export default {
     margin-bottom: 22rpx;
 
     .text1 {
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 36rpx;
       font-style: normal;
@@ -468,7 +468,7 @@ export default {
     }
 
     .text2 {
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 28rpx;
       font-style: normal;
@@ -551,7 +551,7 @@ export default {
       margin: 26rpx 0 0 48rpx;
 
       .text8_1 {
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 28rpx;
         font-style: normal;
@@ -600,7 +600,7 @@ export default {
 
       .text {
         width: 90rpx;
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
@@ -628,7 +628,7 @@ export default {
     }
 
     .text9 {
-      color: #304258;
+      color: #003B3D;
       text-align: left;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -674,7 +674,7 @@ export default {
       }
 
       /deep/.uni-input-input {
-        color: #304258;
+        color: #003B3D;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 60rpx;
@@ -851,7 +851,7 @@ export default {
         .ner2 {
           display: flex;
           justify-content: center;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -874,7 +874,7 @@ export default {
 
         .ner3 {
           justify-content: center;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -945,7 +945,7 @@ export default {
         .ner5 {
           display: flex;
           justify-content: center;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -969,7 +969,7 @@ export default {
 
         .ner4 {
           justify-content: center;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;

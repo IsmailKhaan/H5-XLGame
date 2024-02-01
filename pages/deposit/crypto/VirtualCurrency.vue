@@ -253,7 +253,7 @@ export default {
   .text_point_000 {
     width: 100%;
     padding: 26px 50px 0 50px;
-    color: #304258;
+    color: #003B3D;
     font-family: Microsoft YaHei UI;
     font-size: 12px;
     font-style: normal;
@@ -281,7 +281,7 @@ export default {
 
     .what_p_002 {
       width: 291px;
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
       font-style: normal;
@@ -291,7 +291,7 @@ export default {
       letter-spacing: -0.5px;
 
       .heading_point {
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 12px;
         font-style: normal;
@@ -302,7 +302,7 @@ export default {
       }
 
       .text_point {
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 12px;
         font-style: normal;

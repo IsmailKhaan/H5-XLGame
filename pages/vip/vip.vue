@@ -849,10 +849,10 @@ export default {
         9: "background-color: #D030AC;",
       },
       colors: {
-        0: "color: #304258",
-        1: "color: #304258",
-        2: "color: #304258",
-        3: "color: #304258",
+        0: "color: #003B3D",
+        1: "color: #003B3D",
+        2: "color: #003B3D",
+        3: "color: #003B3D",
         4: "color: #ffffff",
         5: "color: #ffffff",
         6: "color: #ffffff",
@@ -1389,7 +1389,7 @@ export default {
 
         .current_deposit_and_turnover {
           .text_01 {
-            color: #304258;
+            color: #003B3D;
             text-align: center;
             font-family: Microsoft YaHei UI;
             font-size: 24rpx;
@@ -1411,7 +1411,7 @@ export default {
 
             span {
               margin-left: 10rpx;
-              color: #304258;
+              color: #003B3D;
               text-align: center;
               font-family: Microsoft YaHei UI;
               font-size: 24rpx;
@@ -1473,7 +1473,7 @@ export default {
 
               .viptxt {
                 padding: 36rpx 0 0 54rpx;
-                color: #304258;
+                color: #003B3D;
                 font-family: Microsoft YaHei UI;
                 font-size: 52rpx;
                 font-style: normal;
@@ -1485,7 +1485,7 @@ export default {
               .tshi {
                 padding: 12rpx 142rpx 0 68rpx;
 
-                color: #304258;
+                color: #003B3D;
                 font-family: Microsoft YaHei UI;
                 font-size: 24rpx;
                 font-style: normal;
@@ -1494,7 +1494,7 @@ export default {
                 letter-spacing: -0.1rpx;
 
                 text {
-                  color: #304258;
+                  color: #003B3D;
                   font-family: Microsoft YaHei UI;
                   font-size: 24rpx;
                   font-style: normal;
@@ -1519,7 +1519,7 @@ export default {
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: center;
-                background: #304258;
+                background: #003B3D;
 
                 view {
                   color: #e2e2e2;
@@ -1573,7 +1573,7 @@ export default {
 
         .title_ex {
           margin-left: 16rpx;
-          color: #304258;
+          color: #003B3D;
           font-family: Microsoft YaHei UI;
           font-size: 32rpx;
           font-style: normal;
@@ -1680,7 +1680,7 @@ export default {
 
         .title_ex {
           margin-left: 16rpx;
-          color: #304258;
+          color: #003B3D;
           font-family: Microsoft YaHei UI;
           font-size: 32rpx;
           font-style: normal;
@@ -1710,7 +1710,7 @@ export default {
         padding:0rpx 72rpx 0rpx 50rpx;
         width: 100%;
         height: 88rpx;
-        background: #304258;
+        background: #003B3D;
         display: flex;
         align-items: center;
 
@@ -1757,7 +1757,7 @@ export default {
 
         .flex_vip {
           .supreme {
-            color: #304258;
+            color: #003B3D;
             font-family: Microsoft YaHei UI;
             font-size: 44rpx;
             font-style: normal;
@@ -1838,7 +1838,7 @@ export default {
         height: 60rpx;
         border-radius: 8rpx;
         background: #c8c8c8;
-        color: #304258;
+        color: #003B3D;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
@@ -1886,7 +1886,7 @@ export default {
               height: 160rpx;
 
               .vip_titl {
-                color: #304258;
+                color: #003B3D;
                 font-family: Microsoft YaHei UI;
                 font-size: 52rpx;
                 font-style: normal;
@@ -1913,7 +1913,7 @@ export default {
 
               .slider_text_1 {
                 width: 244rpx;
-                color: #304258;
+                color: #003B3D;
                 font-family: Microsoft YaHei UI;
                 font-size: 24rpx;
                 font-style: normal;
@@ -1956,7 +1956,7 @@ export default {
           box-shadow: 4rpx 4rpx 22rpx 0rpx rgba(0, 0, 0, 0.25);
 
           .txt {
-            color: #304258;
+            color: #003B3D;
             font-family: Microsoft YaHei UI;
             font-size: 28rpx;
             font-style: normal;
@@ -1970,7 +1970,7 @@ export default {
           }
 
           .tip {
-            color: #304258;
+            color: #003B3D;
             font-family: Microsoft YaHei UI;
             font-size: 24rpx;
             font-style: normal;
@@ -2028,7 +2028,7 @@ export default {
         }
 
         .txt {
-          color: #304258;
+          color: #003B3D;
           font-family: Microsoft YaHei UI;
           font-size: 28rpx;
           font-style: normal;
@@ -2140,7 +2140,7 @@ export default {
             width: 210rpx;
             height: 62rpx;
             border-radius: 10rpx;
-            background: #304258;
+            background: #003B3D;
             text-align: center;
             display: flex;
             flex-direction: row;
@@ -2200,7 +2200,7 @@ export default {
         padding: 82rpx 74rpx;
 
         view {
-          color: #304258;
+          color: #003B3D;
           font-family: Microsoft YaHei UI;
           font-size: 28rpx;
           font-style: normal;
@@ -2230,7 +2230,7 @@ export default {
       }
 
       .titll {
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
@@ -2300,7 +2300,7 @@ export default {
         .ys1 {
           width: 168rpx;
           height: 80rpx;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -2326,7 +2326,7 @@ export default {
 
         .yss1 {
           width: 40%;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -2411,7 +2411,7 @@ export default {
 
         .xxy {
           height: 66rpx;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -2426,7 +2426,7 @@ export default {
 
         .xxxy {
           height: 66rpx;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -2521,7 +2521,7 @@ export default {
         position: relative;
         margin: 32rpx 0 78rpx 60rpx;
         padding-left: 16rpx;
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 32rpx;
         font-style: normal;
@@ -2570,7 +2570,7 @@ export default {
             }
 
             view:nth-child(2) {
-              color: #304258;
+              color: #003B3D;
               font-family: Microsoft YaHei UI;
               font-size: 24rpx;
               font-style: normal;
@@ -2582,7 +2582,7 @@ export default {
 
           .miaosu {
             padding: 0 0 0 70rpx;
-            color: #304258;
+            color: #003B3D;
             font-family: Microsoft YaHei UI;
             font-size: 24rpx;
             font-style: normal;
@@ -2618,7 +2618,7 @@ export default {
 
 .text-title {
   width: 162rpx;
-  color: #304258;
+  color: #003B3D;
   text-align: right;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx !important;
@@ -2634,13 +2634,13 @@ export default {
   width: 210rpx;
   height: 62rpx;
   border-radius: 10rpx;
-  background: #304258;
+  background: #003B3D;
   // margin-left: 18rpx;
 }
 
 .money-bor-text {
   margin-top: 10rpx;
-  color: #304258;
+  color: #003B3D;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
   font-style: normal;

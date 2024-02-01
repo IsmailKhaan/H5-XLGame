@@ -898,7 +898,7 @@ html {
     }
 
     .text-one {
-      color: #304258;
+      color: #003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -909,7 +909,7 @@ html {
     }
 
     .heading-two {
-      color: #304258;
+      color: #003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 40rpx;
@@ -920,7 +920,7 @@ html {
       padding: 28rpx 220rpx 0 220rpx;
 
       .normal-digits {
-        color: #304258;
+        color: #003B3D;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 40rpx;
@@ -931,7 +931,7 @@ html {
       }
 
       .small-digits {
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 32rpx;
         font-style: normal;
@@ -942,7 +942,7 @@ html {
     }
 
     .text-two {
-      color: #304258;
+      color: #003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -953,7 +953,7 @@ html {
     }
 
     .text_head {
-      color: #304258;
+      color: #003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 28rpx;
@@ -967,13 +967,13 @@ html {
     .input_value {
       padding-top: 66rpx;
       border-bottom: 2rpx dashed;
-      color: #304258;
+      color: #003B3D;
       width: 494rpx;
       margin: auto;
       padding-bottom: 14rpx;
 
       .currency_icon {
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 40rpx;
         font-style: normal;
@@ -1135,7 +1135,7 @@ html {
           display: none !important;
         }
         .uni-noticebar__content-text {
-          color: #304258 !important;
+          color: #003B3D !important;
           font-family: Microsoft YaHei UI;
           animation-duration: 120.32234s !important;
           font-size: 24rpx !important;
@@ -1537,7 +1537,7 @@ html {
     }
 
     .tips_s_2 {
-      color: #304258;
+      color: #003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -1549,7 +1549,7 @@ html {
 
     .upper_classs_s {
       padding: 24rpx 26rpx 0 40rpx;
-      color: #304258;
+      color: #003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -1583,7 +1583,7 @@ html {
       padding: 26rpx 54rpx 22rpx 54rpx;
 
       .text_imgh {
-        color: #304258;
+        color: #003B3D;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
@@ -1650,7 +1650,7 @@ html {
       .left_top {
         width: 198rpx;
         height: 72rpx;
-        color: #304258;
+        color: #003B3D;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
@@ -1676,7 +1676,7 @@ html {
       }
 
       .right_top_2 {
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
@@ -1692,7 +1692,7 @@ html {
       }
 
       .right_top {
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
@@ -1717,7 +1717,7 @@ html {
     margin: 0 66.10rpx;
 
     .text_imgh {
-      color: #304258;
+      color: #003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;

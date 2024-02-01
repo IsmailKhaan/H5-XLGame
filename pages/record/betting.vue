@@ -317,7 +317,7 @@ export default {
   data() {
     return {
       a: "全平台",
-      indicatorStyle: `height: 92rpx; border-top:0.10rpx solid #304258; border-bottom:0.10rpx solid #304258;`,
+      indicatorStyle: `height: 92rpx; border-top:0.10rpx solid #003B3D; border-bottom:0.10rpx solid #003B3D;`,
       lefticon: true,
       selected: null,
       navtitle: "Bettings",
@@ -715,7 +715,7 @@ export default {
   overflow: hidden;
 
   .left_cards_scrolls {
-    color: #304258;
+    color: #003B3D;
     z-index: 99;
 
     .circles {
@@ -803,7 +803,7 @@ export default {
       .win_loss {
         flex: 3;
         padding-left: 28rpx;
-        border-left: 0.1rpx solid #304258;
+        border-left: 0.1rpx solid #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
@@ -1012,7 +1012,7 @@ export default {
       .name {
         min-width: 111px;
         height: 70rpx;
-        color: #304258;
+        color: #003B3D;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
@@ -1043,7 +1043,7 @@ export default {
   background: white;
 
   .title_for_overall_bet_records {
-    color: #304258;
+    color: #003B3D;
     font-family: Microsoft YaHei UI;
     font-size: 32rpx;
     font-style: normal;
@@ -1120,7 +1120,7 @@ export default {
     border-bottom-left-radius: 22rpx;
     width: 182rpx;
     height: 168rpx;
-    color: #304258;
+    color: #003B3D;
     font-family: Inter;
     font-size: 24rpx;
     font-style: normal;
@@ -1135,7 +1135,7 @@ export default {
     border-top-right-radius: 22rpx;
     border-bottom-right-radius: 22rpx;
     flex: 3;
-    color: #304258;
+    color: #003B3D;
     font-family: Microsoft YaHei UI;
     font-size: 24rpx;
     font-style: normal;

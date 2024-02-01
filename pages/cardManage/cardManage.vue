@@ -593,7 +593,7 @@ export default {
       margin: 0 0 0 18rpx;
 
       .name_1 {
-        color: #304258;
+        color: #003B3D;
         font-family: Inter;
         font-size: 24rpx;
         font-style: normal;
@@ -602,7 +602,7 @@ export default {
       }
 
       .name_details {
-        color: #304258;
+        color: #003B3D;
         font-family: Inter;
         font-size: 24rpx;
         font-style: normal;
@@ -633,7 +633,7 @@ export default {
 
   .text1 {
     margin: 32rpx 0 28rpx 48rpx;
-    color: #304258;
+    color: #003B3D;
     font-family: Microsoft YaHei UI;
     font-size: 36rpx;
     font-style: normal;
@@ -665,7 +665,7 @@ export default {
       margin-left: 28rpx;
 
       .card_text2 {
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 28rpx;
         font-style: normal;
@@ -674,7 +674,7 @@ export default {
         letter-spacing: -0.1rpx;
       }
       .card_text { 
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 28rpx;
         font-style: normal;
@@ -689,7 +689,7 @@ export default {
       width: 76%;
       margin-left: 28rpx;
       .card_text_crypto2 {
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
@@ -699,7 +699,7 @@ export default {
         word-break: break-word;
       }
       .card_text_crypto {
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
@@ -718,7 +718,7 @@ export default {
 
   .addnew_card {
     margin: 16rpx 0rpx 0 54rpx;
-    color: #304258;
+    color: #003B3D;
     font-family: Microsoft YaHei UI;
     font-size: 36rpx;
     font-style: normal;
@@ -730,7 +730,7 @@ export default {
     padding: 52rpx 68rpx 0 52rpx;
     margin-bottom: 100rpx;
     .new_card_text {
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 28rpx;
       font-style: normal;

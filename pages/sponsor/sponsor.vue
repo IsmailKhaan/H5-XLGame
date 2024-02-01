@@ -327,7 +327,7 @@ line-height: normal;
         margin: auto;
       }
 .best{
-  color: #304258;
+  color: #003B3D;
 text-align: center;
 font-family: Microsoft YaHei UI;
 font-size: 36rpx;
@@ -346,7 +346,7 @@ letter-spacing: -0.10rpx;
       }
 
       .littitle {
-        color: #304258;
+        color: #003B3D;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
@@ -382,7 +382,7 @@ letter-spacing: -0.10rpx;
 
           .txt {
             .bt {
-              color: #304258;
+              color: #003B3D;
               font-family: Microsoft YaHei UI;
               font-size: 28rpx;
               font-style: normal;
@@ -395,7 +395,7 @@ letter-spacing: -0.10rpx;
             }
 
             .xz {
-              color: #304258;
+              color: #003B3D;
               font-family: Microsoft YaHei UI;
               font-size: 24rpx;
               font-style: normal;

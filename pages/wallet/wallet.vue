@@ -94,7 +94,7 @@ export default {
   methods: {
     getBackgroundColor(index) {
       if (index % 2 === 0) {
-        return '#304258';
+        return '#003B3D';
       } else {
         return '#647182';
       }
@@ -239,7 +239,7 @@ export default {
       letter-spacing: 4rpx;
 
       text {
-        color: #304258;
+        color: #003B3D;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 48rpx;
@@ -253,7 +253,7 @@ export default {
     .total_amount {
       padding: 0 0 0 62rpx;
       margin-top: -14rpx;
-      color: #304258;
+      color: #003B3D;
       text-align: left;
       font-family: Microsoft YaHei UI;
       font-size: 36rpx;

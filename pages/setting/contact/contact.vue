@@ -4,7 +4,7 @@
 
 		<view class="main">
 			<view class="item-box flex-row" v-for="(item, index) in about" :key="index"
-				:style="{ backgroundColor: colors[index] }">
+				>
 				<view class="f-a">
 					<view class="f-c">
 						<image class="imgs" :src="iconUrl + item.contactIcon" mode="widthFix"></image>
@@ -27,7 +27,6 @@
 				</view>
 			</view>
 			<navigator url="/pages/service/serviceDtl" class="button_class f-c">
-				<image src="../../../static/image/help/help.png" mode="widthFix"></image>
 				<view class="texts">{{ $t('contact_us_view.all_day_night_service') }}</view>
 			</navigator>
 		</view>
@@ -77,7 +76,6 @@ export default {
 		box-sizing: border-box;
 
 		.item-box {
-			background: #D9D9D9;
 			width: 100%;
 			line-height: normal;
 			padding: 36rpx 68rpx 36rpx 52rpx;
@@ -92,7 +90,7 @@ export default {
 			}
 
 			.tit {
-				color: #304258;
+				color: #003B3D;
 				font-family: Microsoft YaHei UI;
 				font-size: 24rpx;
 				font-style: normal;
@@ -103,7 +101,7 @@ export default {
 
 			.email { 
 				user-select: text;
-				color: #304258;
+				color: #D9D9D9;
 				font-family: Microsoft YaHei UI;
 				font-size: 24rpx;
 				font-style: normal;
@@ -112,11 +110,7 @@ export default {
 			}
 
 			.btn {
-				width: 144rpx;
-				height: 50rpx;
-				border-radius: 24.10rpx;
-				background: #DE2828;
-				color: #FFF;
+				color: #00A9F2;
 				font-family: Microsoft YaHei UI;
 				font-size: 24rpx;
 				font-style: normal;
@@ -127,19 +121,14 @@ export default {
 		}
 
 		.button_class {
-			width: 522rpx;
-			height: 88rpx;
+			width: 366rpx;
+			height: 66rpx;
 			margin: 0 auto;
-			border-radius: 112rpx;
-			background: #BE1C05;
-			box-shadow: 8rpx 8rpx 20rpx 0rpx rgba(192, 28, 5, 0.50);
+			border-radius: 24rpx;
+			background: #003B3D;
+			box-shadow: 0 0 20rpx 0 #008D91;
 			margin-top: 70rpx;
 
-			image {
-				width: 68rpx;
-				height: 58.342rrpx;
-				flex-shrink: 0;
-			}
 
 			.texts {
 				color: #FFF;

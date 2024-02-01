@@ -271,7 +271,7 @@ uni-page-body {
 				margin-top: 58.10rpx;
 				display: flex;
 				justify-content: center;
-				color: #304258;
+				color: #003B3D;
 				text-align: center;
 				font-family: Microsoft YaHei UI;
 				font-size: 24rpx;
@@ -337,7 +337,7 @@ uni-page-body {
 		margin-top: 58.100rpx;
 		display: flex;
 		justify-content: center;
-		color: #304258;
+		color: #003B3D;
 		text-align: center;
 		font-family: Microsoft YaHei UI;
 		font-size: 24rpx;

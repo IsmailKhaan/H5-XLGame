@@ -579,7 +579,7 @@ export default {
     .text1_1 {
       margin-top: 108rpx;
       margin-bottom: 34rpx;
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 36rpx;
       font-style: normal;
@@ -589,7 +589,7 @@ export default {
     }
 
     .text2_1 {
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 36rpx;
       font-style: normal;
@@ -613,7 +613,7 @@ export default {
 
       .text1__1 {
         width: 536rpx;
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 28rpx;
         font-style: normal;
@@ -635,7 +635,7 @@ export default {
         width: 87%;
         margin-left: 28rpx;
         .text1__1_name {
-          color: #304258;
+          color: #003B3D;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
           font-style: normal;
@@ -644,7 +644,7 @@ export default {
           letter-spacing: -0.10rpx;
         }
         .text1__1_no {
-          color: #304258;
+          color: #003B3D;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
           font-style: normal;
@@ -664,7 +664,7 @@ export default {
         margin-top: 40rpx;
 
         .texts2_2 {
-          color: #304258;
+          color: #003B3D;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
           font-style: normal;
@@ -721,7 +721,7 @@ export default {
     }
 
     .text9 {
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
       font-style: normal;
@@ -789,7 +789,7 @@ export default {
       }
 
       /deep/.uni-input-input {
-        color: #304258;
+        color: #003B3D;
         //text-align: left;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
@@ -839,7 +839,7 @@ export default {
       margin-top: 34rpx;
       display: flex;
       justify-content: center;
-      color: #304258;
+      color: #003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -949,7 +949,7 @@ export default {
       //margin-top: 34rpx;
       display: flex;
       justify-content: center;
-      color: #304258;
+      color: #003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -1017,7 +1017,7 @@ export default {
     margin-top: 58.1rpx;
     display: flex;
     justify-content: center;
-    color: #304258;
+    color: #003B3D;
     text-align: center;
     font-family: Microsoft YaHei UI;
     font-size: 24rpx;

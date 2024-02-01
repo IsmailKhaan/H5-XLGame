@@ -33,8 +33,8 @@
 			</view>
 		    </view>
 			<view class="after_list" v-else-if="actList && (!actList.activities || actList.activities.length === 0)">
-				<image  src="/static/img/demo.png" class="tasiver" mode="widthFix">
-				</image>
+				<!-- <image  src="/static/img/demo.png" class="tasiver" mode="widthFix"> -->
+				<!-- </image> -->
 				<view class="h1 f-c">{{ $t("notifications.sorry") }}</view>
 				<view class="h2 f-c">
 					{{ $t("errors.no_activity") }}
@@ -235,7 +235,7 @@ page {
 
 .text {
 	font-size: 24rpx;
-	color: #304258;
+	color: #003B3D;
 	width: 254rpx;
 	//border-bottom: 2rpx solid #db2b0f;
 	line-height: 54rpx;
@@ -244,7 +244,7 @@ page {
 .borders {
 	width: 254rpx;
 	height: 2rpx;
-	background: #db2b0f;
+	background: #008D91;
 	margin: 0 auto;
 }
 
@@ -271,8 +271,8 @@ page {
 	}
 
 	.navigator_switch {
-		width: 40rpx;
-		height: 24rpx;
+		width: 10rpx;
+		height: 48rpx;
 		margin-right: 54rpx;
 		position: absolute;
 		top: 18px;
@@ -312,7 +312,7 @@ page {
 	}
 
 	span {
-		color: #304258;
+		color: #003B3D;
 		font-family: Microsoft YaHei UI;
 		font-size: 24rpx;
 		font-style: normal;

@@ -235,7 +235,7 @@ export default {
     margin-bottom: 66rpx;
 
     .text1 {
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 36rpx;
       font-style: normal;
@@ -246,7 +246,7 @@ export default {
 
     .text2 {
       margin-top: 66rpx;
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 32rpx;
       font-style: normal;
@@ -268,7 +268,7 @@ export default {
         width: 80%;
 
         .text3_1 {
-          color: #304258;
+          color: #003B3D;
           font-family: Microsoft YaHei UI;
           font-size: 28rpx;
           font-style: normal;

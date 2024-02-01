@@ -361,7 +361,7 @@ uni-page-body {
 
 .text2 {
   font-size: 24rpx;
-  color: #304258;
+  color: #003B3D;
   width: 254rpx;
   //border-bottom: 2rpx solid #db2b0f;
   line-height: 54rpx;
@@ -478,7 +478,7 @@ uni-page-body {
 }
 
 .news-text .text {
-  color: #304258;
+  color: #003B3D;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
   font-style: normal;
@@ -487,7 +487,7 @@ uni-page-body {
 }
 
 .news-text .date {
-  color: #304258;
+  color: #003B3D;
   text-align: right;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
@@ -497,7 +497,7 @@ uni-page-body {
 }
 
 .news-text uni-text {
-  color: #304258;
+  color: #003B3D;
   text-align: right;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
@@ -507,7 +507,7 @@ uni-page-body {
 }
 
 .news-list p {
-  color: #304258;
+  color: #003B3D;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
   font-style: normal;
@@ -533,7 +533,7 @@ uni-page-body {
 }
 
 .details .title h3 {
-  color: #304258;
+  color: #003B3D;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
   font-style: normal;
@@ -548,7 +548,7 @@ uni-page-body {
 }
 
 .details-date {
-  color: #304258;
+  color: #003B3D;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
   font-style: normal;
@@ -557,7 +557,7 @@ uni-page-body {
 }
 
 .details-p {
-  color: #304258;
+  color: #003B3D;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
   font-style: normal;

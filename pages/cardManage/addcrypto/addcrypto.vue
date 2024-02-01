@@ -224,7 +224,7 @@ export default {
 
     .add_virtual_currency {
       margin: 98rpx 0 0 48rpx;
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 36rpx;
       font-style: normal;
@@ -236,7 +236,7 @@ export default {
     .wallet_name {
       margin: 60rpx 0 0 106rpx;
 
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 28rpx;
       font-style: normal;
@@ -261,7 +261,7 @@ export default {
       padding: 0 0 0 18rpx;
       flex: 1;
       background-color: #ffffff;
-      border-bottom: 2rpx solid #304258;
+      border-bottom: 2rpx solid #003B3D;
 
     }
 
@@ -270,7 +270,7 @@ export default {
 
     .virtual_currency_protocol {
       margin: 56rpx 0 0 110rpx;
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 28rpx;
       font-style: normal;
@@ -294,7 +294,7 @@ export default {
       }
 
       .text {
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
@@ -325,7 +325,7 @@ export default {
 
     .virtual_currency_address {
       margin: 78rpx 0 0 106rpx;
-      color: #304258;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 28rpx;
       font-style: normal;
@@ -413,7 +413,7 @@ export default {
         .ner2 {
           display: flex;
           justify-content: center;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -437,7 +437,7 @@ export default {
 
         .ner3 {
           justify-content: center;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -507,7 +507,7 @@ export default {
         .ner5 {
           display: flex;
           justify-content: center;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -531,7 +531,7 @@ export default {
 
         .ner4 {
           justify-content: center;
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -606,7 +606,7 @@ export default {
 }
 
 /deep/.uni-input-input {
-  color: #304258;
+  color: #003B3D;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
   font-style: normal;

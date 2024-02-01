@@ -206,7 +206,7 @@ export default {
   methods: {
     getBackgroundColor(index) {
       if (index % 2 === 0) {
-        return "#304258";
+        return "#003B3D";
       } else {
         return "#647182";
       }
@@ -480,7 +480,7 @@ export default {
       align-items: center;
       padding: 46rpx 0;
       box-sizing: border-box;
-      //border-bottom: 1px solid #304258;
+      //border-bottom: 1px solid #003B3D;
 
       > view {
         width: 100%;
@@ -507,7 +507,7 @@ export default {
           justify-content: center;
 
           view {
-            color: #304258;
+            color: #003B3D;
             text-align: center;
             font-family: Microsoft YaHei UI;
             font-size: 24rpx;
@@ -525,7 +525,7 @@ export default {
         display: block;
         width: 2rpx;
         height: 100%;
-        background: #304258;
+        background: #003B3D;
         position: absolute;
         right: 0;
         top: 0;
@@ -538,7 +538,7 @@ export default {
 
     .text_cont {
       .amount_transfer {
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 28rpx;
         font-style: normal;
@@ -548,7 +548,7 @@ export default {
       }
 
       .details {
-        color: #304258;
+        color: #003B3D;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
@@ -652,7 +652,7 @@ export default {
         }
 
         .txt {
-          color: #304258;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -685,7 +685,7 @@ export default {
         padding: 74rpx 24rpx 0 68rpx;
 
         .title {
-          color: #304258;
+          color: #003B3D;
           font-family: Microsoft YaHei UI;
           font-size: 40rpx;
           font-style: normal;
@@ -715,7 +715,7 @@ export default {
               height: 5%;
 
               .dollar_s {
-                color: #304258;
+                color: #003B3D;
                 font-family: Microsoft YaHei UI;
                 font-size: 32rpx;
                 font-style: normal;
@@ -762,7 +762,7 @@ export default {
               }
             }
             .texts {
-              color: #304258;
+              color: #003B3D;
               font-family: Microsoft YaHei UI;
               font-size: 24rpx;
               font-style: normal;
