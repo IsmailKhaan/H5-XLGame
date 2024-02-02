@@ -288,7 +288,7 @@ uni-page-body {
 					width: 444rpx;
 					height: 74rpx;
 					border-radius: 22rpx;
-					background: #BE1C05; 
+					background: #008D91; 
 					color: #FFF;
 					font-family: Microsoft YaHei UI;
 					font-size: 24rpx;
@@ -368,7 +368,7 @@ uni-page-body {
 
 		.title_2 {
 			border-radius: 22rpx;
-			background: #BE1C05;
+			background: #008D91;
 			width: 264rpx;
 			height: 74rpx;
 			color: #FFF;

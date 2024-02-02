@@ -250,7 +250,7 @@ uni-page-body {
     width: 153px;
     height: 37px;
     border-radius: 11px;
-    background: #be1c05;
+    background: #008D91;
     color: #fff;
     text-align: center;
     font-family: Microsoft YaHei UI;
@@ -285,7 +285,7 @@ uni-page-body {
     letter-spacing: -0.5px;
 
     text {
-      color: #be1c05;
+      color: #008D91;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
       font-style: normal;
@@ -331,7 +331,7 @@ uni-page-body {
       width: 274px;
       height: 37px;
       border-radius: 10px;
-      border: 2px solid #be1c05;
+      border: 2px solid #008D91;
       color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
@@ -369,7 +369,7 @@ uni-page-body {
       letter-spacing: -0.5px;
     }
     .note {
-      color: #be1c05;
+      color: #008D91;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
       font-style: normal;

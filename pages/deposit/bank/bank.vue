@@ -810,7 +810,7 @@ export default {
         }
 
         .successs {
-          color: #be1c05;
+          color: #008D91;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
           font-style: normal;
@@ -841,7 +841,7 @@ export default {
           width: 444rpx;
           height: 74rpx;
           border-radius: 22rpx;
-          background: #be1c05;
+          background: #008D91;
           box-shadow: 6rpx 8rpx 16rpx 0px rgba(174, 81, 69, 0.5);
           color: #fff;
           font-family: Microsoft YaHei UI;

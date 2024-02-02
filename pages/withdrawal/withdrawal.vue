@@ -817,7 +817,7 @@ uni-page-body {
       width: 306rpx;
       height: 74rpx;
       border-radius: 22rpx;
-      background: #be1c05;
+      background: #008D91;
       margin: 0 auto;
       color: #fff;
       text-align: center;

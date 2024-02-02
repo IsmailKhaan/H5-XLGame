@@ -289,7 +289,7 @@ export default {
   }
   .red_text {
     padding: 40rpx 106rpx 42rpx 106rpx;
-    color: #be1c05;
+    color: #008D91;
     font-family: Microsoft YaHei UI;
     font-size: 24rpx;
     font-style: normal;

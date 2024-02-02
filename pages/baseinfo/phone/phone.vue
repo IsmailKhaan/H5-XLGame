@@ -230,7 +230,7 @@ export default {
 	  font-weight: 400;
 	  line-height: normal;
 	  span {
-		color: #be1c05;
+		color: #008D91;
 		font-family: Microsoft YaHei UI;
 		font-size: 24rpx;
 		font-style: normal;

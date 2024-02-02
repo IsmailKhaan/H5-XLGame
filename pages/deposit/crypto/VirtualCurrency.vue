@@ -317,7 +317,7 @@ export default {
     width: 222px;
     height: 37px;
     border-radius: 11px;
-    background: #be1c05;
+    background: #008D91;
     color: #fff;
     text-align: center;
     font-family: Microsoft YaHei UI;

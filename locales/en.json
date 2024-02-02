@@ -660,7 +660,7 @@
     "dob_des_lbl" : "添加日期并确保您年满18岁或以上",
     "email_address_des" : "绑定电子邮件以保护帐户安全",
     "phone_num_address_des" : "绑定手机号码以保护帐户安全",
-    "contact_customer_service_text" : "对于您的隐私和安全性，确认后不能修改信息。 <font color=#BE1C05>联系客服</font>",
+    "contact_customer_service_text" : "对于您的隐私和安全性，确认后不能修改信息。 <font color=#008D91>联系客服</font>",
     "male" : "男",
     "female" : "女",
     "email_address" : "邮箱",

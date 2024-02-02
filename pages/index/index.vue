@@ -886,7 +886,7 @@ html {
     }
 
     .heading-one {
-      color: #be1c05;
+      color: #008D91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 32rpx;
@@ -1011,7 +1011,7 @@ html {
       }
 
       .button_class {
-        background: #be1c05;
+        background: #008D91;
         border-radius: 20.1rpx;
         width: 140rpx;
         height: 42rpx;
@@ -1049,7 +1049,7 @@ html {
         width: 264rpx;
         height: 74rpx;
         border-radius: 22rpx;
-        background: #be1c05;
+        background: #008D91;
       }
     }
   }
@@ -1526,7 +1526,7 @@ html {
     }
 
     .tips_s {
-      color: #be1c05;
+      color: #008D91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 32rpx;
@@ -1566,7 +1566,7 @@ html {
         width: 444rpx;
         height: 74rpx;
         border-radius: 22rpx;
-        background: #be1c05;
+        background: #008D91;
         box-shadow: 6rpx 8rpx 16rpx 0rpx rgba(174, 81, 69, 0.5);
         color: #fff;
         font-family: Microsoft YaHei UI;

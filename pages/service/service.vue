@@ -113,7 +113,7 @@
           <view
             class="title f-c"
             :style="{
-              backgroundColor: quedtext === $t('general.go') ? '#BE1C05' : '',
+              backgroundColor: quedtext === $t('general.go') ? '#008D91' : '',
             }"
             >{{ quedtext }}</view
           >
@@ -383,7 +383,7 @@ page {
     }
 
     .heading-one {
-      color: #be1c05;
+      color: #008D91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 32rpx;
@@ -419,13 +419,13 @@ page {
     .input_value {
       padding-top: 66rpx;
       border-bottom: 4rpx dashed;
-      color: #be1c05;
+      color: #008D91;
       width: 336rpx;
       margin: auto;
       padding-bottom: 14rpx;
 
       .xunli_url {
-        color: #be1c05;
+        color: #008D91;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 32rpx;
@@ -449,7 +449,7 @@ page {
         width: 264rpx;
         height: 74rpx;
         border-radius: 22rpx;
-        background: #be1c05;
+        background: #008D91;
       }
     }
   }
@@ -490,7 +490,7 @@ page {
       margin-top: -250rpx;
     }
     .tips {
-      color: #be1c05;
+      color: #008D91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 32rpx;

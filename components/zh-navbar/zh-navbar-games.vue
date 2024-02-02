@@ -125,7 +125,7 @@ export default {
       margin:0;
       padding-bottom: 36rpx !important;
       .title {
-        color: #be1c05;
+        color: #008D91;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 32rpx;
@@ -153,7 +153,7 @@ export default {
           width: 264rpx;
           height: 74rpx;
           border-radius: 22rpx;
-          background: #be1c05;
+          background: #008D91;
           align-items: center;
           justify-content: center;
           //margin: 0 20rpx;

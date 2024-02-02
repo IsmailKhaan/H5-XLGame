@@ -165,7 +165,7 @@
           <view
             class="title f-c"
             :style="{
-              backgroundColor: quedtext === $t('settings.withdraw') ? '#BE1C05' : '',
+              backgroundColor: quedtext === $t('settings.withdraw') ? '#008D91' : '',
               boxShadow: quedtext === $t('settings.withdraw') ? '4rpx 4rpx 24rpx 0rpx rgba(190, 28, 5, 0.58)' : ''
             }"
             >{{ quedtext }}</view
@@ -894,7 +894,7 @@ export default {
 
     .title_2 {
       border-radius: 22rpx;
-      background: #be1c05;
+      background: #008D91;
       width: 264rpx;
       height: 74rpx;
       color: #fff;
@@ -987,7 +987,7 @@ export default {
 
       .title_12_1 {
         border-radius: 22rpx;
-        background: #be1c05;
+        background: #008D91;
         box-shadow: 4rpx 4rpx 24rpx 0rpx rgba(190, 28, 5, 0.58);
         width: 444rpx;
         height: 74rpx;
@@ -1073,7 +1073,7 @@ export default {
 
       .title_22 {
         border-radius: 22rpx;
-        background: #be1c05;
+        background: #008D91;
         width: 264rpx;
         height: 74rpx;
         color: #fff;

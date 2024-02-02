@@ -716,7 +716,7 @@ export default {
 
       .text {
         margin-left: 32rpx;
-        color: #be1c05;
+        color: #008D91;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
