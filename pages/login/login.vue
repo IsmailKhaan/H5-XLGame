@@ -669,7 +669,7 @@ export default {
         padding: 0 10rpx 0 12rpx;
         box-sizing: border-box;
         justify-content: space-between;
-        border-bottom: 4rpx solid #781000;
+        border-bottom: 4rpx solid #003B3D;
 
         input {
           width: 430rpx;

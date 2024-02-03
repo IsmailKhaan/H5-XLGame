@@ -138,7 +138,7 @@ export default {
   .gametes {
     width: 120rpx;
     height: 40rpx;
-    color: #781000;
+    color: #003B3D;
     text-align: center;
     font-family: Microsoft YaHei UI;
     font-size: 12px;

@@ -461,7 +461,7 @@ export default {
     .question {
       display: flex;
       justify-content: center;
-      color: #781000;
+      color: #003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -525,7 +525,7 @@ export default {
           height: 100%;
           color: #003b3d;
           padding-left: 12rpx;
-          border-bottom: 2rpx solid #781000;
+          border-bottom: 2rpx solid #003B3D;
         }
 
         .passwordshow {

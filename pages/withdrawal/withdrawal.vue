@@ -508,7 +508,7 @@ uni-page-body {
         text-align: center;
         font-size: 32rpx;
         font-weight: bold;
-        color: #781000;
+        color: #003B3D;
         letter-spacing: 2.8rpx;
       }
     }

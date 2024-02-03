@@ -97,7 +97,7 @@ export default {
       height: 110rpx;
       line-height: 112rpx;
       text-align: center;
-      color: #781000;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 32rpx;
       font-weight: 700;

@@ -303,7 +303,7 @@ export default {
 	  }
   
 	  .name_use {
-		color: #a82b00;
+		color: #008D91;
 		font-family: Microsoft YaHei UI;
 		font-size: 32rpx;
 		font-style: normal;
@@ -322,7 +322,7 @@ export default {
 	  .name_side {
 		width: 554rpx;
 		.name {
-		  color: #292d32;
+		  color: #003B3D;
 		  font-family: Microsoft YaHei UI;
 		  font-size: 24rpx;
 		  font-style: normal;
@@ -331,7 +331,7 @@ export default {
 		}
   
 		.name_or_hints {
-		  color: #292d32;
+		  color: #003B3D;
 		  font-family: Microsoft YaHei UI;
 		  font-size: 24rpx;
 		  font-style: normal;
@@ -348,7 +348,7 @@ export default {
 	}
   
 	.text_bottom {
-	  color: #292d32;
+	  color: #003B3D;
 	  font-family: Microsoft YaHei UI;
 	  font-size: 24rpx;
 	  font-style: normal;

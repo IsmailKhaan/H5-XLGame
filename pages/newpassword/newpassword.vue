@@ -216,12 +216,12 @@ export default {
         align-items: center;
         justify-content: space-between;
         margin-bottom: 30rpx;
-        border-bottom: 2rpx solid #781000;
+        border-bottom: 2rpx solid #003B3D;
 
         input {
           width: 560rpx;
           height: 100%;
-          color: #781000;
+          color: #003B3D;
           margin-left: 8rpx;
         }
 

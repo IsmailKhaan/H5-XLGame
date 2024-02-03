@@ -258,7 +258,7 @@ export default {
   width: 532rpx;
   margin: 0 auto;
   margin-top: 62rpx;
-  color: #292d32;
+  color: #003B3D;
   text-align: center;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;

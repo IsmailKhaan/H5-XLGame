@@ -395,7 +395,7 @@ uni-page-body {
 
     .you-title {
       font-size: 32rpx;
-      color: #781000;
+      color: #003B3D;
       width: 100%;
       font-weight: bold;
       text-align: center;

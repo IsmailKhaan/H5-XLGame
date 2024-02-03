@@ -1211,7 +1211,7 @@ export default {
         text-align: center;
         font-size: 32rpx;
         font-weight: bold;
-        color: #781000;
+        color: #003B3D;
       }
     }
   }
@@ -1283,7 +1283,7 @@ export default {
           width: 50%;
 
           .user_name {
-            color: #a82b00;
+            color: #008D91;
             font-family: Microsoft YaHei UI;
             font-size: 32rpx;
             font-style: normal;

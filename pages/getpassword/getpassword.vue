@@ -317,11 +317,11 @@ export default {
         display: flex;
         flex-direction: row;
         align-items: center;
-        border-bottom: 2rpx solid #781000;
+        border-bottom: 2rpx solid #003B3D;
 
         input {
           width: 530rpx;
-          color: #781000;
+          color: #003B3D;
         }
       }
 

@@ -756,7 +756,7 @@ export default {
       font-size: 32rpx;
       font-weight: bold;
       width: 100%;
-      color: #781000;
+      color: #003B3D;
       letter-spacing: 1.4px;
     }
 
@@ -829,7 +829,7 @@ export default {
           justify-content: flex-start;
 
           .name {
-            color: #a82b00;
+            color: #008D91;
             font-weight: bold;
             font-size: 32rpx;
             overflow: auto;
@@ -1012,7 +1012,7 @@ export default {
 
       view {
         margin-right: 80rpx;
-        color: #292D32;
+        color: #003B3D;
         text-align: right;
         font-family: Microsoft YaHei UI;
         font-size: 28rpx;
