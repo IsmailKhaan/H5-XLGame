@@ -90,7 +90,7 @@
             :class="botmnowindex == index ? 'active' : ''"
             @click="idFx(index, 'ids' + index)"
             :style="
-              botmnowindex === index ? { backgroundColor: '#C01C05' } : null
+              botmnowindex === index ? { backgroundColor: '#003B3D' } : null
             "
           >
             <image
@@ -1303,7 +1303,7 @@ html {
         display: grid;
         align-items: center;
         justify-content: center;
-        border: 4rpx solid #c01c05;
+        border: 4rpx solid #003B3D;
 
         image {
           display: block;
@@ -1312,7 +1312,7 @@ html {
         }
 
         .text_icon {
-          color: #c01c05;
+          color: #003B3D;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
           font-style: normal;

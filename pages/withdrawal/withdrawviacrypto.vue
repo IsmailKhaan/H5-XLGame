@@ -108,7 +108,7 @@
           v-if="$store.state.allStatus.showVCRate != 0"
         >
           参考汇率1{{ texts }}=
-          <span style="color: #c01c05">{{ exchangeRate }}</span> CNY,
+          <span style="color: #003B3D">{{ exchangeRate }}</span> CNY,
         </view>
         <view
           style="text-indent: 11px"
@@ -559,7 +559,7 @@ export default {
       width: 672rpx;
       height: 60rpx;
       border-radius: 12rpx;
-      background: #c01c05;
+      background: #003B3D;
       margin: 0 auto;
       margin-bottom: 88rpx;
       color: #fff;
@@ -749,7 +749,7 @@ export default {
         width: 204rpx;
         height: 52rpx;
         border-radius: 26rpx;
-        background: #c01c05;
+        background: #003B3D;
         color: #fff;
         text-align: center;
         font-family: Microsoft YaHei UI;
@@ -1031,7 +1031,7 @@ export default {
     text-align: center;
     justify-content: center;
 
-    color: #c01c05;
+    color: #003B3D;
     font-family: Microsoft YaHei UI;
     font-size: 28rpx;
     font-style: normal;

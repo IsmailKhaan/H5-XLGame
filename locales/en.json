@@ -203,9 +203,9 @@
     "protocol_to_use": "请选择支付币种",
     "protocol_difference": "币种区别",
     "recharge_amount": "支付金额",
-    "information1": "参考汇率 <font color=#C01C05>1{ChannelName}={exchangeRate}CNY</font>",
+    "information1": "参考汇率 <font color=#003B3D>1{ChannelName}={exchangeRate}CNY</font>",
     "information2": "以实际到账金额为准",
-    "information3": " 预计支付 <font color=#C01C05>{exchangeRates} {ChannelName}</font>, \n请参考支付时实时汇率"
+    "information3": " 预计支付 <font color=#003B3D>{exchangeRates} {ChannelName}</font>, \n请参考支付时实时汇率"
   },
   "updateVersionAlert": {
     "update" : "更新",
@@ -329,7 +329,7 @@
     "withdrawal_money": "取款",
     "withdrawal_status": "取款进度",
     "withdrawlimit": "金额范围: ",
-    "confirm_withdraw": "请确认取款金额<font color=#C01C05><strong>{number}¥?</strong></font> ",
+    "confirm_withdraw": "请确认取款金额<font color=#003B3D><strong>{number}¥?</strong></font> ",
     "almost_there": "处理中",
     "withdraw_time": "正在为您取款",
     "withdraw_note1": "请点击确认收款 \n {lockbalance}¥ 到账后!",
@@ -346,7 +346,7 @@
     "fail_withdrawal": "提取失败",
     "reject_withdrawal": "提取失败",
     "contact_customer_support": "联系客户支持...",
-    "estimated_arrival": "<font color=#85A2C6> 预计到账 <font color=#C01C05> {exchangeRate} </font> {text} </font>",
+    "estimated_arrival": "<font color=#85A2C6> 预计到账 <font color=#003B3D> {exchangeRate} </font> {text} </font>",
     "demandAmount_poundageAmount": "您的有效投注还差:{ demandAmount } 元 （拉取注单会有1-10分钟延迟），继续提现将扣除: { poundageAmount } 元手续费！",
     "withdraw_amout_charge": "您的有效投注不足，如果继续提款，将会扣除你30%的费用哦。你确定是否继续",
     "Integer": "请输入整数"
@@ -356,9 +356,9 @@
     "title": "取款",
     "choose_method1": "取款方式:",
     "choose_method2": "选择取款通道",
-    "detail11": "<font color=#85A2C6>今天可用的提款数：<font color=#C01C05> {number} </font> 次. </font>",
-    "detail12":  "<font color=#85A2C6>今天剩余的银行卡的最大提款金额：<font color=#C01C05> {max} </font> 元, 今天剩余的最低提款金额： <font color=#C01C05> {min} </font> 元</font>",
-    "virtual_text": "今天剩余的虚拟币的最大提款金额：<font color=#C01C05> {max} </font> 元, 今天剩余的最低提款金额： <font color=#C01C05> {min} </font> 元",
+    "detail11": "<font color=#85A2C6>今天可用的提款数：<font color=#003B3D> {number} </font> 次. </font>",
+    "detail12":  "<font color=#85A2C6>今天剩余的银行卡的最大提款金额：<font color=#003B3D> {max} </font> 元, 今天剩余的最低提款金额： <font color=#003B3D> {min} </font> 元</font>",
+    "virtual_text": "今天剩余的虚拟币的最大提款金额：<font color=#003B3D> {max} </font> 元, 今天剩余的最低提款金额： <font color=#003B3D> {min} </font> 元",
     "detail2": ": ",
     "yuan": "¥",
     "detail3": ":",
@@ -398,7 +398,7 @@
     "description4": "联系客服中心",
     "success": "您的账户已成功添加! \n 请尽情游玩哦",
     "failed": "未成功! 请稍后重试",
-    "failed_add_bank_card": "您的银行卡 <font color=#C01C05>无效!</font> 请您\n联系客服中心"
+    "failed_add_bank_card": "您的银行卡 <font color=#003B3D>无效!</font> 请您\n联系客服中心"
   },
   "my_purse_view": {
     "total_amount": "总金额",
@@ -642,7 +642,7 @@
     "need_to_import" : "对应金额",
     "current_exchange_rate" : "实时汇率",
     "wallet_protocol" : "虚拟币钱包:",
-    "qr_Code_Des" : "使用<font color=#C01C05> 钱包APP  </font> 扫描二维码支付",
+    "qr_Code_Des" : "使用<font color=#003B3D> 钱包APP  </font> 扫描二维码支付",
     "qr_Code_Detail" : "可将支付二维码截图保存至相册，然后使用钱包APP识别二维码支付.",
     "desposit_address_lbl" : "存款地址",
     "order_remark" : "Order remark code:",

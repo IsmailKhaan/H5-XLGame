@@ -759,7 +759,7 @@ export default {
     margin-top: 72rpx;
     filter: drop-shadow(0rpx 8rpx 8rpx rgba(0, 0, 0, 0.25));
     border-radius: 22rpx;
-    background: #c01c05;
+    background: #003B3D;
     image {
       width: 12rpx;
       margin-right: 20rpx;

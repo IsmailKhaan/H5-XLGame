@@ -351,7 +351,7 @@ export default {
         width: 672rpx;
         height: 60rpx;
         border-radius: 12rpx;
-        background: #c01c05;
+        background: #003B3D;
         color: #fff;
         text-align: center;
         font-family: Microsoft YaHei UI;
@@ -573,7 +573,7 @@ export default {
     width: 672rpx;
     height: 60rpx;
     border-radius: 12rpx;
-    background: #c01c05;
+    background: #003B3D;
     color: #fff;
     text-align: center;
     font-family: Microsoft YaHei UI;

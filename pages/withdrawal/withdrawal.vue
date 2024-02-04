@@ -518,7 +518,7 @@ uni-page-body {
     width: 394rpx;
     height: 88rpx;
     border-radius: 14rpx;
-    background: #C01C05;
+    background: #003B3D;
     box-shadow: 8rpx 8rpx 20rpx 0rpx rgba(0, 0, 0, 0.31);
     color: #fff;
     font-family: Microsoft YaHei UI;
@@ -586,7 +586,7 @@ uni-page-body {
       width: 214rpx;
       height: 88rpx;
       border-radius: 14rpx;
-      background: #C01C05;
+      background: #003B3D;
       box-shadow: 8rpx 8rpx 20rpx 0rpx rgba(0, 0, 0, 0.31);
       text {
         color: #fff;

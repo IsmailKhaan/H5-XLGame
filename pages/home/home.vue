@@ -969,7 +969,7 @@ export default {
 
     .one_click_recovery {
       border-radius: 12rpx;
-      background: #C01C05;
+      background: #003B3D;
       text-align: center;
       margin: 46rpx 0 62rpx 0;
       width: 272rpx;

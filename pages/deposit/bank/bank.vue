@@ -558,7 +558,7 @@ export default {
       }
 
       /deep/.uni-input-input {
-        color: #003B3D;
+        color: #008D91;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 60rpx;
@@ -608,8 +608,8 @@ export default {
           width: 226rpx;
           height: 66rpx;
           border-radius: 12rpx;
-          border: 2rpx solid #c01c05;
-          color: #c01c05;
+          border: 2rpx solid #008D91;
+          color: #003B3D;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -620,7 +620,7 @@ export default {
           margin: 0 8rpx 18rpx 0;
         }
         .SM.active {
-          background: #c01c05;
+          background: #008D91;
           color: #ffffff;
         }
       }
@@ -637,7 +637,7 @@ export default {
       width: 672rpx;
       height: 60rpx;
       border-radius: 12rpx;
-      background: #c01c05;
+      background: #003B3D;
       color: #fff;
       text-align: center;
       font-family: Microsoft YaHei UI;

@@ -556,7 +556,7 @@ export default {
       width: 672rpx;
       height: 60rpx;
       border-radius: 12rpx;
-      background: #c01c05;
+      background: #003B3D;
       margin: 0 auto;
       margin-bottom: 88rpx;
       color: #fff;
@@ -709,7 +709,7 @@ export default {
 
         span {
           margin: 0 10rpx 0 10rpx;
-          color: #c01c05;
+          color: #003B3D;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
           font-style: normal;
@@ -750,7 +750,7 @@ export default {
         width: 204rpx;
         height: 52rpx;
         border-radius: 26rpx;
-        background: #c01c05;
+        background: #003B3D;
         color: #fff;
         text-align: center;
         font-family: Microsoft YaHei UI;
@@ -864,7 +864,7 @@ export default {
     margin-top: 8rpx;
     text-align: center;
     justify-content: center;
-    color: #c01c05;
+    color: #003B3D;
     font-family: Microsoft YaHei UI;
     font-size: 28rpx;
     font-style: normal;

@@ -593,7 +593,7 @@
             </view>
             <div class="f-c money-bor-text" v-show="montyA > 0">
               申请此活动需完成
-              <span style="color: #c01c05;padding: 0 6rpx; ">
+              <span style="color: #003B3D;padding: 0 6rpx; ">
                 {{
                   parseInt(
                     Number(montyA) *
