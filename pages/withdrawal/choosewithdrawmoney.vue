@@ -30,7 +30,6 @@
           <view class="image2 f-c" >
             <div class="image-btn"  v-show="bank_card == true"></div>
           </view>
-
         </view>
         <view class="card f-s" @click="chooseWithdrawWay(1)">
           <image
@@ -228,11 +227,7 @@ export default {
   .withdraw_money_card {
     width: 100%;
     height: 522rpx;
-    border-radius: 34rpx;
-    background: #fff;
-    box-shadow: 0rpx 8rpx 50rpx 0rpx rgba(0, 0, 0, 0.25);
     padding: 62rpx 74rpx 78rpx 48rpx;
-    margin-bottom: 66rpx;
 
     .text1 {
       color: #003B3D;
@@ -272,7 +267,7 @@ export default {
           font-family: Microsoft YaHei UI;
           font-size: 28rpx;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 700;
           line-height: 40rpx;
           letter-spacing: -0.10rpx;
         }

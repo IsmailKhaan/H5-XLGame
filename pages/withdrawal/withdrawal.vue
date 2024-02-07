@@ -1,5 +1,5 @@
 <template>
-  <view style="background: #FFF" class="withdrawal">
+  <view style="background: #fff" class="withdrawal">
     <loading :isshow="isshow"></loading>
     <view id="navbar">
       <view class="fixed">
@@ -32,31 +32,27 @@
     <view style="margin-bottom: 60rpx" v-if="$store.state.navselect == 1">
       <view class="toptwo">
         <view>
-          <view class="money">{{ $store.state.money }}</view>
           <view class="tip">
             <view>{{ $t("transfer_view.center_wallet") }}</view>
           </view>
+          <view class="money">{{ $store.state.money }}</view>
         </view>
         <view>
-          <view class="money">{{ lockBalance }}</view>
           <view class="tip">
             <view>{{ $t("transfer_view.lock_wallet") }}</view>
           </view>
+          <view class="money">{{ lockBalance }}</view>
         </view>
       </view>
-      <view class="selectlist" style="margin-top: 58rpx;">
+      <view class="selectlist" style="margin-top: 58rpx">
         <view
           class="contents"
           v-for="(item, index) in allBalance"
           :key="index"
           v-show="index != 0"
-          :style="{ backgroundColor: getBackgroundColor(index) }"
         >
           <image
-            :src="
-              $store.state.iconUrl+
-              $store.state.static.gameIcon[item.key]
-            "
+            :src="$store.state.iconUrl + $store.state.static.gameIcon[item.key]"
             mode="widthFix"
           ></image>
           <view class="G_Name">
@@ -64,7 +60,7 @@
             <span
               class="span_class"
               :style="{
-                color: itemIsDigit(item.balance) ? 'white' : '#FF6C46',
+                color: itemIsDigit(item.balance) ? '#003B3D' : '#FF6C46',
               }"
               >{{ formatBalance(item.balance) }}</span
             >
@@ -73,8 +69,6 @@
         </view>
       </view>
 
-     
-      
       <view class="class_btns">
         <view class="topone f-c">
           <view class="yjbtn f-c" @click="turnIn">
@@ -82,12 +76,10 @@
           </view>
         </view>
 
-        <navigator url="/pages/withdrawal/choosewithdrawmoney" class="next_btn f-c"
-          >{{ $t("withdraw_view.withdrawal_money") }}
-          <image
-            src="../../static/transfer/Polygon.png"
-            mode="widthFix"
-          ></image>
+        <navigator
+          url="/pages/withdrawal/choosewithdrawmoney"
+          class="next_btn f-c"
+          >{{ $t("withdraw_view.withdrawal_money") }} >
         </navigator>
       </view>
     </view>
@@ -280,7 +272,7 @@
           src="../../static/transfer/progress_L5.png"
           mode="widthFix"
         ></image>
-        <view @click="support" class="text_support reminder">
+        <view @click="support" class="text_support">
           {{ $t("withdraw_view.withdraw_help") }}
           <span>{{ $t("withdraw_view.customer_support") }}</span>
         </view>
@@ -360,7 +352,7 @@ export default {
           state.progress = res.data.data.orderState;
           // state.progress = 5;
           uni.setStorageSync("checkstat_us", res.data.data.orderState);
-         // console.log(res.data.data, "checkorderStatus2 ");
+          // console.log(res.data.data, "checkorderStatus2 ");
         } else if ((res.data.code = 11038)) {
           this.sorry = false;
           return;
@@ -460,7 +452,7 @@ export default {
 
 <style lang="scss">
 uni-page-body {
-  background: #FFF !important;
+  background: #fff !important;
 }
 
 .withdrawal {
@@ -482,7 +474,7 @@ uni-page-body {
       left: 0;
       height: 100rpx;
       width: 100%;
-      background: #FFF;
+      background: #fff;
       background-size: 100% 100%;
       .icon-block {
         position: absolute;
@@ -508,25 +500,20 @@ uni-page-body {
         text-align: center;
         font-size: 32rpx;
         font-weight: bold;
-        color: #003B3D;
+        color: #003b3d;
         letter-spacing: 2.8rpx;
       }
     }
   }
 
   .next_btn {
-    width: 394rpx;
-    height: 88rpx;
-    border-radius: 14rpx;
-    background: #003B3D;
-    box-shadow: 8rpx 8rpx 20rpx 0rpx rgba(0, 0, 0, 0.31);
-    color: #fff;
+    width: 305rpx;
+    color: #008d91;
     font-family: Microsoft YaHei UI;
     font-size: 32rpx;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin:0 0 0 33rpx;
 
     image {
       margin-left: 20rpx;
@@ -536,8 +523,6 @@ uni-page-body {
   }
 
   .navlist {
-    background: url("../../static/transfer/nav_bg.png") no-repeat;
-    background-size: 100% 100%;
     width: 636rpx;
     height: 68rpx;
     display: flex;
@@ -551,7 +536,7 @@ uni-page-body {
     > view {
       width: 50%;
       height: 100%;
-      color: #fff;
+      color: #008d91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -565,8 +550,8 @@ uni-page-body {
       width: 306rpx;
       height: 60rpx;
       border-radius: 108rpx;
-      background: #fff;
-      color: #008D91;
+      color: #fff;
+      background: #008d91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -580,16 +565,12 @@ uni-page-body {
   .topone {
     height: 88rpx;
     box-sizing: border-box;
-    margin:  0 33rpx 0 0 ;
-
     .yjbtn {
-      width: 214rpx;
-      height: 88rpx;
-      border-radius: 14rpx;
-      background: #003B3D;
-      box-shadow: 8rpx 8rpx 20rpx 0rpx rgba(0, 0, 0, 0.31);
+      width: 305rpx;
+      border-right: 2rpx solid #cecece;
+      height: 100%;
       text {
-        color: #fff;
+        color: #008d91;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
@@ -609,7 +590,6 @@ uni-page-body {
     align-items: center;
     padding: 100rpx 0 46rpx 0;
     box-sizing: border-box;
-    border-bottom: 2rpx solid #003B3D;
 
     > view {
       width: 100%;
@@ -618,8 +598,8 @@ uni-page-body {
       position: relative;
 
       .money {
-        margin-top: 6rpx;
-        color: #008D91;
+        margin-top: 32rpx;
+        color: #008d91;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 40rpx;
@@ -634,14 +614,13 @@ uni-page-body {
         flex-direction: row;
         align-items: center;
         justify-content: center;
-
         view {
-          color: #003B3D;
+          color: #003b3d;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 700;
           line-height: 40rpx;
           /* 166.667% */
           letter-spacing: -0.1rpx;
@@ -652,9 +631,9 @@ uni-page-body {
     > view:nth-child(1)::before {
       content: "";
       display: block;
-      width: 2rpx;
+      width: 4rpx;
       height: 100%;
-      background: #003B3D;
+      background: #1e1e1e;
       position: absolute;
       right: 0;
       top: 0;
@@ -664,11 +643,6 @@ uni-page-body {
 
 .withdraw_progress {
   margin: 44rpx 18rpx 0 18rpx;
-  width: 714rpx;
-  height: auto;
-  border-radius: 40rpx;
-  background: #ffffff;
-  box-shadow: 0rpx 54rpx 70rpx -54rpx rgba(0, 0, 0, 0.42);
 
   .mark_icons {
     padding: 24rpx 32rpx 0 32rpx;
@@ -677,7 +651,7 @@ uni-page-body {
       //width: 138rpx;
 
       .tit {
-        color: #003B3D;
+        color: #003b3d;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
@@ -690,7 +664,7 @@ uni-page-body {
       }
 
       .tit_active {
-        color: #008D91;
+        color: #008d91;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
@@ -739,7 +713,7 @@ uni-page-body {
 
   .heading {
     margin-top: 42rpx;
-    color: #003B3D;
+    color: #003b3d;
     text-align: center;
     font-family: Microsoft YaHei UI;
     font-size: 32rpx;
@@ -750,8 +724,8 @@ uni-page-body {
   }
 
   .progress_images {
-    width: 412rpx;
-    height: 400rpx;
+    width: 514rpx;
+    height: 514rpx;
     margin: 0 auto;
     margin-top: 72rpx;
   }
@@ -759,7 +733,7 @@ uni-page-body {
   .reminder {
     padding-top: 124rpx;
     padding-bottom: 60rpx;
-    color: #003B3D;
+    color: #003b3d;
     text-align: center;
     font-family: Microsoft YaHei UI;
     font-size: 24rpx;
@@ -817,7 +791,7 @@ uni-page-body {
       width: 306rpx;
       height: 74rpx;
       border-radius: 22rpx;
-      background: #008D91;
+      background: #008d91;
       margin: 0 auto;
       color: #fff;
       text-align: center;
@@ -832,8 +806,12 @@ uni-page-body {
 }
 
 .text_support {
-  margin-top: 56rpx;
-  color: #003B3D;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #003b3d;
   text-align: center;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
@@ -876,12 +854,15 @@ uni-page-body {
       //   margin: 50rpx 240rpx 38rpx 240rpx;
     }
   }
-
 }
-.class_btns{
+.class_btns {
   display: flex;
   //justify-content: space-around;
   align-items: center;
-  padding: 86rpx 38rpx 0 38rpx;
+  width: 610rpx;
+  height: 96rpx;
+  border-radius: 24rpx;
+  border: 4rpx solid #cecece;
+  margin-top: 64rpx;
 }
 </style>

@@ -13,23 +13,23 @@
           class="f-c"
           @click="navselectfun(2)"
           :class="{ active: navselect == 2 }"
-          >{{ $t("settings.transfer")}}
+          >{{ $t("settings.transfer") }}
         </view>
       </view>
 
       <view class="vieweone" v-if="navselect == 1">
         <view class="toptwo">
           <view>
-            <view class="money">¥{{ NewestBalance }}</view>
             <view class="tip">
               <view>{{ $t("transfer_view.center_wallet") }}</view>
             </view>
+            <view class="money">¥{{ NewestBalance }}</view>
           </view>
           <view>
-            <view class="money">¥{{ lockBalance }}</view>
             <view class="tip">
               <view>{{ $t("transfer_view.lock_wallet") }}</view>
             </view>
+            <view class="money">¥{{ lockBalance }}</view>
           </view>
         </view>
         <view class="topone f-c">
@@ -48,10 +48,11 @@
             v-for="(item, index) in allBalance"
             :key="index"
             v-show="index != 0"
-            :style="{ backgroundColor: getBackgroundColor(index) }"
           >
             <image
-              :src="$store.state.iconUrl + $store.state.static.gameIcon[item.key]"
+              :src="
+                $store.state.iconUrl + $store.state.static.gameIcon[item.key]
+              "
               mode="widthFix"
             ></image>
             <view class="G_Name">
@@ -59,7 +60,7 @@
               <span
                 class="span_class"
                 :style="{
-                  color: itemIsDigit(item.balance) ? 'white' : '#FF6C46',
+                  color: itemIsDigit(item.balance) ? '#003B3D' : '#FF6C46',
                 }"
                 >{{ formatBalance(item.balance) }}
               </span>
@@ -91,12 +92,11 @@
             range-key="name"
           >
             <view class="money" v-if="qhqbtype == 1">
-              <view class="moneytxt">
-                <!-- <image src="../../static/transfer/dollar.png" mode="widthFix"></image> -->
-                <text>¥ {{ allBalance1[colorIndex].balance }}</text>
-              </view>
               <view class="txt">
                 {{ allBalance1[colorIndex].name }}
+              </view>
+              <view class="moneytxt">
+                <text>¥ {{ allBalance1[colorIndex].balance }}</text>
               </view>
             </view>
           </picker>
@@ -115,12 +115,17 @@
             range-key="name"
           >
             <view class="money" v-if="qhqbtype == 1">
-              <view class="moneytxt">
-                <!-- <image src="../../static/transfer/dollar.png" mode="widthFix"></image> -->
-                <text>{{ typeof allBalance1[colorIndex1].balance !== 'string' ? '¥ ' : '' }}{{ allBalance1[colorIndex1].balance }}</text>
-              </view>
               <view class="txt">
                 {{ allBalance1[colorIndex1].name }}
+              </view>
+              <view class="moneytxt">
+                <text
+                  >{{
+                    typeof allBalance1[colorIndex1].balance !== "string"
+                      ? "¥ "
+                      : ""
+                  }}{{ allBalance1[colorIndex1].balance }}</text
+                >
               </view>
             </view>
           </picker>
@@ -201,7 +206,7 @@ export default {
     this.$logins();
     this.getmon();
     //获取免转状态
-    this.checked = state.user.freeTransfer == 0?true:false;
+    this.checked = state.user.freeTransfer == 0 ? true : false;
   },
   methods: {
     getBackgroundColor(index) {
@@ -221,7 +226,7 @@ export default {
       let that = this;
       let balancestats = uni.getStorageSync("status").balanceStatus;
       that.allBalance = await that.$store.dispatch("gameMoney");
-      console.log(that.allBalance,"allBalance")
+      console.log(that.allBalance, "allBalance");
       that.allBalance1 = this.allBalance;
       that.NewestBalance = this.allBalance[0].balance; //money
       state.money = this.NewestBalance;
@@ -294,12 +299,12 @@ export default {
     gameBalanceTransfer() {
       let _this = this;
 
-      if(_this.money == ''){
+      if (_this.money == "") {
         uni.showToast({
-          title: this.$t('errors.no_money'),
+          title: this.$t("errors.no_money"),
           icon: "none",
         });
-        return
+        return;
       }
       let url = _this.$globalApi.gameBalanceTransfer;
       let datas = {
@@ -309,7 +314,7 @@ export default {
       };
       _this.$res.postRequest(url, datas).then((res) => {
         this.gameFx();
-          this.money = ""
+        this.money = "";
         uni.showToast({
           title: state.codes[res.data.code],
           icon: "none",
@@ -320,16 +325,16 @@ export default {
       console.log(this.checked);
       this.checked = !this.checked;
       let id = {
-        freeTransfer: this.checked ?0:1
+        freeTransfer: this.checked ? 0 : 1,
       };
       this.$res.postRequest(this.$globalApi.auto, id).then((res) => {
-       // console.log(res,"resssss")
-        if(res.data.code == 0){
+        // console.log(res,"resssss")
+        if (res.data.code == 0) {
           state.user.freeTransfer = id.freeTransfer;
           uni.setStorage({
-            key:'memberInfo',
-            data: state.user
-          })
+            key: "memberInfo",
+            data: state.user,
+          });
         }
         uni.showToast({
           title: state.codes[res.data.code],
@@ -398,8 +403,6 @@ export default {
   padding-top: 30rpx;
 
   .navlist {
-    background: url("../../static/transfer/nav_bg.png") no-repeat;
-    background-size: 100% 100%;
     width: 636rpx;
     height: 68rpx;
     display: flex;
@@ -410,29 +413,29 @@ export default {
     > view {
       width: 50%;
       height: 100%;
-      color: #fff;
+      color: #008d91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
       font-style: normal;
       font-weight: 400;
       line-height: 40rpx;
-      letter-spacing: -0.10rpx;
+      letter-spacing: -0.1rpx;
     }
 
     > view.active {
       width: 306rpx;
       height: 56rpx;
       border-radius: 108rpx;
-      background: #fff;
-      color: #008D91;
+      color: #fff;
+      background: #008d91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
       font-style: normal;
       font-weight: 400;
       line-height: 40rpx;
-      letter-spacing: -0.10rpx;
+      letter-spacing: -0.1rpx;
     }
   }
 
@@ -445,11 +448,10 @@ export default {
       box-sizing: border-box;
 
       .yjbtn {
-        width: 286rpx;
-        height: 62rpx;
-        border-radius: 100rpx;
-        background: #008D91;
-        box-shadow: 4rpx 4rpx 8rpx 0rpx rgba(0, 0, 0, 0.25);
+        width: 366rpx;
+        height: 66rpx;
+        border-radius: 20rpx;
+        background: #003b3d;
 
         image {
           display: block;
@@ -467,7 +469,7 @@ export default {
           font-style: normal;
           font-weight: 400;
           line-height: 40rpx;
-          letter-spacing: -0.10rpx;
+          letter-spacing: -0.1rpx;
         }
       }
     }
@@ -489,15 +491,15 @@ export default {
         position: relative;
 
         .money {
-          margin-top: 6rpx;
-          color: #008D91;
+          margin-top: 32rpx;
+          color: #008d91;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 40rpx;
           font-style: normal;
           font-weight: 700;
           line-height: 40rpx;
-          letter-spacing: -0.10rpx;
+          letter-spacing: -0.1rpx;
         }
 
         .tip {
@@ -505,17 +507,16 @@ export default {
           flex-direction: row;
           align-items: center;
           justify-content: center;
-
           view {
-            color: #003B3D;
+            color: #003b3d;
             text-align: center;
             font-family: Microsoft YaHei UI;
             font-size: 24rpx;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 700;
             line-height: 40rpx;
             /* 166.667% */
-            letter-spacing: -0.10rpx;
+            letter-spacing: -0.1rpx;
           }
         }
       }
@@ -523,9 +524,9 @@ export default {
       > view:nth-child(1)::before {
         content: "";
         display: block;
-        width: 2rpx;
+        width: 4rpx;
         height: 100%;
-        background: #003B3D;
+        background: #1E1E1E;
         position: absolute;
         right: 0;
         top: 0;
@@ -538,23 +539,23 @@ export default {
 
     .text_cont {
       .amount_transfer {
-        color: #003B3D;
+        color: #003b3d;
         font-family: Microsoft YaHei UI;
         font-size: 28rpx;
         font-style: normal;
         font-weight: 400;
         line-height: 40rpx;
-        letter-spacing: -0.10rpx;
+        letter-spacing: -0.1rpx;
       }
 
       .details {
-        color: #003B3D;
+        color: #003b3d;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
         font-weight: 400;
         line-height: 30rpx;
-        letter-spacing: -0.10rpx;
+        letter-spacing: -0.1rpx;
       }
     }
 
@@ -608,7 +609,7 @@ export default {
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      margin-bottom: 30rpx;
+      margin: 30rpx 0;
 
       .money {
         text-align: center;
@@ -628,15 +629,16 @@ export default {
           width: 250rpx;
           margin: 0 auto;
           text-align: center;
-          color: #008D91;
+          color: #008d91;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 40rpx;
           font-style: normal;
           font-weight: 700;
           line-height: 40rpx;
+          margin-top: 32rpx;
           /* 100% */
-          letter-spacing: -0.10rpx !important;
+          letter-spacing: -0.1rpx !important;
 
           image {
             width: 20rpx;
@@ -652,14 +654,14 @@ export default {
         }
 
         .txt {
-          color: #003B3D;
+          color: #003b3d;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 700;
           line-height: 40rpx;
-          letter-spacing: -0.10rpx;
+          letter-spacing: -0.1rpx;
         }
       }
 
@@ -685,14 +687,14 @@ export default {
         padding: 74rpx 24rpx 0 68rpx;
 
         .title {
-          color: #003B3D;
+          color: #003b3d;
           font-family: Microsoft YaHei UI;
           font-size: 40rpx;
           font-style: normal;
           font-weight: 700;
           line-height: 40rpx;
           /* 100% */
-          letter-spacing: -0.10rpx;
+          letter-spacing: -0.1rpx;
         }
 
         .viewthree {
@@ -715,42 +717,42 @@ export default {
               height: 5%;
 
               .dollar_s {
-                color: #003B3D;
+                color: #003b3d;
                 font-family: Microsoft YaHei UI;
                 font-size: 32rpx;
                 font-style: normal;
                 font-weight: 700;
                 line-height: 40rpx;
-                letter-spacing: -0.10rpx;
+                letter-spacing: -0.1rpx;
               }
 
               .uni-input-placeholder {
-                color: #008D91;
+                color: #008d91;
                 font-family: Microsoft YaHei UI;
                 font-size: 24rpx;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 40rpx;
-                letter-spacing: -0.10rpx;
+                letter-spacing: -0.1rpx;
                 margin-left: 10rpx;
               }
 
               input {
-                border-bottom: 2rpx solid #008D91;
+                border-bottom: 2rpx solid #008d91;
                 margin-left: 14rpx;
                 height: 40rpx;
                 width: 100%;
-                color: #008D91;
+                color: #008d91;
                 font-family: Microsoft YaHei UI;
                 font-size: 24rpx;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 40rpx;
-                letter-spacing: -0.10rpx;
+                letter-spacing: -0.1rpx;
                 /deep/.uni-input-input {
                   width: 430rpx;
                   height: 100%;
-                  color: #008D91;
+                  color: #008d91;
                   font-family: Microsoft YaHei UI;
                   font-size: 32rpx;
                   font-style: normal;
@@ -762,30 +764,30 @@ export default {
               }
             }
             .texts {
-              color: #003B3D;
+              color: #003b3d;
               font-family: Microsoft YaHei UI;
               font-size: 24rpx;
               font-style: normal;
               font-weight: 400;
               line-height: 40rpx;
-              letter-spacing: -0.10rpx;
+              letter-spacing: -0.1rpx;
               margin-top: 16rpx;
+              margin-left: 32rpx;
             }
           }
 
           .btns {
             width: 164rpx;
-            height:52rpx;
+            height: 52rpx;
             border-radius: 38rpx;
-            background: #008D91;
+            background: #003b3d;
             color: #fff;
             font-family: Microsoft YaHei UI;
             font-size: 24rpx;
             font-style: normal;
             font-weight: 400;
             line-height: 40rpx;
-            letter-spacing: -0.10rpx;
-            margin-top: 44rpx;
+            letter-spacing: -0.1rpx;
           }
         }
       }
@@ -807,15 +809,15 @@ export default {
       width: 518rpx;
       height: 70rpx;
       margin: 0 auto;
-      border-radius: 12rpx;
-      background: #008D91;
+      border-radius: 20rpx;
+      background: #003b3d;
       color: #fff;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 700;
       line-height: 40rpx;
-      letter-spacing: -0.10rpx;
+      letter-spacing: -0.1rpx;
       margin-top: 76rpx;
     }
   }

@@ -107,8 +107,6 @@
       </view>
     </view>
     <view class="after_list" v-if="listBetRec == null">
-      <image src="/static/img/sorry.png" class="tasiver" mode="widthFix">
-      </image>
       <view class="h1 f-c">{{ $t("notifications.sorry") }}</view>
       <view class="h2 f-c">
         {{ $t("transaction_record_view.sorry_des_transfer_records_lbl") }}
@@ -556,16 +554,13 @@ export default {
   .days_transaction {
     margin: 0 auto;
     margin-top: 38rpx;
-    background: #008D91;
     width: 612rpx;
     height: 66rpx;
-    border-radius: 108rpx;
-    box-shadow: 0rpx 0rpx 18rpx 0rpx rgba(0, 0, 0, 0.63) inset;
 
     .todays {
       width: 196rpx;
       height: 54rpx;
-      color: #fff;
+      color: #008d91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -579,8 +574,8 @@ export default {
       width: 196rpx;
       height: 57rpx;
       border-radius: 108rpx;
-      background: #fff;
-      color: #008D91;
+      color: #fff;
+      background: #008d91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -715,7 +710,7 @@ export default {
   overflow: hidden;
 
   .left_cards_scrolls {
-    color: #003B3D;
+    color: #003b3d;
     z-index: 99;
 
     .circles {
@@ -803,7 +798,7 @@ export default {
       .win_loss {
         flex: 3;
         padding-left: 28rpx;
-        border-left: 0.1rpx solid #003B3D;
+        border-left: 0.1rpx solid #003b3d;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
@@ -1012,7 +1007,7 @@ export default {
       .name {
         min-width: 111px;
         height: 70rpx;
-        color: #003B3D;
+        color: #003b3d;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
@@ -1043,7 +1038,7 @@ export default {
   background: white;
 
   .title_for_overall_bet_records {
-    color: #003B3D;
+    color: #003b3d;
     font-family: Microsoft YaHei UI;
     font-size: 32rpx;
     font-style: normal;
@@ -1120,7 +1115,7 @@ export default {
     border-bottom-left-radius: 22rpx;
     width: 182rpx;
     height: 168rpx;
-    color: #003B3D;
+    color: #003b3d;
     font-family: Inter;
     font-size: 24rpx;
     font-style: normal;
@@ -1135,7 +1130,7 @@ export default {
     border-top-right-radius: 22rpx;
     border-bottom-right-radius: 22rpx;
     flex: 3;
-    color: #003B3D;
+    color: #003b3d;
     font-family: Microsoft YaHei UI;
     font-size: 24rpx;
     font-style: normal;
