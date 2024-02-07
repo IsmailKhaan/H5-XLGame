@@ -234,15 +234,12 @@ export default {
   .what {
     width: 229px;
     height: 33px;
-    border-radius: 54px;
-    background: #b53d1e;
-    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.63) inset;
-    color: #f1f1f1;
+    color: #003B3D;
     text-align: center;
     font-family: Microsoft YaHei UI;
     font-size: 12px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     line-height: 20px;
     /* 166.667% */
     letter-spacing: -0.5px;
@@ -253,7 +250,7 @@ export default {
   .text_point_000 {
     width: 100%;
     padding: 26px 50px 0 50px;
-    color: #003B3D;
+    color: #008D91;
     font-family: Microsoft YaHei UI;
     font-size: 12px;
     font-style: normal;
@@ -272,7 +269,7 @@ export default {
       width: 10px;
       height: 10px;
       border-radius: 50px;
-      background: #b53d1e;
+      background: #008D91;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
 
@@ -281,7 +278,7 @@ export default {
 
     .what_p_002 {
       width: 291px;
-      color: #003B3D;
+      color: #008D91;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
       font-style: normal;
@@ -291,7 +288,7 @@ export default {
       letter-spacing: -0.5px;
 
       .heading_point {
-        color: #003B3D;
+        color: #008D91;
         font-family: Microsoft YaHei UI;
         font-size: 12px;
         font-style: normal;
@@ -302,7 +299,7 @@ export default {
       }
 
       .text_point {
-        color: #003B3D;
+        color: #008D91;
         font-family: Microsoft YaHei UI;
         font-size: 12px;
         font-style: normal;

@@ -177,7 +177,7 @@ export default {
 
 <style lang="scss">
 .withdrawal {
-  background: #fff6f6;
+  background: #FFF;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -194,7 +194,7 @@ export default {
       left: 0;
       height: 100rpx;
       width: 100%;
-      background: #fff6f6;
+      background: #FFF;
       background-size: 100% 100%;
       .icon-block{
         position: absolute;

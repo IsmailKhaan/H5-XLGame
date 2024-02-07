@@ -567,7 +567,7 @@ export default {
     width: 612rpx;
     height: 66rpx;
     border-radius: 108rpx;
-    background: #b53d1e;
+    background: #008D91;
     box-shadow: 0px 0px 18rpx 0px rgba(0, 0, 0, 0.63) inset;
     margin: 44rpx auto;
     .avators {
@@ -583,7 +583,7 @@ export default {
       letter-spacing: -0.5px;
     }
     .avators.on {
-      color: #b53d1e;
+      color: #008D91;
       width: 270rpx;
       height: 54rpx;
       border-radius: 108rpx;

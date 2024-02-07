@@ -487,7 +487,7 @@ export default {
 
       span {
         border-width: 320rpx;
-        color: #b53d1e;
+        color: #008D91;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
@@ -496,7 +496,7 @@ export default {
         letter-spacing: -0.5px;
         text-align: center;
         margin-left: 12rpx;
-        border-bottom: 2rpx solid #b53d1e;
+        border-bottom: 2rpx solid #008D91;
       }
     }
   }

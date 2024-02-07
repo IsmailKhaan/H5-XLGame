@@ -493,7 +493,7 @@ export default {
 
 <style lang="scss">
 .withdrawal {
-  background: #fff6f6;
+  background: #FFF;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -513,7 +513,7 @@ export default {
       height: 120rpx;
       width: 100%;
       background-size: 100% 100%;
-      background: #fff6f6;
+      background: #FFF;
 
       .image {
         width: 22rpx;

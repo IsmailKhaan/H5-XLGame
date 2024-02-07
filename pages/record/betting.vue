@@ -556,7 +556,7 @@ export default {
   .days_transaction {
     margin: 0 auto;
     margin-top: 38rpx;
-    background: #b53d1e;
+    background: #008D91;
     width: 612rpx;
     height: 66rpx;
     border-radius: 108rpx;
@@ -580,7 +580,7 @@ export default {
       height: 57rpx;
       border-radius: 108rpx;
       background: #fff;
-      color: #b53d1e;
+      color: #008D91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;

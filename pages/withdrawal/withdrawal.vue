@@ -1,5 +1,5 @@
 <template>
-  <view style="background: #fff6f6" class="withdrawal">
+  <view style="background: #FFF" class="withdrawal">
     <loading :isshow="isshow"></loading>
     <view id="navbar">
       <view class="fixed">
@@ -460,7 +460,7 @@ export default {
 
 <style lang="scss">
 uni-page-body {
-  background: #fff6f6 !important;
+  background: #FFF !important;
 }
 
 .withdrawal {
@@ -482,7 +482,7 @@ uni-page-body {
       left: 0;
       height: 100rpx;
       width: 100%;
-      background: #fff6f6;
+      background: #FFF;
       background-size: 100% 100%;
       .icon-block {
         position: absolute;
@@ -566,7 +566,7 @@ uni-page-body {
       height: 60rpx;
       border-radius: 108rpx;
       background: #fff;
-      color: #b53d1e;
+      color: #008D91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -619,7 +619,7 @@ uni-page-body {
 
       .money {
         margin-top: 6rpx;
-        color: #b53d1e;
+        color: #008D91;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 40rpx;
@@ -690,7 +690,7 @@ uni-page-body {
       }
 
       .tit_active {
-        color: #b53d1e;
+        color: #008D91;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;

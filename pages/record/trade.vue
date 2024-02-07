@@ -367,7 +367,7 @@ export default {
     .days_transaction {
         margin: 0 auto;
         margin-top: 38rpx;
-        background: #B53D1E;
+        background: #008D91;
         width: 612rpx;
         height: 66rpx;
         border-radius: 108rpx;
@@ -391,7 +391,7 @@ export default {
             height: 57rpx;
             border-radius: 108rpx;
             background: #FFF;
-            color: #B53D1E;
+            color: #008D91;
             text-align: center;
             font-family: Microsoft YaHei UI;
             font-size: 24rpx;
@@ -681,7 +681,7 @@ export default {
 }
 
 .status_red {
-    background: #B53D1E !important;
+    background: #008D91 !important;
     color: #fff !important;
 }
 </style>

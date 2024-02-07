@@ -229,7 +229,7 @@ export default {
 
     .amount {
       padding: 26rpx 0 0 50rpx;
-      color: #B53D1E;
+      color: #008D91;
       text-align: left;
       font-family: Microsoft YaHei UI;
       font-size: 60rpx;
@@ -268,7 +268,7 @@ export default {
         width: 194rpx;
         height: 62rpx;
         border-radius: 100rpx;
-        background: #B53D1E;
+        background: #008D91;
         box-shadow: 4rpx 4rpx 8rpx 0rpx rgba(0, 0, 0, 0.25);
         color: #FFF;
         text-align: center;
@@ -285,7 +285,7 @@ export default {
         width: 286rpx;
         height: 62rpx;
         border-radius: 100rpx;
-        background: #B53D1E;
+        background: #008D91;
         box-shadow: 4rpx 4rpx 8rpx 0rpx rgba(0, 0, 0, 0.25);
 
         image {

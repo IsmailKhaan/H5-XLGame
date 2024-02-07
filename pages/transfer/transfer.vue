@@ -76,7 +76,7 @@
             <view class="details">{{ $t("transfer_view.automatically") }}</view>
           </view>
           <view class="switch">
-            <switch color="#B53D1E" :checked="checked" @change="checkedZr" />
+            <switch color="#008D91" :checked="checked" @change="checkedZr" />
           </view>
         </view>
       </view>
@@ -425,7 +425,7 @@ export default {
       height: 56rpx;
       border-radius: 108rpx;
       background: #fff;
-      color: #b53d1e;
+      color: #008D91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -448,7 +448,7 @@ export default {
         width: 286rpx;
         height: 62rpx;
         border-radius: 100rpx;
-        background: #b53d1e;
+        background: #008D91;
         box-shadow: 4rpx 4rpx 8rpx 0rpx rgba(0, 0, 0, 0.25);
 
         image {
@@ -490,7 +490,7 @@ export default {
 
         .money {
           margin-top: 6rpx;
-          color: #b53d1e;
+          color: #008D91;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 40rpx;
@@ -628,7 +628,7 @@ export default {
           width: 250rpx;
           margin: 0 auto;
           text-align: center;
-          color: #b53d1e;
+          color: #008D91;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 40rpx;
@@ -725,7 +725,7 @@ export default {
               }
 
               .uni-input-placeholder {
-                color: #b53d1e;
+                color: #008D91;
                 font-family: Microsoft YaHei UI;
                 font-size: 24rpx;
                 font-style: normal;
@@ -736,11 +736,11 @@ export default {
               }
 
               input {
-                border-bottom: 2rpx solid #b53d1e;
+                border-bottom: 2rpx solid #008D91;
                 margin-left: 14rpx;
                 height: 40rpx;
                 width: 100%;
-                color: #b53d1e;
+                color: #008D91;
                 font-family: Microsoft YaHei UI;
                 font-size: 24rpx;
                 font-style: normal;
@@ -750,7 +750,7 @@ export default {
                 /deep/.uni-input-input {
                   width: 430rpx;
                   height: 100%;
-                  color: #b53d1e;
+                  color: #008D91;
                   font-family: Microsoft YaHei UI;
                   font-size: 32rpx;
                   font-style: normal;
@@ -777,7 +777,7 @@ export default {
             width: 164rpx;
             height:52rpx;
             border-radius: 38rpx;
-            background: #b53d1e;
+            background: #008D91;
             color: #fff;
             font-family: Microsoft YaHei UI;
             font-size: 24rpx;
@@ -808,7 +808,7 @@ export default {
       height: 70rpx;
       margin: 0 auto;
       border-radius: 12rpx;
-      background: #b53d1e;
+      background: #008D91;
       color: #fff;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;

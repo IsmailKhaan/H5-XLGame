@@ -108,8 +108,6 @@ export default {
   align-items: center;
   .cards {
     width: 674rpx;
-    border-radius: 40rpx;
-    background: #003B3D;
     margin: 0 auto;
     padding: 30rpx 20rpx 56rpx 84rpx;
     .protocol_intro {
@@ -117,7 +115,7 @@ export default {
       height: 64rpx;
       border-radius: 100rpx;
       background: #fff;
-      color: #003B3D;
+      color: 003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 28rpx;
@@ -128,27 +126,31 @@ export default {
       margin: 0 0 0 82rpx;
     }
     .ERC20_01 {
-      color: #fff;
+      color: #008D91;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
       font-style: normal;
       font-weight: 700;
       line-height: 30rpx; /* 125% */
       letter-spacing: -0.10rpx;
-      margin-top: 34rpx;
+      margin-top: 32rpx;
+      margin-bottom: 16rpx;
+      text-align: center;
     }
     .TRC20_01 {
-      color: #fff;
+      color: #008D91;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
       font-style: normal;
       font-weight: 700;
       line-height: 30rpx; /* 125% */
       letter-spacing: -0.10rpx;
-      margin-top: 30rpx;
+      margin-top: 32rpx;
+      margin-bottom: 16rpx;
+      text-align: center;
     }
     .text_details_01 {
-      color: #fff;
+      color: #008D91;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
       font-style: normal;
@@ -160,8 +162,6 @@ export default {
   }
   .cards2 {
     width: 674rpx;
-    border-radius: 40rpx;
-    background: #003B3D;
     margin: 0 auto;
     padding: 30rpx 32rpx 56rpx 32rpx;
     .protocol_intro {
@@ -169,7 +169,7 @@ export default {
       height: 64rpx;
       border-radius: 100rpx;
       background: #fff;
-      color: #003B3D;
+      color: 003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 28rpx;
@@ -183,7 +183,7 @@ export default {
       padding: 34rpx 0 24rpx 0;
       .headings {
         width: 248rpx;
-        color: #fff;
+        color: #008D91;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
@@ -198,7 +198,7 @@ export default {
 
       .details {
         width: 248rpx;
-        color: #fff;
+        color: #008D91;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
@@ -213,8 +213,6 @@ export default {
 
   .cards3 {
     width: 674rpx;
-    border-radius: 40rpx;
-    background: #003B3D;
     margin: 0 auto;
     padding: 15px 16px 28px 24px;
     .protocol_intro {
@@ -222,7 +220,7 @@ export default {
       height: 64rpx;
       border-radius: 100rpx;
       background: #fff;
-      color: #003B3D;
+      color: 003B3D;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 28rpx;
@@ -237,37 +235,33 @@ export default {
       justify-content: flex-start;
       align-items: center;
       .photo {
-        background: url("../../../static/deposit/erc.png") no-repeat;
-        background-size: 100% 100%;
         width: 128rpx;
         height: 128rpx;
-        color: #fff;
+        color: #008D91;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
-        font-weight: 400;
+        font-weight: bold;
         line-height: 30rpx; /* 125% */
         letter-spacing: -0.10rpx;
       }
       .photo_02 {
-        background: url("../../../static/deposit/trc.png") no-repeat;
-        background-size: 100% 100%;
         width: 128rpx;
         height: 128rpx;
-        color: #fff;
+        color: #008D91;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
-        font-weight: 400;
+        font-weight: bold;
         line-height: 30rpx; /* 125% */
         letter-spacing: -0.10rpx;
       }
       .texts {
         margin-left: 26rpx;
         .text_01 {
-          color: #fff;
+          color: #008D91;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
           font-style: normal;
@@ -276,7 +270,7 @@ export default {
           letter-spacing: -0.10rpx;
         }
         .text_02 {
-          color: #fff;
+          color: #008D91;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
           font-style: normal;
@@ -289,7 +283,7 @@ export default {
   }
   .red_text {
     padding: 40rpx 106rpx 42rpx 106rpx;
-    color: #008D91;
+    color: #be1c05;
     font-family: Microsoft YaHei UI;
     font-size: 24rpx;
     font-style: normal;

@@ -1128,7 +1128,7 @@ export default {
   text-align: center;
   color: #ffffff;
   border-radius: 96rpx;
-  background: #b53d1e;
+  background: #008D91;
   box-shadow: 0px 8rpx 8rpx 0px rgba(0, 0, 0, 0.25);
   color: #fff;
   font-family: Microsoft YaHei UI;
@@ -1146,7 +1146,7 @@ export default {
   text-align: center;
   color: #ffffff;
   border-radius: 96rpx;
-  background: #b53d1e;
+  background: #008D91;
   box-shadow: 0px 8rpx 8rpx 0rpx rgba(0, 0, 0, 0.25);
   color: #fff;
   font-family: Microsoft YaHei UI;
@@ -1245,7 +1245,7 @@ export default {
       height: 56rpx;
       border-radius: 108rpx;
       background: #f1f1f1;
-      color: #b53d1e;
+      color: #008D91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -1375,7 +1375,7 @@ export default {
               width: 30%;
               height: 22rpx;
               border-radius: 54rpx;
-              background: #b53d1e;
+              background: #008D91;
               position: absolute;
               top: 6rpx;
               left: 8rpx;
@@ -1850,7 +1850,7 @@ export default {
 
       view.active {
         border-radius: 8rpx;
-        border: 2rpx solid #b53d1e;
+        border: 2rpx solid #008D91;
         background: #c8c8c8;
         box-shadow: 4rpx 4rpx 22rpx 0rpx rgba(255, 0, 0, 0.4);
       }
@@ -1924,7 +1924,7 @@ export default {
               }
 
               .slider_text_2 {
-                color: #b53d1e;
+                color: #008D91;
                 font-family: Microsoft YaHei UI;
                 font-size: 24rpx;
                 font-style: normal;
@@ -2211,7 +2211,7 @@ export default {
         }
 
         .active {
-          color: #b53d1e;
+          color: #008D91;
           position: relative;
           font-weight: bold;
         }
@@ -2222,7 +2222,7 @@ export default {
           width: 100%;
           height: 4rpx;
           border-radius: 4rpx;
-          background: #b53d1e;
+          background: #008D91;
           position: absolute;
           bottom: 0;
           left: 0;
@@ -2469,7 +2469,7 @@ export default {
         }
 
         .active {
-          color: #b53d1e;
+          color: #008D91;
           position: relative;
           font-weight: bold;
         }
@@ -2598,7 +2598,7 @@ export default {
       padding: 68rpx 20rpx 160rpx 20rpx;
       .alltext_1 {
      //   width: 520rpx;
-        color: #b53d1e;
+        color: #008D91;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;

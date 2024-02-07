@@ -71,16 +71,16 @@
     </view>
     <view class="box_02">
       <text class="url">{{ item.walletNo }}</text>
-      <view @tap="copyFx(item.walletNo)">
-        <image src="../../static/deposit/copy.png" mode="" class="copy"></image>
+      <view @tap="copyFx(item.walletNo)" class="copy">
+        {{ $t("contact_us_view.copy") }}
       </view>
     </view>
 
     <view class="box_03">
       <text> {{ $t("virtual_currency_recharge.order_remark") }} </text>
       <text class="note">{{ item.payOrder }}</text>
-      <view @tap="copyFx(item.payOrder)">
-        <image src="../../static/deposit/copy.png" mode="" class="copy"></image>
+      <view @tap="copyFx(item.payOrder)" class="copy">
+        {{ $t("contact_us_view.copy") }}
       </view>
     </view>
 
@@ -88,19 +88,19 @@
       {{ $t("virtual_currency_recharge.finish_lbl") }}
     </view>
     <view class="info" style="padding-top: 19px">
-      <text class="num">1</text>
+      <text class="num">1.</text>
       <view class="textt">
         {{ $t("virtual_currency_recharge.policy_one") }}
       </view>
     </view>
     <view class="info">
-      <text class="num">2</text>
+      <text class="num">2.</text>
       <view class="textt">{{
         $t("virtual_currency_recharge.policy_two")
       }}</view>
     </view>
     <view class="info">
-      <text class="num">3</text>
+      <text class="num">3.</text>
       <view class="textt">{{
         $t("virtual_currency_recharge.policy_three")
       }}</view>
@@ -189,10 +189,10 @@ export default {
 
 <style lang="scss" scoped>
 uni-page-body {
-  background-color: #fff6f6 !important;
+  background-color: #fff !important;
 }
 .usdt {
-  background: #fff6f6;
+  background: #fff;
   height: 100%;
   #navbar {
     width: 100%;
@@ -207,7 +207,7 @@ uni-page-body {
       height: 120rpx;
       width: 100%;
       background-size: 100% 100%;
-      background: #fff6f6;
+      background: #fff;
 
       .image {
         width: 22rpx;
@@ -231,7 +231,7 @@ uni-page-body {
         text-align: center;
         font-size: 32rpx;
         font-weight: bold;
-        color: #003B3D;
+        color: #003b3d;
       }
     }
   }
@@ -240,7 +240,7 @@ uni-page-body {
     width: 654rpx;
     height: 246rpx;
     border-radius: 32rpx;
-    background: #fff;
+    background: #008d91;
     box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.25);
     margin: 0 auto;
     margin-top: 11px;
@@ -250,7 +250,7 @@ uni-page-body {
     width: 153px;
     height: 37px;
     border-radius: 11px;
-    background: #008D91;
+    background: #003B3D;
     color: #fff;
     text-align: center;
     font-family: Microsoft YaHei UI;
@@ -265,7 +265,7 @@ uni-page-body {
 
   .tit_02 {
     padding: 18px 0 0 48px;
-    color: #003B3D;
+    color: #003b3d;
     font-family: Microsoft YaHei UI;
     font-size: 12px;
     font-style: normal;
@@ -275,17 +275,17 @@ uni-page-body {
   }
 
   .tit_03 {
-    padding: 18px 0 0 48px;
-    color: #003B3D;
+    padding-top: 18px;
+    color: #003b3d;
     font-family: Microsoft YaHei UI;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: 15px;
     letter-spacing: -0.5px;
-
+    text-align: center;
     text {
-      color: #008D91;
+      color: #008d91;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
       font-style: normal;
@@ -309,7 +309,7 @@ uni-page-body {
     margin: 0 auto;
   }
   .tit_04 {
-    color: #003B3D;
+    color: #003b3d;
     text-align: center;
     font-family: Microsoft YaHei UI;
     font-size: 12px;
@@ -331,8 +331,8 @@ uni-page-body {
       width: 274px;
       height: 37px;
       border-radius: 10px;
-      border: 2px solid #008D91;
-      color: #003B3D;
+      border: 6rpx solid #008d91;
+      color: #003b3d;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
       font-style: normal;
@@ -350,6 +350,9 @@ uni-page-body {
       margin-left: 14px;
       width: 20.149px;
       height: 24px;
+      white-space: nowrap;
+      border-bottom: 4rpx solid #00a9f2;
+      width: fit-content;
     }
   }
   .box_03 {
@@ -360,7 +363,7 @@ uni-page-body {
     box-sizing: border-box;
     justify-content: space-between;
     text {
-      color: #003B3D;
+      color: #003b3d;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
       font-style: normal;
@@ -369,7 +372,7 @@ uni-page-body {
       letter-spacing: -0.5px;
     }
     .note {
-      color: #008D91;
+      color: #008d91;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
       font-style: normal;
@@ -381,6 +384,9 @@ uni-page-body {
   .copy {
     width: 20.149px;
     height: 24px;
+    white-space: nowrap;
+    border-bottom: 4rpx solid #00a9f2;
+    width: fit-content;
   }
 
   .box {
@@ -394,7 +400,7 @@ uni-page-body {
     margin-top: 15px;
 
     .tit {
-      color: #003B3D;
+      color: #fff;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
       font-style: normal;
@@ -403,7 +409,7 @@ uni-page-body {
       letter-spacing: -0.5px;
     }
     .s {
-      color: #003B3D;
+      color: #fff;
       text-align: right;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
@@ -414,7 +420,7 @@ uni-page-body {
     }
 
     .amount {
-      color: #003B3D;
+      color: #fff;
       text-align: right;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
@@ -438,8 +444,8 @@ uni-page-body {
     .num {
       width: 18px;
       height: 18px;
-      background: #b53d1e;
-      color: #f1f1f1;
+      // background: #008d91;
+      color: #003B3D;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
       font-style: normal;
@@ -447,10 +453,9 @@ uni-page-body {
       line-height: 20px;
       letter-spacing: -0.5px;
       text-align: center;
-      border-radius: 20rpx;
     }
     .textt {
-      color: #003B3D;
+      color: #003b3d;
       font-family: Microsoft YaHei UI;
       font-size: 12px;
       font-style: normal;
