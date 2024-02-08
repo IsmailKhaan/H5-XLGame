@@ -6,10 +6,7 @@
         <view class="title">{{ $t("settings.title") }}</view>
         <view class="list" @click="shareToggle">
           <view>
-            <image
-              src="../../static/home/setting-icon.png"
-              mode=""
-            ></image>
+            <image src="../../static/home/setting-icon.png" mode=""></image>
           </view>
         </view>
       </view>
@@ -29,76 +26,80 @@
               mode="widthFix"
             ></image>
           </view>
-          <view class="namevipday" @click="goskip">
-            <view class="namevip">
-              <view class="name">{{ memberInfo.username }}</view>
+          <view class="namevipday">
+            <view class="namevip" @click="goskip">
+              <view class="name">{{ memberInfo.username }}.</view>
               <view class="vip f-c">VIP {{ memberInfo.userLevel }}</view>
             </view>
-            <view class="day letter"  v-html="$en($store.state.ens.settings.user_join_description).replace('{number}', jiarutime)">
+            <view class="money">
+              <view>
+                <view class="nowmoney">
+                  <view class="qian">¥{{ NewestBalance }}</view>
+                </view>
+                <view class="text">
+                  <image
+                    @click="rmbBtn()"
+                    class="img2"
+                    :class="{ imgClass: refresh }"
+                    src="../../static/home/refresh.png"
+                    mode=""
+                  ></image>
+                </view>
+              </view>
+            </view>
+            <view
+              class="day letter"
+              v-html="
+                $en($store.state.ens.settings.user_join_description).replace(
+                  '{number}',
+                  jiarutime
+                )
+              "
+            >
             </view>
           </view>
-          <image
-            :src="'../../static/vips/L' + `${memberInfo.userLevel}` + '.png'"
-            mode="widthFix"
-            class="star_level"
-          ></image>
         </view>
       </view>
-      <image
-        @tap="open"
-        class="image_editor2"
-        src="../../static/home/edit.png"
-        mode="widthFix"
-      ></image>
-      <view class="money">
-        <view>
-          <view class="nowmoney">
-            <view class="qian">¥{{ NewestBalance }}</view>
-          </view>
-          <view class="text">
-            <image
-              @click="rmbBtn()"
-              class="img2"
-              :class="{ imgClass: refresh }"
-              src="../../static/home/refresh.png"
-              mode=""
-            ></image>
-          </view>
-        </view>
-      </view>
+
       <!--  -->
-      <view class="list_new">
-        <div @click="userFx(1)" class="icons" hover-class="none">
-          <image
-            :src="depositIcon"
-            mode="widthFix"
-            style="max-height: 104rpx"
-          ></image>
-          <span style="margin-left: 20rpx;">{{ $t("settings.deposit") }}</span>
-        </div>
-        <navigator  class="icons" hover-class="none"
-          url="/pages/transfer/transfer"
+      <view class="f-c">
+        <view class="list_new">
+          <div @click="userFx(1)" class="icons" hover-class="none">
+            <image
+              :src="depositIcon"
+              mode="widthFix"
+              style="max-height: 104rpx"
+            ></image>
+            <span style="margin-left: 20rpx">{{ $t("settings.deposit") }}</span>
+          </div>
+          <navigator
+            class="icons"
+            hover-class="none"
+            url="/pages/transfer/transfer"
           >
-          <image
-            :src="depositIcon2"
-            mode="widthFix"
-            style="max-height: 104rpx"
-          ></image>
-          <span>{{ $t("settings.transfer") }}</span>
-        </navigator>
-        
-        <div
-          @click="userFx(3)"
-          url="/pages/withdrawal/withdrawal"
-          class="icons"
-        >
-          <image
-            :src="depositIcon3"
-            mode="widthFix"
-            style="max-height: 104rpx"
-          ></image>
-          <span style="margin-right: 14rpx;">{{ $t("settings.withdraw") }}</span>
-        </div>
+            <image
+              :src="depositIcon2"
+              mode="widthFix"
+              style="max-height: 104rpx"
+            ></image>
+            <span>{{ $t("settings.transfer") }}</span>
+          </navigator>
+
+          <div
+            @click="userFx(3)"
+            url="/pages/withdrawal/withdrawal"
+            class="icons"
+          >
+            <image
+              :src="depositIcon3"
+              mode="widthFix"
+              style="max-height: 104rpx"
+            ></image>
+            <span style="margin-right: 14rpx">{{
+              $t("settings.withdraw")
+            }}</span>
+          </div>
+        </view>
       </view>
       <view class="pg f-c" @click="yjallBack">
         <view class="one_click_recovery f-c">
@@ -106,56 +107,70 @@
         </view>
       </view>
       <view class="navlist">
-        <navigator
-          class="navIcon"
-          hover-class="none"
-          url="/pages/wallet/wallet"
-        >
-          <image
-            src="../../static/home/account-wallet.png"
-            mode="widthFix"
-          ></image>
-          <view>{{ $t("settings.my_purse") }}</view>
-        </navigator>
-        <navigator class="navIcon" hover-class="none" url="/pages/record/trade">
-          <image
-            src="../../static/home/transaction-history.png"
-            mode="widthFix"
-            style="width: 54rpx;"
-          ></image>
-          <view>{{ $t("settings.transactions") }}</view>
-        </navigator>
-        <navigator
-          class="navIcon"
-          hover-class="none"
-          url="/pages/record/betting"
-        >
-          <image
-            src="../../static/home/betting-history.png"
-            mode="widthFix"
-            style="width: 54rpx;"
-          ></image>
-          <view>{{ $t("settings.bettings") }}</view>
-        </navigator>
-        <div
-          @click="userFx(8)"
-          class="navIcon"
-          hover-class="none"
-          url="/pages/cardManage/cardManage"
-          style="border-bottom: none"        >
-          <image
-            src="../../static/home/account-management.png"
-            mode="widthFix"
-          ></image>
-          <view>{{ $t("settings.manage_account") }}</view>
-        </div>
+        <view class="nav_f">
+          <navigator
+            class="navIcon"
+            hover-class="none"
+            url="/pages/wallet/wallet"
+          >
+            <image
+              src="../../static/home/account-wallet.png"
+              mode="widthFix"
+            ></image>
+            <view>{{ $t("settings.my_purse") }}</view>
+          </navigator>
+          <navigator
+            class="navIcon"
+            hover-class="none"
+            url="/pages/record/trade"
+          >
+            <image
+              src="../../static/home/transaction-history.png"
+              mode="widthFix"
+              style="width: 54rpx"
+            ></image>
+            <view>{{ $t("settings.transactions") }}</view>
+          </navigator>
+        </view>
+        <view class="nav_f">
+          <navigator
+            class="navIcon"
+            hover-class="none"
+            url="/pages/record/betting"
+          >
+            <image
+              src="../../static/home/betting-history.png"
+              mode="widthFix"
+              style="width: 54rpx"
+            ></image>
+            <view>{{ $t("settings.bettings") }}</view>
+          </navigator>
+          <div
+            @click="userFx(8)"
+            class="navIcon"
+            hover-class="none"
+            url="/pages/cardManage/cardManage"
+            style="border-bottom: none"
+          >
+            <image
+              src="../../static/home/account-management.png"
+              mode="widthFix"
+            ></image>
+            <view>{{ $t("settings.manage_account") }}</view>
+          </div>
+        </view>
       </view>
       <view class="listview"> </view>
 
       <publicNav :active="5"></publicNav>
     </view>
 
-    <uni-popup class="popup_nav" ref="share" type="bottom" backgroundColor="">
+    <uni-popup
+      class="popup_nav f-c"
+      ref="share"
+      type="bottom"
+      backgroundColor=""
+    >
       <view class="background_class">
         <view class="border f-c"></view>
         <view class="setting_and_support f-c">{{
@@ -165,16 +180,14 @@
           url="/pages/setting/password/password"
           class="change_password"
         >
-          <view class="f-s"> 
+          <view class="f-s">
             <image
               class="lock"
               src="../../static/home/lock.png"
               mode="widthFix"
             ></image>
             <view class="text">
-              {{
-                $t("change_password.change_password_title")
-              }}
+              {{ $t("change_password.change_password_title") }}
             </view>
           </view>
           <image
@@ -185,16 +198,14 @@
           </image>
         </navigator>
         <navigator url="/pages/baseinfo/baseinfo" class="change_password">
-          <view class="f-s"> 
+          <view class="f-s">
             <image
               class="lock lock_2"
               src="../../static/home/profil.png"
               mode="widthFix"
             ></image>
             <view class="text">
-              {{
-                $t("personel_info.personel_info_title")
-              }}
+              {{ $t("personel_info.personel_info_title") }}
             </view>
           </view>
           <image
@@ -207,7 +218,7 @@
           url="/pages/setting/deviceinfo/deviceinfo"
           class="change_password"
         >
-          <view class="f-s"> 
+          <view class="f-s">
             <image
               class="lock"
               src="../../static/home/mob.png"
@@ -230,7 +241,7 @@
             ></image>
             <view class="text">{{ $t("help_center.help_center_title") }}</view>
           </view>
-          <view class="f-s"> 
+          <view class="f-s">
             <view class="any_questions">{{ $t("settings.any_question") }}</view>
             <image
               class="angle_right"
@@ -279,13 +290,13 @@
             class="avators f-c"
             @click="switchFx(0)"
             :class="animi == 0 ? 'on' : ''"
-            >{{ $t('general.real_person') }}</view
+            >{{ $t("general.real_person") }}</view
           >
           <view
             class="avators f-c"
             @click="switchFx(1)"
             :class="animi == 1 ? 'on' : ''"
-            >{{ $t('general.avtar') }}</view
+            >{{ $t("general.avtar") }}</view
           >
         </view>
         <view v-show="animi == 0" class="uni-share-content">
@@ -357,12 +368,10 @@ export default {
       state.user.avatar = a;
       if (a == null) {
         state.user.avatar =
-        state.iconUrl+
-          state.static.avatar[state.user.userIcon];
+          state.iconUrl + state.static.avatar[state.user.userIcon];
       } else if (b == null) {
         state.user.avatar =
-        state.iconUrl +
-          state.static.headIcon[state.user.userIcon];
+          state.iconUrl + state.static.headIcon[state.user.userIcon];
       }
       uni.setStorageSync("memberInfo", state.user);
 
@@ -408,7 +417,7 @@ export default {
           });
         }
         if (res.data.code == 0) {
-            this.isshow = 0;
+          this.isshow = 0;
 
           console.log(res.data.data.customerInfo);
           this.userIn = res.data.data.customerInfo;
@@ -450,7 +459,7 @@ export default {
       uni.removeStorageSync("memberInfo");
       this.$store.state.user = "";
       uni.showToast({
-        title: this.$t('settings.log_out'),
+        title: this.$t("settings.log_out"),
         icon: "none",
       });
       setTimeout(() => {
@@ -567,7 +576,7 @@ export default {
     width: 612rpx;
     height: 66rpx;
     border-radius: 108rpx;
-    background: #008D91;
+    background: #008d91;
     box-shadow: 0px 0px 18rpx 0px rgba(0, 0, 0, 0.63) inset;
     margin: 44rpx auto;
     .avators {
@@ -583,7 +592,7 @@ export default {
       letter-spacing: -0.5px;
     }
     .avators.on {
-      color: #008D91;
+      color: #008d91;
       width: 270rpx;
       height: 54rpx;
       border-radius: 108rpx;
@@ -640,8 +649,7 @@ export default {
     background: #ffffff;
     border-top-left-radius: 40rpx;
     border-top-right-radius: 40rpx;
-    padding: 40rpx 74rpx 0 74rpx;
-
+    padding: 40rpx 66rpx;
     .border {
       width: 202rpx;
       height: 0px;
@@ -668,17 +676,9 @@ export default {
       margin: 0 0 49rpx 0;
       align-items: center;
       justify-content: space-between;
-
-      .lock {
-        width: 44rpx;
-        height: 44rpx;
-        flex-shrink: 0;
-        margin-right: 38rpx;
-      }
-      .lock_2 {
-        width: 48rpx;
-        height: 48rpx;
-        flex-shrink: 0;
+      image {
+        width: 38rpx;
+        height: 38rpx;
       }
 
       .text {
@@ -688,12 +688,13 @@ export default {
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        margin-left: 40rpx;
       }
 
       .angle_right {
         width: 17rpx;
         height: 34rpx;
-        margin-left:26rpx;
+        margin-left: 26rpx;
       }
 
       .any_questions {
@@ -707,7 +708,6 @@ export default {
 
     .logout {
       padding-bottom: 182rpx;
-
       .out {
         width: 38.008rpx;
         height: 38rpx;
@@ -716,7 +716,7 @@ export default {
 
       .text {
         margin-left: 32rpx;
-        color: #008D91;
+        color: #008d91;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
@@ -731,8 +731,6 @@ export default {
   //padding: 96rpx 0 0 0;
   width: 100%;
   height: 480rpx;
-  background: url("../../static/home/me-bg-1.png");
-  background-size: 100% 100%;
   .image_editor2 {
     margin: -58rpx 0rpx 0rpx 128rpx;
     width: 66rpx;
@@ -756,8 +754,9 @@ export default {
       font-size: 32rpx;
       font-weight: bold;
       width: 100%;
-      color: #003B3D;
+      color: #003b3d;
       letter-spacing: 1.4px;
+      margin-top: 24rpx;
     }
 
     .list {
@@ -770,46 +769,38 @@ export default {
       align-items: center;
       justify-content: right;
       z-index: 1000;
-      padding: 0 70rpx 0 0;
+      padding: 0 40rpx 0 0;
       cursor: pointer !important;
-
 
       view {
         image {
           display: block;
-          width: 64rpx;
-          height: 64rpx;
+          width: 72rpx;
+          height: 72rpx;
         }
       }
     }
   }
 
   .headimgjiantou {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 70rpx;
-    margin-top: 12rpx;
-    // margin-bottom: 48rpx;
-
+    margin-top: 32rpx;
     .headimgtext {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 24rpx;
 
       .headimg {
         display: block;
-        width: 122rpx;
+        width: 232rpx;
         overflow: hidden;
-        height: 122rpx !important;
-        margin-right: 22rpx;
+        height: 232rpx !important;
 
         image {
           display: block;
-          width: 122rpx;
-          height: 122rpx !important;
+          width: 232rpx;
+          height: 232rpx !important;
         }
 
         .image_editor {
@@ -821,7 +812,12 @@ export default {
       }
 
       .namevipday {
-        width: 348rpx;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24rpx;
+
         .namevip {
           display: flex;
           flex-direction: row;
@@ -829,33 +825,28 @@ export default {
           justify-content: flex-start;
 
           .name {
-            color: #008D91;
+            color: #003b3d;
             font-weight: bold;
             font-size: 32rpx;
             overflow: auto;
             text-overflow: ellipsis;
             white-space: nowrap;
-           // width: auto;
+            // width: auto;
           }
 
           .vip {
-            background: #fff;
-            text-align: center;
-            margin-left: 14rpx;
-            border-radius: 4rpx;
-            color: #7b7b7b;
+            margin-left: 6rpx;
+            color: #6b6b6b;
             font-family: Microsoft YaHei UI;
             font-size: 24rpx;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
-            padding: 4rpx 16rpx 0rpx 16rpx;
-            min-height: 40rpx;
           }
         }
 
         .day {
-          color: #e9734b;
+          color: #cdcdcd;
           font-size: 24rpx;
 
           view {
@@ -866,18 +857,11 @@ export default {
           }
         }
       }
-      .star_level {
-        width: 108rpx;
-        margin-left: 10rpx;
-      }
     }
   }
 
   .money {
-    padding: 0 70rpx;
     box-sizing: border-box;
-    height: 60rpx;
-    margin: 16rpx 0 0 0;
     //padding-top: 48px;
 
     > view {
@@ -885,29 +869,22 @@ export default {
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      box-sizing: border-box;
-      color: #e9734b;
-      font-size: 48rpx;
-      font-weight: 500;
-      height: 60rpx;
 
       .text {
-        box-shadow: 4rpx 4rpx 10rpx 0rpx rgba(0, 0, 0, 0.25);
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: left;
-        background: #ffffff;
-        border-radius: 6rpx;
+        background: #008d91;
+        border-radius: 14rpx;
         margin-left: 14rpx;
-        width: 52rpx;
-        height: 52rpx;
-        margin-left: 36rpx;
+        width: 48rpx;
+        height: 48rpx;
 
         .img2 {
           display: block;
-          width: 52rpx;
-          height: 44rpx;
+          width: 46rpx;
+          height: 46rpx;
           transition: all ease-out 0.4s;
           padding: 6rpx;
           position: relative;
@@ -925,7 +902,8 @@ export default {
         justify-content: right;
 
         .qian {
-          font-size: 48rpx;
+          font-size: 40rpx;
+          color: #6b6b6b;
         }
       }
     }
@@ -937,8 +915,7 @@ export default {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    margin: 144rpx auto 0 auto;
-
+    margin-top: 32rpx;
     > .icons {
       text-align: center;
 
@@ -946,80 +923,79 @@ export default {
         display: block;
         width: 66rpx;
         margin: 0 auto;
+        margin-bottom: 8rpx;
       }
       span {
         margin: 0 auto;
-        color: #003B3D;
+        color: #008d91;
         text-align: center;
         font-family: Microsoft YaHei UI;
-        font-size: 28rpx;
+        font-size: 24rpx;
         font-style: normal;
-        font-weight: bold;
         line-height: normal;
         letter-spacing: 1.4px;
-
       }
     }
   }
 
   .pg {
-    border-bottom: 2rpx solid rgba(0, 0, 0, 0.5);
-    width: 610rpx;
-    margin: auto;
+    margin: 32rpx auto;
 
     .one_click_recovery {
-      border-radius: 12rpx;
-      background: #003B3D;
-      text-align: center;
-      margin: 46rpx 0 62rpx 0;
-      width: 272rpx;
-      height: 64rpx;
-      flex-shrink: 0;
+      border-radius: 20rpx;
+      background: #003b3d;
+      width: 366rpx;
+      height: 66rpx;
 
       .one_click_text {
-        color: #FFF;
+        color: #fff;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 28rpx;
         font-style: normal;
         font-weight: 700;
-        line-height: 40rpx; 
+        line-height: 40rpx;
         letter-spacing: 1.4px;
         margin-left: 12rpx;
       }
     }
   }
   .navlist {
-    display: block;
-    box-sizing: border-box;
-    margin: 0 70rpx;
-    width: auto;
-    padding-top: 24rpx;
-    height: 650rpx;
-
-    .navIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16rpx;
+    .nav_f {
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
-      text-align: center;
-      border-bottom: 3rpx dotted rgba(0, 0, 0, 0.25);
+      gap: 40rpx;
+      .navIcon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 284rpx;
+        height: 284rpx;
+        padding-top: 48rpx;
+        background: #d9d9d9;
+        border-radius: 60rpx;
+        image {
+          display: inline-block;
+          width: 66rpx;
+        }
 
-      image {
-        display: inline-block;
-        width: 66rpx;
-        margin: 28rpx 0 28rpx 80rpx;
-      }
-
-      view {
-        margin-right: 80rpx;
-        color: #003B3D;
-        text-align: right;
-        font-family: Microsoft YaHei UI;
-        font-size: 28rpx;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        letter-spacing: 1.12px;
+        view {
+          color: #008d91;
+          font-family: Microsoft YaHei UI;
+          font-size: 24rpx;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 1.12px;
+          margin-top: 48rpx;
+        }
       }
     }
   }
