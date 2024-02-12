@@ -6,14 +6,7 @@
         :lefticon="true"
       ></zhnavbar>
       <view class="navbar_transaction">
-        <view
-          class="menu_transaction f-c"
-          @click="menuFx"
-          :style="{
-            background: lists.total === 0 ? '#111' : '',
-            opacity: lists.total === 0 ? '0.7' : '',
-          }"
-        >
+        <view class="menu_transaction f-c" @click="menuFx">
           <image
             src="../../static/transfer/menu_transaction.png"
             mode="widthFix"
@@ -118,8 +111,8 @@
         >
 
         <view class="transaction_records_time">
-          <uni-dateformat :date="v.finishTime"></uni-dateformat
-        ></view>
+          <uni-dateformat :date="v.finishTime"></uni-dateformat>
+        </view>
       </view>
       <view
         class="transaction_records_sub_2 f-s"
@@ -166,8 +159,8 @@
           >{{ $store.state.allStatus.dividendState[v.dividendState] }}</view
         >
         <view class="transaction_records_time">
-          <uni-dateformat :date="v.createTime"></uni-dateformat
-        ></view>
+          <uni-dateformat :date="v.createTime"></uni-dateformat>
+        </view>
       </view>
       <view
         class="transaction_records_sub_2 f-s"
@@ -217,8 +210,8 @@
           >{{ $store.state.allStatus.transferStatus[v.transferStatus] }}</view
         >
         <view class="transaction_records_time">
-          <uni-dateformat :date="v.createTime"></uni-dateformat
-        ></view>
+          <uni-dateformat :date="v.createTime"></uni-dateformat>
+        </view>
       </view>
       <view
         class="transaction_records_sub_2 f-s"
@@ -260,13 +253,12 @@
           >{{ $store.state.allStatus.applyState[v.rechargeState] }}</view
         >
         <view class="transaction_records_time">
-          <uni-dateformat :date="v.applyTime"></uni-dateformat
-        ></view>
+          <uni-dateformat :date="v.applyTime"></uni-dateformat>
+        </view>
       </view>
     </view>
 
     <view class="after_list" v-if="lists.total == 0">
-      <image src="/static/img/cry.png" class="tasiver" mode="widthFix"> </image>
       <view class="h1 f-c">{{ $t("notifications.sorry") }}</view>
       <view class="h2 f-c">
         {{ $t("transaction_record_view.sorry_des_transfer_records_lbl") }}
@@ -461,12 +453,14 @@ export default {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 .fixed_top {
   background: #ffffff !important;
   width: 100%;
   z-index: 2000;
   position: fixed;
 }
+
 .navbar_transaction {
   margin: 0 auto;
   margin-top: -300rpx;
@@ -478,13 +472,7 @@ export default {
     width: 260rpx;
     height: 58rpx;
     border-radius: 98rpx;
-    background: linear-gradient(
-      132deg,
-      #ed3a3c 0%,
-      #d92264 52.08%,
-      #ca197c 100%
-    );
-
+    background: linear-gradient(0, #ffffff -14%, #003b3d 100%);
     image {
       width: 32.1rpx;
     }
@@ -608,6 +596,7 @@ export default {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
     image {
       width: 40rpx;
       height: 32rpx;

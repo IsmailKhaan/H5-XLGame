@@ -1,6 +1,6 @@
 <template>
   <view class="vip set-bg">
-    <loading :isshow="isshow" ></loading>
+    <loading :isshow="isshow"></loading>
     <view id="navbar">
       <view class="fixed">
         <view class="image" @click="goback">
@@ -9,43 +9,31 @@
         <view class="title">{{ $t("vip_page.vip_page_title") }}</view>
       </view>
     </view>
-
-    <view style="background: #f1f1f1; padding-top: 10rpx">
-      <view class="navlist">
-        <view v-if="nowindex == 1" class="active f-c">{{
-          $t("vip_page.vip_previlage")
-        }}</view>
-        <view
-          class="f-c"
-          v-if="nowindex != 1"
-          @click="navselet"
-          data-navid="1"
-          >{{ $t("vip_page.vip_previlage") }}</view
-        >
-        <view v-if="nowindex == 2" class="active f-c">{{
-          $t("vip_page.vip_details")
-        }}</view>
-        <view
-          class="f-c"
-          v-if="nowindex != 2"
-          @click="navselet"
-          data-navid="2"
-          >{{ $t("vip_page.vip_details") }}</view
-        >
-      </view>
+    <view class="navlist">
+      <view v-if="nowindex == 1" class="active f-c">{{
+        $t("vip_page.vip_previlage")
+      }}</view>
+      <view class="f-c" v-if="nowindex != 1" @click="navselet" data-navid="1">{{
+        $t("vip_page.vip_previlage")
+      }}</view>
+      <view v-if="nowindex == 2" class="active f-c">{{
+        $t("vip_page.vip_details")
+      }}</view>
+      <view class="f-c" v-if="nowindex != 2" @click="navselet" data-navid="2">{{
+        $t("vip_page.vip_details")
+      }}</view>
     </view>
-
     <view class="page_no_1" v-show="nowindex == 1" v-if="levelInfo">
       <view class="profile_view">
         <view class="profile_user_info">
           <image
             class="profile_image"
-            :src="baseInfoicon"
+            :src="$store.state.user.avatar"
             mode="widthFix"
           ></image>
           <view class="name_and_vip f-c">
-            <view class="user_name">{{ baseInfoName }}</view>
-            <view class="user_vip f-c">VIP{{ vipDj }}</view>
+            <view class="user_name">{{ baseInfoName }}.</view>
+            <view class="user_vip f-c">vip{{ vipDj }}</view>
           </view>
           <image
             class="crown_image"
@@ -71,7 +59,7 @@
                 :style="'width:' + jindu + '%'"
               ></image>
             </view>
-            <view class="txt-number" :style="'left:' + (jindu - 5) + '%'" >
+            <view class="txt-number" :style="'left:' + (jindu - 5) + '%'">
               {{ jindu }}%
             </view>
           </view>
@@ -116,23 +104,22 @@
               :current="vipDj"
               @change="vipSChan"
             >
-              <swiper-item 
+              <swiper-item
                 v-for="(ite, index) in levelInfo.levelRecords"
                 :key="index"
                 v-if="index != 0"
               >
-                <view class="swiper-item" :style="vipGradients[index-1]" >
+                <view class="swiper-item" :style="vipGradients[index - 1]">
                   <view class="dengji">
                     <image
-                      :src="'../../static/vips/L' + [index-1] + '.png'"
+                      :src="'../../static/vips/L' + [index - 1] + '.png'"
                       mode=""
                     ></image>
                   </view>
-                  <view   class="viptxt" :style="colors[index-1]">
-                    VIP{{ Number(index)-1 }}
+                  <view class="viptxt" :style="colors[index - 1]">
+                    VIP{{ Number(index) - 1 }}
                   </view>
                   <view
-                
                     class="tshi"
                     :style="colors[index - 1]"
                     v-html="
@@ -160,22 +147,18 @@
                 </view>
               </swiper-item>
               <swiper-item>
-                <view class="swiper-item" :style="vipGradients[10]" >
-                  <view class="dengji10">
+                <view class="swiper-item" :style="vipGradients[10]">
+                  <view class="dengji">
                     <image
                       :src="'../../static/vips/L' + [10] + '.png'"
                       mode="widthFix"
                     ></image>
                   </view>
                   <!-- this is just for set color of text :style="colors[4]" -->
-                  <view   class="viptxt" :style="colors[4]">
+                  <view class="viptxt" :style="colors[4]">
                     VIP{{ Number(10) }}
                   </view>
-                  <view
-                    style="height: 92rpx;"
-                    :style="colors[10]"
-                  >
-                  </view>
+                  <view style="height: 92rpx" :style="colors[10]"> </view>
                   <view class="tip">
                     <view
                       >{{ $t("vip_page.reminder_deadline")
@@ -192,100 +175,51 @@
                   </view>
                 </view>
               </swiper-item>
-
             </swiper>
           </view>
         </view>
       </view>
-      <view class="vip_exclusive"  >
+      <view class="vip_exclusive">
         <view class="exclusive_title">
-          <view class="border_title"></view>
           <view class="title_ex">{{ $t("vip_page.vip_exclusive") }}</view>
         </view>
-        <view class="exclusive_flex f-s" >
-          <view class="exclusive_flex_1 f-s">
-            <image
-              class="exclusive_image_icon"
-              src="../../static/vips/wp.png"
-              mode="widthFix"
-            ></image>
-            <view class="exclusive_text">
-              <view class="e_2">{{ $t("vip_page.withdrawl_perday") }}</view>
-              <view class="e_1">{{
-                levelInfo.levelPermissions[vipDj].dayWithdrawNum
-              }}</view>
-            </view>
+        <view class="exclusive_flex">
+          <view class="exclusive_flex_1 bg_1">
+            <view class="e_2">{{ $t("vip_page.withdrawl_perday") }}</view>
+            <view class="e_1">{{
+              levelInfo.levelPermissions[vipDj].dayWithdrawNum
+            }}</view>
           </view>
-          <view class="exclusive_flex_1 f-s">
-            <image
-              class="exclusive_image_icon"
-              src="../../static/vips/ubp.png"
-              mode="widthFix"
-            ></image>
-            <view class="exclusive_text">
-              <view class="e_2">{{ $t("vip_page.upgrade_bonus_perday") }}</view>
-              <view class="e_1">{{
-                levelInfo.levelPermissions[vipDj].dayWithdrawAmt
-              }}</view>
-            </view>
+          <view class="exclusive_flex_1 bg_2">
+            <view class="e_2">{{ $t("vip_page.upgrade_bonus_perday") }}</view>
+            <view class="e_1">{{
+              levelInfo.levelPermissions[vipDj].dayWithdrawAmt
+            }}</view>
+          </view>
+          <view class="exclusive_flex_1 bg_3">
+            <view class="e_2">{{ $t("vip_page.daily_withdrawl_limit") }}</view>
+            <view class="e_1">{{
+              levelInfo.levelPermissions[vipDj].upBonus
+            }}</view>
           </view>
         </view>
-        <view class="exclusive_flex f-s" style="margin-top: 46rpx">
-          <view class="exclusive_flex_1 f-s">
-            <image
-              class="exclusive_image_icon"
-              src="../../static/vips/dwl.png"
-              mode="widthFix"
-            ></image>
-            <view class="exclusive_text">
-              <view class="e_2">{{
-                $t("vip_page.daily_withdrawl_limit")
-              }}</view>
-              <view class="e_1">{{
-                levelInfo.levelPermissions[vipDj].upBonus
-              }}</view>
-             
-            </view>
+        <view class="exclusive_flex">
+          <view class="exclusive_flex_1 bg_4">
+            <view class="e_2">{{ $t("vip_page.red_envelops") }}</view>
+            <view class="e_1">{{
+              levelInfo.levelPermissions[vipDj].birthdayAmt
+            }}</view>
           </view>
-
-          <view class="exclusive_flex_1 f-s">
-            <image
-              class="exclusive_image_icon"
-              src="../../static/vips/bg.png"
-              mode="widthFix"
-            ></image>
-            <view class="exclusive_text">
-              <view class="e_2">{{ $t("vip_page.red_envelops") }}</view>
-              <view class="e_1">{{
-                levelInfo.levelPermissions[vipDj].birthdayAmt
-              }}</view>
-            </view>
-          </view>
-        </view>
-        <view class="exclusive_flex f-s" style="margin-top: 46rpx">
-          <view class="exclusive_flex_1 f-s">
-            <image
-              class="exclusive_image_icon"
-              src="../../static/vips/wdom.png"
-              mode="widthFix"
-            ></image>
-            <view class="exclusive_text">
-              <view class="e_2">{{ $t("vip_page.birthday_gift") }}</view>
-
-              <view class="e_1">{{
-                levelInfo.levelPermissions[vipDj].moonFreeAmt
-              }}</view>
-            </view>
-          </view>
-
-          <view class="exclusive_flex_1 f-s">
-            <view class="bar"></view>
+          <view class="exclusive_flex_1 bg_5">
+            <view class="e_2">{{ $t("vip_page.birthday_gift") }}</view>
+            <view class="e_1">{{
+              levelInfo.levelPermissions[vipDj].moonFreeAmt
+            }}</view>
           </view>
         </view>
       </view>
       <view class="vip_details">
         <view class="exclusive_title">
-          <view class="border_title"></view>
           <view class="title_ex">{{ $t("vip_page.vip_rebate_ratio") }}</view>
         </view>
         <view class="selectlist">
@@ -294,13 +228,12 @@
             v-for="(ite, index) in levelInfo.levelRebates[vipDj]
               .platformRebates"
             :key="index"
-            :style="{ backgroundColor: getBackgroundColor(index) }"
           >
             <image
               :src="
                 $store.state.iconUrl +
                 $store.state.static.gameIcon[ite.uniqueCode]
-              " 
+              "
               mode="widthFix"
             ></image>
             <view class="G_Name" :style="{ color: getFontColor(index) }"
@@ -338,82 +271,35 @@
 
     <view style="" class="pagetwo" v-show="nowindex == 2" v-if="levelInfo">
       <view class="djlist">
-        <!-- <view
-          :style="vipGradients[0]"
-          :class="vipSIndex1 == 0 ? 'active' : ''"
-          @click="setindex(0)"
-        >
-          vip 0
-        </view> -->
-        <view
-          :style="vipGradients[0]"
-          :class="vipSIndex1 == 1 ? 'active' : ''"
-          @click="setindex(1)"
-        >
-          vip 1
+        <view :class="vipSIndex1 == 1 ? 'active' : ''" @click="setindex(1)">
+          <span>1</span> vip
         </view>
-        <view
-          :style="vipGradients[1]"
-          :class="vipSIndex1 == 2 ? 'active' : ''"
-          @click="setindex(2)"
-        >
-          vip 2
+        <view :class="vipSIndex1 == 2 ? 'active' : ''" @click="setindex(2)">
+          <span>2</span> vip
         </view>
-        <view
-          :style="vipGradients[2]"
-          :class="vipSIndex1 == 3 ? 'active' : ''"
-          @click="setindex(3)"
-        >
-          vip 3
+        <view :class="vipSIndex1 == 3 ? 'active' : ''" @click="setindex(3)">
+          <span>3</span> vip
         </view>
-        <view
-          :style="vipGradients[3]"
-          :class="vipSIndex1 == 4 ? 'active' : ''"
-          @click="setindex(4)"
-        >
-          vip 4
+        <view :class="vipSIndex1 == 4 ? 'active' : ''" @click="setindex(4)">
+          <span>4</span> vip
         </view>
-        <view
-          :style="vipGradients[4]"
-          :class="vipSIndex1 == 5 ? 'active' : ''"
-          @click="setindex(5)"
-        >
-          vip 5
+        <view :class="vipSIndex1 == 5 ? 'active' : ''" @click="setindex(5)">
+          <span>5</span> vip
         </view>
-        <view
-          :style="vipGradients[5]"
-          :class="vipSIndex1 == 6 ? 'active' : ''"
-          @click="setindex(6)"
-        >
-          vip 6
+        <view :class="vipSIndex1 == 6 ? 'active' : ''" @click="setindex(6)">
+          <span>6</span> vip
         </view>
-        <view
-          :style="vipGradients[6]"
-          :class="vipSIndex1 == 7 ? 'active' : ''"
-          @click="setindex(7)"
-        >
-          vip 7
+        <view :class="vipSIndex1 == 7 ? 'active' : ''" @click="setindex(7)">
+          <span>7</span> vip
         </view>
-        <view
-          :style="vipGradients[7]"
-          :class="vipSIndex1 == 8 ? 'active' : ''"
-          @click="setindex(8)"
-        >
-          vip 8
+        <view :class="vipSIndex1 == 8 ? 'active' : ''" @click="setindex(8)">
+          <span>8</span> vip
         </view>
-        <view
-          :style="vipGradients[8]"
-          :class="vipSIndex1 == 9 ? 'active' : ''"
-          @click="setindex(9)"
-        >
-          vip 9
+        <view :class="vipSIndex1 == 9 ? 'active' : ''" @click="setindex(9)">
+          <span>9</span> vip
         </view>
-        <view
-          :style="vipGradients[9]"
-          :class="vipSIndex1 == 10 ? 'active' : ''"
-          @click="setindex(10)"
-        >
-          vip 10
+        <view :class="vipSIndex1 == 10 ? 'active' : ''" @click="setindex(10)">
+          <span>10</span> vip
         </view>
       </view>
       <view class="luobo">
@@ -431,16 +317,16 @@
                   class="leve"
                 ></image>
               </view>
-              <view style="margin-top: -26rpx">
+              <view>
                 <view class="content_flex">
                   <image
                     src="../../static/vips/dollar.png"
                     mode="widthFix"
                     class="iconss"
                   ></image>
-                  <view class="slider_text_1">{{
-                    $t("vip_page.cumulative_deposit")
-                  }}</view>
+                  <view class="slider_text_1"
+                    >{{ $t("vip_page.cumulative_deposit") }}:
+                  </view>
                   <view class="slider_text_2">{{ ite.upgradeRecharge }}</view>
                 </view>
                 <view class="content_flex">
@@ -449,9 +335,9 @@
                     mode="widthFix"
                     class="iconss"
                   ></image>
-                  <view class="slider_text_1">{{
-                    $t("vip_page.turnover_requirements")
-                  }}</view>
+                  <view class="slider_text_1"
+                    >{{ $t("vip_page.turnover_requirements") }}:
+                  </view>
                   <view class="slider_text_2">{{ ite.upgradeValid }}</view>
                 </view>
                 <view class="content_flex">
@@ -460,9 +346,9 @@
                     mode="widthFix"
                     class="iconss"
                   ></image>
-                  <view class="slider_text_1">{{
-                    $t("vip_page.relegation_flow")
-                  }}</view>
+                  <view class="slider_text_1"
+                    >{{ $t("vip_page.relegation_flow") }}:
+                  </view>
                   <view class="slider_text_2">{{ ite.relegationValid }}</view>
                 </view>
               </view>
@@ -492,12 +378,6 @@
         </view>
 
         <view class="shengri">
-          <image src="../../static/vips/star1.png" class="image_v_1"></image>
-          <image src="../../static/vips/star2.png" class="image_v_2"></image>
-          <image src="../../static/vips/star3.png" class="image_v_3"></image>
-          <image src="../../static/vips/star4.png" class="image_v_4"></image>
-          <image src="../../static/vips/star5.png" class="image_v_5"></image>
-
           <view class="txt">
             {{ $t("vip_page.birthday_gift") }}
             <text>{{
@@ -538,8 +418,7 @@
           </view>
           <view class="one">
             <view class="num">
-              {{ levelInfo.levelDiscounts.discountData[vipSIndex1].validMulti
-              }}
+              {{ levelInfo.levelDiscounts.discountData[vipSIndex1].validMulti }}
             </view>
             <view class="txt">{{ $t("vip_page.turnover_multiple") }}</view>
           </view>
@@ -561,64 +440,63 @@
           </view>
         </view>
         <view class="selectlist">
-          <view>
-            <view class="txtselect">
-              <view class="text-title">{{ $t("vip_page.choose_venue") }}</view>
-              <picker
-                :value="gameindex"
-                range-key="platformName"
-                :range="levelRebates_gameType"
-                @change="legi"
-              >
-                <view class="txet-size" style="padding: 0 18rpx">
-                  {{ levelRebates_gameType[gameindex].platformName }}
-                  <image
-                    src="../../static/vips/arrow.png"
-                    mode="widthFix"
-                  ></image>
-                </view>
-              </picker>
-            </view>
-            <view class="txtselect" style="margin-top: 18rpx">
-              <view class="text-title">{{ $t("vip_page.amount") }}</view>
-              <input
-                type="number"
-                class="money-bor"
-                :placeholder="$t('vip_page.enter_amount')"
-                @blur="okform2data"
-                maxlength="11"
-                data-type="montyA"
-                v-model="montyA"
-              />
-            </view>
-            <div class="f-c money-bor-text" v-show="montyA > 0">
-              申请此活动需完成
-              <span style="color: #003B3D;padding: 0 6rpx; ">
-                {{
-                  parseInt(
-                    Number(montyA) *
-                      (Number(
-                        levelInfo.levelDiscounts.discountData[vipSIndex1]
-                          .bonusRatio
-                      ) +
-                        1) *
-                      Number(
-                        levelInfo.levelDiscounts.discountData[vipSIndex1]
-                          .validMulti
-                      )
-                  )
-                }}
-              </span>
-              流水
-            </div>
+          <view view class="txtselect">
+            <view class="text-title">{{ $t("vip_page.choose_venue") }}</view>
+            <picker
+              :value="gameindex"
+              range-key="platformName"
+              :range="levelRebates_gameType"
+              @change="legi"
+            >
+              <view class="txet-size">
+                {{ levelRebates_gameType[gameindex].platformName }}
+                <image
+                  src="../../static/vips/arrow.png"
+                  mode="widthFix"
+                ></image>
+              </view>
+            </picker>
           </view>
-
-          <view class="btncs f-c" v-if="vipSIndex1 == vipDj" @click="sqhd">
-            {{ $t("vip_page.activity_btn") }}
+          <view class="txtselect">
+            <view class="text-title">{{ $t("vip_page.amount") }}</view>
+            <input
+              type="number"
+              class="money-bor"
+              :placeholder="$t('vip_page.enter_amount')"
+              @blur="okform2data"
+              maxlength="11"
+              data-type="montyA"
+              v-model="montyA"
+            />
           </view>
-          <view class="btncs1 f-c" v-else @click="sqhd">
-            {{ $t("vip_page.activity_btn") }}</view
-          >
+          <view class="txtselect">
+            <view class="btncs f-c" v-if="vipSIndex1 == vipDj" @click="sqhd">
+              {{ $t("vip_page.activity_btn") }}
+            </view>
+            <view class="btncs1 f-c" v-else @click="sqhd">
+              {{ $t("vip_page.activity_btn") }}</view
+            >
+          </view>
+          <div class="f-c money-bor-text" v-show="montyA > 0">
+            申请此活动需完成
+            <span style="color: #008d91; padding: 0 6rpx">
+              {{
+                parseInt(
+                  Number(montyA) *
+                    (Number(
+                      levelInfo.levelDiscounts.discountData[vipSIndex1]
+                        .bonusRatio
+                    ) +
+                      1) *
+                    Number(
+                      levelInfo.levelDiscounts.discountData[vipSIndex1]
+                        .validMulti
+                    )
+                )
+              }}
+            </span>
+            流水
+          </div>
         </view>
       </view>
 
@@ -637,15 +515,6 @@
             >{{ $t("vip_page.vip_withdrawal_limit") }}
           </view>
         </view>
-        <view class="titll f-c">
-          <image src="../../static/vips/crown.png" mode="widthFix"></image>
-       
-          <span v-if="vipnav == 1">{{ $t("vip_page.vip_rebate_ratio") }}</span>
-          <span v-if="vipnav == 2">{{
-            $t("vip_page.vip_withdrawal_limit")
-          }}</span>
-        </view>
-
         <scroll-view
           v-if="vipnav == 1"
           scroll-x="true"
@@ -698,7 +567,10 @@
           style=" 100%;overflow: hidden;white-space: nowrap;"
         >
           <view class="" style="width: 100%">
-            <table @change="change" style="width: 100%; border-collapse: collapse;">
+            <table
+              @change="change"
+              style="width: 100%; border-collapse: collapse"
+            >
               <tr class="th">
                 <th class="yss" style="height: 126rpx; line-height: 110rpx">
                   {{ $t("vip_page.vip_level") }}
@@ -743,7 +615,6 @@
         <view class="tip">
           <view class="one">
             <view class="littitle">
-              <view class="f-c">1</view>
               <view>{{ $t("vip_page.rule_title1") }}</view>
             </view>
             <view class="miaosu">
@@ -752,49 +623,42 @@
           </view>
           <view class="one">
             <view class="littitle">
-              <view class="f-c">2</view>
               <view>{{ $t("vip_page.rule_title2") }}</view>
             </view>
             <view class="miaosu">{{ $t("vip_page.rule_desc2") }}</view>
           </view>
           <view class="one">
             <view class="littitle">
-              <view class="f-c">3</view>
               <view>{{ $t("vip_page.rule_title3") }}</view>
             </view>
             <view class="miaosu">{{ $t("vip_page.rule_desc3") }}</view>
           </view>
           <view class="one">
             <view class="littitle">
-              <view class="f-c">4</view>
               <view>{{ $t("vip_page.rule_title4") }}</view>
             </view>
             <view class="miaosu">{{ $t("vip_page.rule_desc4") }}</view>
           </view>
           <view class="one">
             <view class="littitle">
-              <view class="f-c">5</view>
               <view>{{ $t("vip_page.rule_title5") }}</view>
             </view>
             <view class="miaosu">{{ $t("vip_page.rule_desc5") }}</view>
           </view>
           <view class="one">
             <view class="littitle">
-              <view class="f-c">6</view>
               <view>{{ $t("vip_page.rule_title6") }}</view>
             </view>
             <view class="miaosu">{{ $t("vip_page.rule_desc6") }}</view>
           </view>
           <view class="one">
             <view class="littitle">
-              <view class="f-c">7</view>
               <view>{{ $t("vip_page.rule_title7") }}</view>
             </view>
             <view class="miaosu">{{ $t("vip_page.rule_desc7") }}</view>
           </view>
           <view class="one">
             <view class="littitle">
-              <view class="f-c">8</view>
               <view>{{ $t("vip_page.rule_title8") }}</view>
             </view>
             <view class="miaosu">
@@ -834,7 +698,7 @@ export default {
         7: "color: #ffffff; background: linear-gradient(90deg, #7188A1 1.31%, #FFF 135.24%);",
         8: "color: #ffffff; background: linear-gradient(89deg, #BB6F3B -0.48%, #FFF 168.69%);",
         9: "color: #ffffff; background: linear-gradient(102deg, #D72BA9 4.45%, #6777D5 56.92%, #82F4F5 102.25%);",
-       10: "color: #ffffff; background: linear-gradient(102deg, #D72BA9 4.45%, #6777D5 56.92%, #82F4F5 102.25%);",
+        10: "color: #ffffff; background: linear-gradient(102deg, #D72BA9 4.45%, #6777D5 56.92%, #82F4F5 102.25%);",
       },
       vipcurrent: {
         0: "background-color: #E2E2E2;",
@@ -881,7 +745,7 @@ export default {
       moneyText: false,
       baifen: 0,
       jindu: 0,
-      currentLevelinfo:1,
+      currentLevelinfo: 1,
     };
   },
   props: ["url"],
@@ -923,9 +787,9 @@ export default {
 
     getFontColor(index) {
       if (index % 2 === 0) {
-        return "#FFFFFF";
+        return "#003B3D";
       } else {
-        return "#647182";
+        return "#008D91";
       }
     },
 
@@ -983,7 +847,7 @@ export default {
       // return
       this.getVipList(
         state.jsons.levelInfoVersionNo,
-        state.jsonUrl  + JsonList.levelInfo
+        state.jsonUrl + JsonList.levelInfo
       );
 
       this.getVipDj();
@@ -1080,7 +944,7 @@ export default {
       let b = a.toFixed(2) + "%";
       return b;
     },
-  
+
     navselet(e) {
       this.nowindex = e.currentTarget.dataset.navid;
     },
@@ -1122,32 +986,34 @@ export default {
 }
 
 .btncs {
-  width: 214rpx;
-  height: 70rpx;
+  margin-top: 20rpx;
+  margin: auto;
+  width: 286rpx;
+  height: 60rpx;
   line-height: 76rpx;
   text-align: center;
   color: #ffffff;
-  border-radius: 96rpx;
-  background: #008D91;
-  box-shadow: 0px 8rpx 8rpx 0px rgba(0, 0, 0, 0.25);
+  border-radius: 20rpx;
+  background: #003b3d;
   color: #fff;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 40rpx;
   letter-spacing: -0.1rpx;
 }
 
 .btncs1 {
-  width: 214rpx;
-  height: 70rpx;
+  margin-top: 20rpx;
+  margin: auto;
+  width: 286rpx;
+  height: 60rpx;
   line-height: 76rpx;
   text-align: center;
   color: #ffffff;
-  border-radius: 96rpx;
-  background: #008D91;
-  box-shadow: 0px 8rpx 8rpx 0rpx rgba(0, 0, 0, 0.25);
+  border-radius: 26rpx;
+  background: #003b3d;
   color: #fff;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
@@ -1179,7 +1045,6 @@ export default {
     height: 110rpx;
     position: relative;
     z-index: 1001;
-
     .fixed {
       position: fixed;
       top: 0;
@@ -1187,7 +1052,6 @@ export default {
       height: 120rpx;
       width: 100%;
       background-size: 100% 100%;
-      background: #f1f1f1;
 
       .image {
         width: 22rpx;
@@ -1211,14 +1075,13 @@ export default {
         text-align: center;
         font-size: 32rpx;
         font-weight: bold;
-        color: #003B3D;
+        color: #003b3d;
+        background-color: white;
       }
     }
   }
 
   .navlist {
-    background: url("../../static/vips/nav_bg.png") no-repeat;
-    background-size: 100% 100%;
     width: 636rpx;
     height: 68rpx;
     display: flex;
@@ -1230,7 +1093,7 @@ export default {
     > view {
       width: 50%;
       height: 100%;
-      color: #fff;
+      color: #008d91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -1244,8 +1107,8 @@ export default {
       width: 306rpx;
       height: 56rpx;
       border-radius: 108rpx;
-      background: #f1f1f1;
-      color: #008D91;
+      color: #f1f1f1;
+      background: #008d91;
       text-align: center;
       font-family: Microsoft YaHei UI;
       font-size: 24rpx;
@@ -1259,10 +1122,6 @@ export default {
   .page_no_1 {
     .profile_view {
       width: 100%;
-      height: 1010rpx;
-      border-radius: 0px 0px 40rpx 40rpx;
-      background: #f1f1f1;
-      box-shadow: 0px 30rpx 30rpx 0px rgba(0, 0, 0, 0.25);
 
       .profile_user_info {
         padding: 30rpx 10rpx 0 58rpx;
@@ -1271,8 +1130,8 @@ export default {
         align-items: center;
 
         .profile_image {
-          width: 116rpx;
-          height: 116rpx;
+          width: 124rpx;
+          height: 124rpx;
           margin-right: 22rpx;
         }
 
@@ -1283,7 +1142,7 @@ export default {
           width: 50%;
 
           .user_name {
-            color: #008D91;
+            color: #008d91;
             font-family: Microsoft YaHei UI;
             font-size: 32rpx;
             font-style: normal;
@@ -1292,15 +1151,10 @@ export default {
           }
 
           .user_vip {
-            margin-left: 22rpx;
-            // width: 68rpx;
-            padding: 0 4rpx;
-            height: 34rpx;
-            border-radius: 4rpx;
-            background: #e2e2e2;
+            margin-left: 8rpx;
             color: #727272;
             font-family: Microsoft YaHei UI;
-            font-size: 24rpx;
+            font-size: 28rpx;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
@@ -1309,7 +1163,7 @@ export default {
 
         .crown_image {
           margin-left: 60rpx;
-          width: 160rpx;
+          width: 90rpx;
         }
       }
 
@@ -1375,7 +1229,7 @@ export default {
               width: 30%;
               height: 22rpx;
               border-radius: 54rpx;
-              background: #008D91;
+              background: #008d91;
               position: absolute;
               top: 6rpx;
               left: 8rpx;
@@ -1389,7 +1243,7 @@ export default {
 
         .current_deposit_and_turnover {
           .text_01 {
-            color: #003B3D;
+            color: #003b3d;
             text-align: center;
             font-family: Microsoft YaHei UI;
             font-size: 24rpx;
@@ -1400,7 +1254,7 @@ export default {
           }
 
           .text_02 {
-            color: #8098b6;
+            color: #008d91;
             text-align: center;
             font-family: Microsoft YaHei UI;
             font-size: 24rpx;
@@ -1411,7 +1265,8 @@ export default {
 
             span {
               margin-left: 10rpx;
-              color: #003B3D;
+              margin-right: 4rpx;
+              color: #003b3d;
               text-align: center;
               font-family: Microsoft YaHei UI;
               font-size: 24rpx;
@@ -1426,7 +1281,7 @@ export default {
 
       .luobo {
         width: 100%;
-        margin: 142rpx 0 0 32rpx;
+        margin: 40rpx 0 0 32rpx;
 
         swiper {
           height: 306rpx;
@@ -1434,7 +1289,7 @@ export default {
 
           swiper-item {
             width: 98%;
-            height: 306rpx;
+            height: 610rpx;
             border-radius: 32rpx;
 
             .swiper-item {
@@ -1447,18 +1302,17 @@ export default {
 
               .dengji {
                 position: absolute;
-                width: 120rpx;
-                top: 6rpx;
-                right: 54rpx;
+                top: 48rpx;
+                right: 46rpx;
 
                 image {
                   display: block;
-                  width: 172rpx;
-                  height: 172rpx;
-//                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                  width: 90rpx;
+                  height: 120rpx;
+                  //                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 }
               }
-              .dengji10{
+              .dengji10 {
                 position: absolute;
                 width: 120rpx;
                 top: 6rpx;
@@ -1467,13 +1321,13 @@ export default {
                   display: block;
                   width: 270rpx;
                   height: 164rpx;
-//                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                  //                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 }
               }
 
               .viptxt {
                 padding: 36rpx 0 0 54rpx;
-                color: #003B3D;
+                color: #003b3d;
                 font-family: Microsoft YaHei UI;
                 font-size: 52rpx;
                 font-style: normal;
@@ -1485,7 +1339,7 @@ export default {
               .tshi {
                 padding: 12rpx 142rpx 0 68rpx;
 
-                color: #003B3D;
+                color: #003b3d;
                 font-family: Microsoft YaHei UI;
                 font-size: 24rpx;
                 font-style: normal;
@@ -1494,7 +1348,7 @@ export default {
                 letter-spacing: -0.1rpx;
 
                 text {
-                  color: #003B3D;
+                  color: #003b3d;
                   font-family: Microsoft YaHei UI;
                   font-size: 24rpx;
                   font-style: normal;
@@ -1505,10 +1359,9 @@ export default {
                   box-sizing: border-box;
                 }
               }
-              .tshii{
+              .tshii {
                 height: 92rpx;
               }
-
 
               .tip {
                 width: 100%;
@@ -1519,7 +1372,7 @@ export default {
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: center;
-                background: #003B3D;
+                background: #003b3d;
 
                 view {
                   color: #e2e2e2;
@@ -1553,11 +1406,6 @@ export default {
 
     .vip_exclusive {
       width: 100%;
-      height: 540rpx;
-
-      background: #f1f1f1;
-      box-shadow: 0rpx 8rpx 30rpx 0rpx rgba(0, 0, 0, 0.25);
-      margin-top: 54rpx;
       padding: 46rpx 64rpx;
 
       .exclusive_title {
@@ -1565,17 +1413,10 @@ export default {
         align-items: center;
         justify-content: left;
 
-        .border_title {
-          width: 6rpx;
-          height: 52rpx;
-          background: #9c240f;
-        }
-
         .title_ex {
-          margin-left: 16rpx;
-          color: #003B3D;
+          color: #003b3d;
           font-family: Microsoft YaHei UI;
-          font-size: 32rpx;
+          font-size: 24rpx;
           font-style: normal;
           font-weight: 700;
           line-height: 40rpx;
@@ -1584,44 +1425,48 @@ export default {
       }
 
       .exclusive_flex {
-        padding: 28rpx 0rpx 0 0rpx;
-
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16rpx;
+        margin-top: 16rpx;
         .exclusive_flex_1 {
-          .exclusive_image_icon {
-            width: 60rpx;
-            height: 60rpx;
+          width: 192rpx;
+          height: 192rpx;
+          border-radius: 20rpx;
+          background: gray;
+          color: white;
+          padding: 16rpx;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .e_2 {
+            font-size: 24rpx;
           }
-
-          .exclusive_text {
-            padding-left: 18rpx;
-
-            .e_1 {
-              color: #788391;
-              font-family: Microsoft YaHei UI;
-              font-size: 24rpx;
-              font-style: normal;
-              font-weight: 400;
-              line-height: normal;
-            }
-
-            .e_2 {
-              width: 252rpx;
-              color: #788391;
-              font-family: Microsoft YaHei UI;
-              font-size: 24rpx;
-              font-style: normal;
-              font-weight: 290;
-              line-height: normal;
-            }
+          .e_1 {
+            font-size: 30rpx;
+            font-weight: bold;
           }
-          .bar {
-            width: 198rpx;
-            height: 12rpx;
-            flex-shrink: 0;
-            border-radius: 64rpx;
-            background: #788391;
-            margin: 0 68rpx 0 0rpx;
-          }
+        }
+        .bg_1 {
+          background: url("../../static/vips/exclusive_bg_1.png") no-repeat;
+          background-size: 100% 100%;
+        }
+        .bg_2 {
+          background: url("../../static/vips/exclusive_bg_2.png") no-repeat;
+          background-size: 100% 100%;
+        }
+        .bg_3 {
+          background: url("../../static/vips/exclusive_bg_3.png") no-repeat;
+          background-size: 100% 100%;
+        }
+        .bg_4 {
+          background: url("../../static/vips/exclusive_bg_4.png") no-repeat;
+          background-size: 100% 100%;
+        }
+        .bg_5 {
+          background: url("../../static/vips/exclusive_bg_5.png") no-repeat;
+          background-size: 100% 100%;
         }
       }
 
@@ -1659,10 +1504,6 @@ export default {
 
     .vip_details {
       width: 100%;
-      height: 100%;
-      background: #f1f1f1;
-      box-shadow: 0rpx 8rpx 30rpx 0rpx rgba(0, 0, 0, 0.25);
-      margin-top: 54rpx;
       padding: 46rpx 0rpx;
       padding-bottom: 252rpx;
 
@@ -1672,17 +1513,10 @@ export default {
         justify-content: left;
         padding: 0rpx 64rpx;
 
-        .border_title {
-          width: 6rpx;
-          height: 52rpx;
-          background: #9c240f;
-        }
-
         .title_ex {
-          margin-left: 16rpx;
-          color: #003B3D;
+          color: #003b3d;
           font-family: Microsoft YaHei UI;
-          font-size: 32rpx;
+          font-size: 24rpx;
           font-style: normal;
           font-weight: 700;
           line-height: 40rpx;
@@ -1699,18 +1533,12 @@ export default {
       width: 674rpx;
       max-height: 708rpx;
       overflow-y: auto;
-      border-radius: 40rpx;
-      background: #e9e9e9;
-      box-shadow: 4rpx 4rpx 30rpx 0rpx rgba(0, 0, 0, 0.25);
       margin: 0 auto;
-      margin-top: 34rpx;
-
 
       .contents {
-        padding:0rpx 72rpx 0rpx 50rpx;
+        padding: 0rpx 72rpx 0rpx 50rpx;
         width: 100%;
         height: 88rpx;
-        background: #003B3D;
         display: flex;
         align-items: center;
 
@@ -1720,11 +1548,11 @@ export default {
         }
 
         .G_Name {
-          color: #fff;
+          color: #003b3d;
           font-size: 24rpx;
           font-weight: 700;
           display: flex;
-          padding:0 0 0 32rpx;
+          padding: 0 0 0 32rpx;
           flex: 3;
           flex-direction: column;
         }
@@ -1746,20 +1574,15 @@ export default {
   .page_no_2 {
     .supreme_vip {
       width: 100%;
-      min-height: 434rpx;
-      height: 440rpx;
-      border-radius: 0px 0px 40rpx 40rpx;
-      background: #f1f1f1;
-      box-shadow: 0px 30rpx 30rpx 0px rgba(0, 0, 0, 0.25);
-
+      padding: 48rpx 20rpx;
       .class_display_text {
         padding: 0px 0 0 46rpx;
 
         .flex_vip {
           .supreme {
-            color: #003B3D;
+            color: #003b3d;
             font-family: Microsoft YaHei UI;
-            font-size: 44rpx;
+            font-size: 36rpx;
             font-style: normal;
             font-weight: 400;
             line-height: 40rpx;
@@ -1767,9 +1590,9 @@ export default {
           }
 
           .vipp {
-            color: #e18a15;
+            color: #008d91;
             font-family: Microsoft YaHei UI;
-            font-size: 44rpx;
+            font-size: 36rpx;
             font-style: normal;
             font-weight: 700;
             line-height: 40rpx;
@@ -1805,8 +1628,9 @@ export default {
       }
 
       .class_display_image {
-        height: 474rpx !important;
-        width: 448rpx;
+        width: 152rpx;
+        height: 206rpx;
+        margin-right: 140rpx;
       }
     }
   }
@@ -1831,28 +1655,32 @@ export default {
       padding: 62rpx 30rpx 0 30rpx;
 
       view {
-        display: block;
-        margin-bottom: 10rpx;
-        margin-left: 10rpx;
-        width: 126rpx;
-        height: 60rpx;
-        border-radius: 8rpx;
-        background: #c8c8c8;
-        color: #003B3D;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 16rpx;
+        margin-left: 32rpx;
+        width: 88rpx;
+        height: 88rpx;
+        border-radius: 20rpx;
+        background: #d9d9d9;
+        color: #003b3d;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
         font-weight: 400;
-        line-height: 56rpx;
+        // line-height: 56rpx;
         letter-spacing: -0.1rpx;
+        span {
+          font-weight: bold;
+        }
       }
 
       view.active {
-        border-radius: 8rpx;
-        border: 2rpx solid #008D91;
-        background: #c8c8c8;
-        box-shadow: 4rpx 4rpx 22rpx 0rpx rgba(255, 0, 0, 0.4);
+        background: #003b3d;
+        color: #ffffff;
       }
     }
 
@@ -1863,11 +1691,11 @@ export default {
       padding-bottom: 30rpx;
 
       swiper {
-        height: 500rpx;
+        height: 610rpx;
         width: 100%;
 
         swiper-item {
-          height: 500rpx;
+          height: 610rpx;
           padding: 50rpx 38rpx;
           box-sizing: border-box;
 
@@ -1875,20 +1703,18 @@ export default {
             height: 400rpx;
             border-radius: 32rpx;
             background: #e2e2e2;
-            box-shadow: 4rpx 4rpx 22rpx 0rpx rgba(0, 0, 0, 0.25);
             position: relative;
-            //padding-top: 70rpx;
             box-sizing: border-box;
 
             .vip_title_and_level {
-              padding: 0rpx 20rpx 0 62rpx;
               //   margin: -58rpx 0 0 0;
+              margin: 0 48rpx;
               height: 160rpx;
 
               .vip_titl {
-                color: #003B3D;
+                color: #003b3d;
                 font-family: Microsoft YaHei UI;
-                font-size: 52rpx;
+                font-size: 32rpx;
                 font-style: normal;
                 font-weight: 700;
                 line-height: 40rpx;
@@ -1896,8 +1722,9 @@ export default {
               }
 
               image {
-                width: 160rpx;
-                height: 160rpx;
+                width: 90rpx;
+                height: 120rpx;
+                margin-top: 48rpx;
               }
             }
 
@@ -1908,30 +1735,29 @@ export default {
               padding: 0 98rpx 28rpx 56rpx;
 
               image {
-                width: 48.094rpx;
+                width: 40rpx;
               }
 
               .slider_text_1 {
-                width: 244rpx;
-                color: #003B3D;
+                color: #003b3d;
                 font-family: Microsoft YaHei UI;
                 font-size: 24rpx;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 40rpx;
                 letter-spacing: -0.1rpx;
-                margin: 0 0rpx 0 32rpx;
+                margin-left: 24rpx;
               }
 
               .slider_text_2 {
-                color: #008D91;
+                color: #003b3d;
                 font-family: Microsoft YaHei UI;
                 font-size: 24rpx;
                 font-style: normal;
-                font-weight: 400;
+                font-weight: 700;
                 line-height: 40rpx;
                 letter-spacing: -0.1rpx;
-                width: 120rpx;
+                margin-left: 16rpx;
               }
             }
           }
@@ -1949,14 +1775,13 @@ export default {
 
         > view {
           width: 48%;
-          height: 186rpx;
+          height: 154rpx;
           padding: 30rpx 30rpx 50rpx;
-          border-radius: 32rpx;
+          border-radius: 30rpx;
           background: #e2e2e2;
-          box-shadow: 4rpx 4rpx 22rpx 0rpx rgba(0, 0, 0, 0.25);
 
           .txt {
-            color: #003B3D;
+            color: #003b3d;
             font-family: Microsoft YaHei UI;
             font-size: 28rpx;
             font-style: normal;
@@ -1970,7 +1795,7 @@ export default {
           }
 
           .tip {
-            color: #003B3D;
+            color: #003b3d;
             font-family: Microsoft YaHei UI;
             font-size: 24rpx;
             font-style: normal;
@@ -1983,10 +1808,9 @@ export default {
 
       .shengri {
         padding: 30rpx;
-        border-radius: 26rpx;
+        border-radius: 30rpx;
         background: #e2e2e2;
-        box-shadow: 4rpx 4rpx 22rpx 0rpx rgba(0, 0, 0, 0.38);
-        height: 112rpx;
+        height: 88rpx;
         margin: 0 auto;
         text-align: center;
         margin-left: 38rpx;
@@ -2028,7 +1852,7 @@ export default {
         }
 
         .txt {
-          color: #003B3D;
+          color: #003b3d;
           font-family: Microsoft YaHei UI;
           font-size: 28rpx;
           font-style: normal;
@@ -2045,102 +1869,52 @@ export default {
 
     .vipdetail {
       width: 100%;
-      height: 676rpx;
-      border-radius: 40rpx;
-      background: #647182;
-      box-shadow: 0rpx 8rpx 30rpx 0rpx rgba(0, 0, 0, 0.25);
-
       .title {
-        font-size: 34rpx;
-        color: #ffffff;
-        height: 40rpx;
-        line-height: 40rpx;
-        position: relative;
-        padding: 50rpx 0 0 92rpx;
-
-        margin-bottom: 40rpx;
+        font-size: 24rpx;
+        color: #003b3d;
         font-weight: bold;
-      }
-
-      .title::before {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 6rpx;
-        height: 40rpx;
-        background: #ffffff;
-        margin: 50rpx 0 0 64rpx;
+        padding: 0 50rpx;
       }
 
       .list {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        padding: 68rpx 0 0 0;
+        padding: 0 50rpx;
 
         .one {
-          width: 33.3333333%;
-          text-align: center;
-          margin-bottom: 40rpx;
-
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-direction: row-reverse;
+          font-size: 24rpx;
+          margin-top: 10rpx;
           .num {
-            color: #ffbc0f;
-            text-align: center;
-            font-family: Microsoft YaHei UI;
-            font-size: 32rpx;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 40rpx;
-            /* 125% */
-            letter-spacing: -0.1rpx;
-
-            text {
-              margin-left: 10rpx;
-            }
+            color: #008d91;
           }
 
           .txt {
-            color: #fff;
-            text-align: center;
-            font-family: Microsoft YaHei UI;
-            font-size: 24rpx;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 40rpx;
-            /* 166.667% */
-            letter-spacing: -0.1rpx;
+            color: #003b3d;
+            margin-left: 30rpx;
           }
         }
       }
 
       .selectlist {
-        margin: 0 auto;
-        padding: 30rpx;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        border-radius: 40rpx;
+        margin: 48rpx auto;
+        border-radius: 30rpx;
         background: #e2e2e2;
         width: 702rpx;
-        height: 232rpx;
-
+        height: 388rpx;
+        padding: 48rpx 32rpx;
         .txtselect {
           display: flex;
           flex-direction: row;
           align-items: center;
-          justify-content: flex-start;
-
+          justify-content: space-between;
+          width: 100%;
           picker view {
-            width: 210rpx;
-            height: 62rpx;
+            width: 174rpx;
+            height: 66rpx;
             border-radius: 10rpx;
-            background: #003B3D;
+            background: #003b3d;
             text-align: center;
             display: flex;
             flex-direction: row;
@@ -2162,7 +1936,7 @@ export default {
               margin-left: 32rpx;
             }
           }
-        
+
           //          placeholder-style="color:#41536A; font-size: 24rpx; text-align:center; margin:0 15px;"
           /deep/.uni-input-input {
             font-family: Microsoft YaHei UI;
@@ -2172,7 +1946,7 @@ export default {
             color: #ffffff;
             font-size: 24rpx;
             text-align: left;
-            width: 210rpx;
+            width: 174rpx;
             padding: 0 30rpx;
           }
           /deep/.uni-input-placeholder {
@@ -2182,7 +1956,7 @@ export default {
             line-height: normal;
             color: rgb(65, 83, 106);
             font-size: 24rpx;
-            width: 210rpx;
+            width: 174rpx;
             padding: 0 30rpx;
           }
         }
@@ -2190,47 +1964,35 @@ export default {
     }
 
     .vip_rebate_and_withdraw {
-      margin-top: 76rpx;
       width: 100%;
-      border-radius: 0px 0px 40rpx 40rpx;
-      background: #f1f1f1;
-      box-shadow: 0px 8rpx 30rpx 0px rgba(0, 0, 0, 0.25);
-
+      padding: 0 40rpx;
       .navlists {
-        padding: 82rpx 74rpx;
-
         view {
-          color: #003B3D;
+          color: #008d91;
           font-family: Microsoft YaHei UI;
           font-size: 28rpx;
           font-style: normal;
-          font-weight: 700;
+          font-weight: 400;
           line-height: 40rpx;
           letter-spacing: -0.1rpx;
           margin: 0 24rpx 0 24rpx;
         }
 
         .active {
-          color: #008D91;
+          color: #fff;
           position: relative;
           font-weight: bold;
-        }
-
-        .active::before {
-          content: "";
-          display: block;
-          width: 100%;
-          height: 4rpx;
-          border-radius: 4rpx;
-          background: #008D91;
-          position: absolute;
-          bottom: 0;
-          left: 0;
+          background: #008d91;
+          width: 284rpx;
+          height: 56rpx;
+          border-radius: 108rpx;
+          text-align: center;
+          padding-top: 10rpx;
         }
       }
 
       .titll {
-        color: #003B3D;
+        color: #003b3d;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
         font-style: normal;
@@ -2288,19 +2050,19 @@ export default {
           height: 80rpx;
           color: #af9d0b;
           text-align: center;
+          background: #F1F1F1;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
           font-style: normal;
           font-weight: 700;
           line-height: 80rpx;
           letter-spacing: -0.1rpx;
-          background: #f1f1f1;
         }
 
         .ys1 {
           width: 168rpx;
           height: 80rpx;
-          color: #003B3D;
+          color: #003b3d;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -2313,7 +2075,7 @@ export default {
         .yss {
           width: 20%;
           height: 60rpx;
-          background: #f1f1f1;
+
           color: #af9d0b;
           text-align: center;
           font-family: Microsoft YaHei UI;
@@ -2326,7 +2088,7 @@ export default {
 
         .yss1 {
           width: 40%;
-          color: #003B3D;
+          color: #003b3d;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -2360,6 +2122,7 @@ export default {
         .ys {
           width: 168rpx;
           color: #938725;
+          background: #F1F1F1;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -2367,7 +2130,6 @@ export default {
           font-weight: 400;
           line-height: 70rpx;
           letter-spacing: -0.1rpx;
-          background: #f1f1f1;
         }
 
         .ys1 {
@@ -2406,12 +2168,11 @@ export default {
           /* 166.667% */
           letter-spacing: -0.1rpx;
           width: 20%;
-          background: #f1f1f1;
         }
 
         .xxy {
           height: 66rpx;
-          color: #003B3D;
+          color: #003b3d;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -2426,7 +2187,7 @@ export default {
 
         .xxxy {
           height: 66rpx;
-          color: #003B3D;
+          color: #003b3d;
           text-align: center;
           font-family: Microsoft YaHei UI;
           font-size: 24rpx;
@@ -2443,13 +2204,13 @@ export default {
 
     .viptishi {
       border-radius: 0rpx 0rpx 40rpx 40rpx;
-      background: #f1f1f1;
+
       box-shadow: 0rpx 8rpx 30rpx 0rpx rgba(0, 0, 0, 0.25);
       margin-bottom: 30rpx;
 
       .navlist {
         width: 100%;
-        background: #f1f1f1;
+
         height: 110rpx;
         display: flex;
         flex-direction: row;
@@ -2469,7 +2230,7 @@ export default {
         }
 
         .active {
-          color: #008D91;
+          color: #008d91;
           position: relative;
           font-weight: bold;
         }
@@ -2507,82 +2268,25 @@ export default {
     }
 
     .guize {
-      padding: 30rpx;
-      box-sizing: border-box;
-      margin-bottom: 40rpx;
-      margin-top: 88rpx;
-      border-radius: 0rpx 0px 40rpx 40rpx;
-      background: #f1f1f1;
-      height: 100%;
-      box-shadow: 0rpx 8rpx 30rpx 0rpx rgba(0, 0, 0, 0.25);
-
       .title {
-        height: 40rpx;
-        position: relative;
-        margin: 32rpx 0 78rpx 60rpx;
-        padding-left: 16rpx;
-        color: #003B3D;
-        font-family: Microsoft YaHei UI;
-        font-size: 32rpx;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 40rpx;
-        letter-spacing: -0.1rpx;
-      }
-
-      .title::before {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 6rpx;
-        height: 40rpx;
-        background: #9c240f;
+        font-size: 24rpx;
+        color: #003b3d;
+        font-weight: bold;
+        padding: 48rpx 0 0 50rpx;
       }
 
       .tip {
-        padding: 0 12rpx 0 58rpx;
-
+        padding: 0 12rpx 0 78rpx;
+        font-size: 24rpx;
         .one {
-          margin-bottom: 30rpx;
-
           .littitle {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-start;
-
-            view:nth-child(1) {
-              width: 48rpx;
-              height: 48rpx;
-              border-radius: 50%;
-              color: #f1f1f1;
-              font-family: Microsoft YaHei UI;
-              font-size: 24rpx;
-              font-style: normal;
-              font-weight: 700;
-              line-height: 40rpx;
-              letter-spacing: -0.1rpx;
-              text-align: center;
-              background: #9c240f;
-              margin-right: 26rpx;
-            }
-
-            view:nth-child(2) {
-              color: #003B3D;
-              font-family: Microsoft YaHei UI;
-              font-size: 24rpx;
-              font-style: normal;
-              font-weight: 700;
-              line-height: 40rpx;
-              letter-spacing: -0.1rpx;
-            }
+            color: #003b3d;
+            font-weight: 700;
+            margin: 32rpx 0 16rpx 0;
           }
 
           .miaosu {
-            padding: 0 0 0 70rpx;
-            color: #003B3D;
+            color: #008d91;
             font-family: Microsoft YaHei UI;
             font-size: 24rpx;
             font-style: normal;
@@ -2597,8 +2301,8 @@ export default {
     .one_text {
       padding: 68rpx 20rpx 160rpx 20rpx;
       .alltext_1 {
-     //   width: 520rpx;
-        color: #008D91;
+        //   width: 520rpx;
+        color: #008d91;
         text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 24rpx;
@@ -2617,8 +2321,7 @@ export default {
 }
 
 .text-title {
-  width: 162rpx;
-  color: #003B3D;
+  color: #003b3d;
   text-align: right;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx !important;
@@ -2631,16 +2334,17 @@ export default {
 }
 
 .money-bor {
-  width: 210rpx;
-  height: 62rpx;
+  width: 174rpx;
+  height: 66rpx;
   border-radius: 10rpx;
-  background: #003B3D;
+  background: #003b3d;
   // margin-left: 18rpx;
 }
 
 .money-bor-text {
+  margin: 0 auto;
   margin-top: 10rpx;
-  color: #003B3D;
+  color: #003b3d;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
   font-style: normal;

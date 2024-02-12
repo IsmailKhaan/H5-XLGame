@@ -206,7 +206,7 @@
   padding-left: 22rpx;
 }
 .bor-list .names {
-  color: #003B3D;
+  color: #003b3d;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
   font-style: normal;
@@ -244,7 +244,7 @@
   line-height: normal;
   height: 44rpx;
   border-radius: 22rpx;
-  background: #003B3D;
+  background: #003b3d;
   padding-top: 6rpx;
 }
 .bor-list .code {
@@ -266,7 +266,7 @@
 .bor-btns {
   margin-top: 76rpx;
   border-radius: 22rpx;
-  background: #003B3D;
+  background: #003b3d;
   width: 492rpx;
   height: 82rpx;
   color: #fff;
@@ -404,7 +404,7 @@
   width: 264rpx;
   height: 74rpx;
   border-radius: 22rpx;
-  background: #008D91;
+  background: #008d91;
   align-items: center;
   justify-content: center;
   margin: 0 20rpx;
@@ -435,7 +435,7 @@
   letter-spacing: 2.8rpx;
 }
 .openAlert .title {
-  color: #008D91;
+  color: #008d91;
   text-align: center;
   font-family: Microsoft YaHei UI;
   font-size: 32rpx;
@@ -446,7 +446,7 @@
   padding: 52rpx 234rpx 0 234rpx;
 }
 .openAlert .content {
-  color: #003B3D;
+  color: #003b3d;
   text-align: center;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
@@ -484,7 +484,7 @@
 }
 
 /deep/.uni-input-input {
-  color: #003B3D;
+  color: #003b3d;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;
   font-style: normal;
@@ -516,7 +516,7 @@ view {
   margin: 0 auto;
   .contents {
     padding: 0rpx 72rpx 0rpx 50rpx;
-    border-bottom: 4rpx solid #D9D9D9;
+    border-bottom: 2rpx solid #003b3d;
     width: 100%;
     height: 88rpx;
     display: flex;
@@ -528,7 +528,7 @@ view {
     }
     .amount {
       width: 148rpx;
-      color: #003B3D;
+      color: #003b3d;
       text-align: center;
       font-family: Inter;
       font-size: 28rpx;
@@ -541,7 +541,7 @@ view {
 .G_Name {
   // width: 146rpx;
   // height: 56rpx;
-  color: #003B3D;
+  color: #003b3d;
   font-size: 24rpx;
   font-weight: 700;
   display: flex;
@@ -550,7 +550,7 @@ view {
   flex-direction: column;
 
   .span_class {
-    color: #003B3D;
+    color: #003b3d;
     font-family: Inter;
     font-size: 24rpx;
     font-style: normal;
@@ -566,7 +566,7 @@ view {
   .image-btn {
     width: 30rpx;
     height: 30rpx;
-    background: #008D91;
+    background: #008d91;
     border-radius: 30rpx;
   }
 }
@@ -584,7 +584,7 @@ view {
 }
 
 .h1 {
-  color: #003B3D;
+  color: #003b3d;
   text-align: center;
   font-family: Microsoft YaHei UI;
   font-size: 28rpx;
@@ -593,7 +593,7 @@ view {
 }
 .h2 {
   margin-top: 16rpx;
-  color: #003B3D;
+  color: #003b3d;
   text-align: center;
   font-family: Microsoft YaHei UI;
   font-size: 24rpx;

@@ -946,10 +946,10 @@ export default {
       background: #003b3d;
       width: 366rpx;
       height: 66rpx;
+      text-align: center;
 
       .one_click_text {
         color: #fff;
-        text-align: center;
         font-family: Microsoft YaHei UI;
         font-size: 28rpx;
         font-style: normal;
